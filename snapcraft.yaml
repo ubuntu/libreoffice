@@ -1,0 +1,82 @@
+name: libreoffice
+version: 5.0.4
+# The vendor for the snap (replace 'Vendor <email@example.com>')
+#vendor: Canonical <info@canonical.com>
+summary: LibreOffice is a free and open source office suite
+description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
+icon: ./libreoffice.png
+parts:
+    libreoffice-deps:
+        plugin: make
+        source: ./deps
+        stage-packages:
+            - xorg
+            - xmir
+            - libgl1-mesa-glx
+            - libatk1.0-dev
+            - libcairo2-dev
+            - libdbus-glib-1-dev
+            - libfreetype6-dev
+            - libgconf2-dev
+            - libglib2.0-dev
+            - libgstreamer1.0-dev
+            - libgstreamer-plugins-base1.0-dev
+            - libgtk2.0-dev
+            - libnspr4-dev
+            - libnss3-dev
+#            - libxml2-dev
+            - python3-dev
+            - strace
+            - gdb
+            - libxslt1.1
+        snap:
+            - usr/include/atk-1.0/*
+            - usr/include/dbus-1.0/*
+            - usr/include/gconf/2/*
+            - usr/include/glib-2.0/*
+            - usr/include/gtk-2.0/*
+            - usr/include/gstreamer-1.0/*
+            - usr/include/freetype2/*
+            - usr/include/libxml2/*
+            - usr/include/nspr/*
+            - usr/include/nss/*
+            - usr/lib/x86_64-linux-gnu/*
+            - usr/share/*
+            - usr/bin/strace
+            - usr/bin/gdb
+            - usr/bin/*
+    libreoffice-build:
+        plugin: make
+        source: /media/bjoern/extra/libreoffice-build/
+        stage-packages:
+            - libatk1.0-dev
+            - libcairo2-dev
+            - libdbus-glib-1-dev
+            - libfreetype6-dev
+            - libgconf2-dev
+            - libglib2.0-dev
+            - libgstreamer1.0-dev
+            - libgstreamer-plugins-base1.0-dev
+            - libgtk2.0-dev
+            - libnspr4-dev
+            - libnss3-dev
+            - libxml2-dev
+            - python3-dev
+        after:
+            - libreoffice-deps
+        snap:
+            - usr/*
+build-packages:
+            - libatk1.0-dev
+            - libcairo2-dev
+            - libdbus-glib-1-dev
+            - libfreetype6-dev
+            - libgconf2-dev
+            - libglib2.0-dev
+            - libgstreamer1.0-dev
+            - libgstreamer-plugins-base1.0-dev
+            - libgtk2.0-dev
+            - libnspr4-dev
+            - libnss3-dev
+            - libxml2-dev
+            - python3-dev
