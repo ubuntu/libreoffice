@@ -4,7 +4,7 @@ version: 5.0.4
 #vendor: Canonical <info@canonical.com>
 summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
-icon: ./libreoffice.png
+icon: libreoffice.png
 parts:
     libreoffice-build:
         plugin: make
