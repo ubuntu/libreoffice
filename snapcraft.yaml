@@ -9,41 +9,43 @@ parts:
     libreoffice-build:
         plugin: make
         source: ./libreoffice-build/
+#        build-packages:
         stage-packages:
-            - gdb
+            - libatk1.0-0
+            - libcairo2
+            - libdbus-glib-1-2
+            - libfreetype6
+            - libgconf-2-4
+            - libgl1-mesa-glx
+            - libglib2.0-0
+            - libgstreamer-plugins-base1.0-0
+            - libgstreamer1.0-0
+            - libgtk2.0-0
+            - libnspr4
+            - libnss3
+            - libxml2
+            - libxslt1.1
             - libatk1.0-dev
             - libcairo2-dev
             - libdbus-glib-1-dev
             - libfreetype6-dev
             - libgconf2-dev
-            - libgl1-mesa-glx
             - libglib2.0-dev
             - libgstreamer-plugins-base1.0-dev
             - libgstreamer1.0-dev
             - libgtk2.0-dev
             - libnspr4-dev
             - libnss3-dev
+            - libpython3.5-dev
             - libxml2-dev
-            - libxslt1.1
             - python3-dev
+            - gdb
             - strace
             - xmir
             - xorg
-#            - libxml2-dev
         snap:
-            - usr/*
-            - usr/bin/*
+            - usr/local/*
             - usr/bin/gdb
             - usr/bin/strace
-            - usr/include/atk-1.0/*
-            - usr/include/dbus-1.0/*
-            - usr/include/freetype2/*
-            - usr/include/gconf/2/*
-            - usr/include/glib-2.0/*
-            - usr/include/gstreamer-1.0/*
-            - usr/include/gtk-2.0/*
-            - usr/include/libxml2/*
-            - usr/include/nspr/*
-            - usr/include/nss/*
-            - usr/lib/x86_64-linux-gnu/*
-            - usr/share/*
+            - usr/lib/x86_64-linux-gnu/lib*
+            - usr/lib/x86_64-linux-gnu/mesa/lib*
