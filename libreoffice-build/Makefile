@@ -3,6 +3,7 @@ BUILDDIR := $(THISDIR)/build
 
 CONFFLAGS := --enable-python=system --disable-liblangtag --disable-collada --disable-coinmp --enable-verbose --disable-ccache --disable-postgresql-sdbc --without-doxygen --without-system-libs --with-system-nss --disable-odk
 
+#see lp#1549691 -- fetching source cannot be done with default snapcraft tooling
 .fetch:
 	echo "executing step: $@"
 	echo "SNAP: getting source"
@@ -19,6 +20,7 @@ all: .fetch
 	echo "SNAP: cleaning up"
 	cd $(BUILDDIR) && make clean || true
 	echo "SNAP: patching source"
+	# lp#1548232: snapcraft messes with include paths in unhealthy ways
 	cp $(THISDIR)/final_FixNss.mk $(BUILDDIR)/solenv/gbuild/extensions/
 	echo "SNAP: configuring"
 	cd $(BUILDDIR) && ./autogen.sh --disable-fetch-external $(CONFFLAGS)
@@ -29,6 +31,7 @@ all: .fetch
 
 install:
 	echo "executing step: $@"
+	# lp#1548376: manually copy files from snap-packages to install, so that the will be part of the snap
 	cp -a $(shell readlink -f ../../../stage)/* $(shell readlink -f ../install)
 	cd $(BUILDDIR) && make install DESTDIR=$(shell readlink -f ../install)
 
