@@ -7,7 +7,7 @@ CONFFLAGS := --enable-python=system --disable-liblangtag --disable-collada --dis
 .fetch:
 	echo "executing step: $@"
 	echo "SNAP: getting source"
-	git clone -vb libreoffice-5.0.4.2 https://github.com/LibreOffice/core.git $(BUILDDIR) || true
+	git clone -vb libreoffice-5.1.1.3 https://github.com/LibreOffice/core.git $(BUILDDIR) || true
 	cd $(BUILDDIR) && git clean -dfx
 	echo "SNAP: configuring"
 	cd $(BUILDDIR) && ./autogen.sh $(CONFFLAGS)
