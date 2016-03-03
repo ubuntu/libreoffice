@@ -49,3 +49,18 @@ parts:
             - usr/bin/strace
             - usr/lib/x86_64-linux-gnu/lib*
             - usr/lib/x86_64-linux-gnu/mesa/lib*
+apps:
+    libreoffice:
+        command: /usr/local/lib/libreoffice/program/soffice
+    libreoffice-base:
+        command: /usr/local/lib/libreoffice/program/sbase
+    libreoffice-calc:
+        command: /usr/local/lib/libreoffice/program/scalc
+    libreoffice-draw:
+        command: /usr/local/lib/libreoffice/program/sdraw
+    libreoffice-impress:
+        command: /usr/local/lib/libreoffice/program/simpress
+    libreoffice-math:
+        command: /usr/local/lib/libreoffice/program/smath
+    libreoffice-writer:
+        command: /usr/local/lib/libreoffice/program/swriter
