@@ -1,7 +1,7 @@
 THISDIR := $(realpath $(dir $(firstword $(MAKEFILE_LIST))))
 BUILDDIR := $(THISDIR)/build
 
-CONFFLAGS := --enable-python=system --disable-liblangtag --disable-collada --disable-coinmp --enable-verbose --disable-ccache --disable-postgresql-sdbc --without-doxygen --without-system-libs --with-system-nss --disable-odk
+CONFFLAGS := --enable-python=system --disable-liblangtag --disable-collada --disable-coinmp --enable-verbose --disable-ccache --disable-postgresql-sdbc --without-doxygen --without-system-libs --with-system-nss
 
 #see lp#1549691 -- fetching source cannot be done with default snapcraft tooling
 .fetch:
