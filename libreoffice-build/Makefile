@@ -20,6 +20,7 @@ CONFFLAGS := \
 	--disable-firebird-sdbc \
 	--disable-gltf \
 	--disable-gstreamer-0-10 \
+	--disable-kde4 \
 	--disable-online-update \
 	--enable-dbus \
 	--enable-eot \
@@ -28,7 +29,6 @@ CONFFLAGS := \
 	--enable-extension-integration \
 	--enable-gstreamer-1-0 \
 	--enable-hardlink-deliver \
-	--enable-kde4 \
 	--enable-mergelibs \
 	--enable-release-build \
 	--enable-scripting-beanshell \
@@ -38,11 +38,13 @@ CONFFLAGS := \
 	--with-build-version='5.1.1.3-snap1' \
 	--with-gdrive-client-id=$(GOOGLEAPI_CLIENTID_UBUNTU) \
 	--with-gdrive-client-secret=$(GOOGLEAPI_CLIENTSECRET_UBUNTU) \
-	--with-help \
 	--with-lang="en-US af am ar as ast be bg bn br bs ca ca-valencia cs cy da de dz el en-GB en-ZA eo es et eu fa fi fr ga gd gl gu gug he hi hr hu id is it ja ka kk km ko kmr-Latn lt lv mk mn ml mr nb ne nl nn nr nso oc om or pa-IN pl pt pt-BR ro ru rw si sk sl sr ss st sv ta te tg th tn tr ts ug uk uz ve vi xh zh-CN zh-TW zu" \
+	--with-system-libexttextcat \
 	--with-theme="galaxy hicontrast oxygen tango sifr breeze elementary human" \
 	--with-vendor='Canonical, Ltd.' \
-	
+	--disable-postgresql-sdbc \
+
+#	--with-help \
 
 #see lp#1549691 -- fetching source cannot be done with default snapcraft tooling
 .fetch:
@@ -63,17 +65,28 @@ all: .fetch
 	echo "SNAP: patching source"
 	# lp#1548232: snapcraft messes with include paths in unhealthy ways
 	cp $(THISDIR)/final_FixNss.mk $(BUILDDIR)/solenv/gbuild/extensions/
+	cp $(THISDIR)/ExternalProject_libwpd.mk $(BUILDDIR)/external/libwpd
 	echo "SNAP: configuring"
 	cd $(BUILDDIR) && ./autogen.sh --disable-fetch-external $(CONFFLAGS)
-	echo "SNAP: building"
-	cd $(BUILDDIR) && make
+	#echo "SNAP: build libwpd"
+	#cd $(BUILDDIR)/external/boost && make verbose=t PARALLELISM=1
+	#cd $(BUILDDIR)/external/librevenge && make verbose=t PARALLELISM=1
+	#cd $(BUILDDIR)/external/libwpd && make verbose=t PARALLELISM=1
+	#echo "SNAP: building i18pool singlethreaded"
+	#cd $(BUILDDIR) && make i18npool.all PARALLELISM=1
+	echo "SNAP: building rest, first attempt"
+	cd $(BUILDDIR) && make verbose=t || true
+	echo "SNAP: building rest, second attempt"
+	cd $(BUILDDIR) && make verbose=t || true
+	echo "SNAP: building rest, third attempt"
+	cd $(BUILDDIR) && make verbose=t
 	echo "SNAP: running checks"
 	cd $(BUILDDIR) && make check
 
 install:
 	echo "executing step: $@"
 	# lp#1548376: manually copy files from snap-packages to install, so that the will be part of the snap
-	cp -a $(shell readlink -f ../../../stage)/* $(shell readlink -f ../install)
+	cp -a $(shell readlink -f ../../../stage)/* $(shell readlink -f ../install) | true
 	cd $(BUILDDIR) && make install DESTDIR=$(shell readlink -f ../install)
 
 
