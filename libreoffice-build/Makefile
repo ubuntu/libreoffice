@@ -65,7 +65,6 @@ all: .fetch
 	echo "SNAP: patching source"
 	# lp#1548232: snapcraft messes with include paths in unhealthy ways
 	cp $(THISDIR)/final_FixNss.mk $(BUILDDIR)/solenv/gbuild/extensions/
-	cp $(THISDIR)/ExternalProject_libwpd.mk $(BUILDDIR)/external/libwpd
 	echo "SNAP: configuring without help"
 	cd $(BUILDDIR) && ./autogen.sh --disable-fetch-external $(CONFFLAGS)
 	echo "SNAP: building without help"
