@@ -35,22 +35,29 @@ CONFFLAGS := \
 	--enable-scripting-javascript \
 	--enable-symbols \
 	--with-alloc=system \
-	--with-build-version='5.1.1.3-snap2' \
+	--with-build-version='libreoffice-5.2.0.0.alpha1~snap1' \
 	--with-gdrive-client-id=$(GOOGLEAPI_CLIENTID_UBUNTU) \
 	--with-gdrive-client-secret=$(GOOGLEAPI_CLIENTSECRET_UBUNTU) \
-	--with-lang="en-US af am ar as ast be bg bn br bs ca ca-valencia cs cy da de dz el en-GB en-ZA eo es et eu fa fi fr ga gd gl gu gug he hi hr hu id is it ja ka kk km ko kmr-Latn lt lv mk mn ml mr nb ne nl nn nr nso oc om or pa-IN pl pt pt-BR ro ru rw si sk sl sr ss st sv ta te tg th tn tr ts ug uk uz ve vi xh zh-CN zh-TW zu" \
 	--with-system-libexttextcat \
+	--with-system-nss \
 	--with-theme="galaxy hicontrast oxygen tango sifr breeze elementary human" \
 	--with-vendor='Canonical, Ltd.' \
 	--disable-postgresql-sdbc \
+
+#	--with-lang="en-US af am ar as ast be bg bn br bs ca ca-valencia cs cy da de dz el en-GB en-ZA eo es et eu fa fi fr ga gd gl gu gug he hi hr hu id is it ja ka kk km ko kmr-Latn lt lv mk mn ml mr nb ne nl nn nr nso oc om or pa-IN pl pt pt-BR ro ru rw si sk sl sr ss st sv ta te tg th tn tr ts ug uk uz ve vi xh zh-CN zh-TW zu" \
+	--with-system-libwpd \
+	--with-system-libwps \
+	--with-system-libwpg \
 
 CONFFLAGS_HELP := $(CONFFLAGS) --with-help --with-parallelism=1
 
 #see lp#1549691 -- fetching source cannot be done with default snapcraft tooling
 .fetch:
+	sudo dot -c
 	echo "executing step: $@"
 	echo "SNAP: getting source"
-	git clone -vb libreoffice-5.1.1.3 https://github.com/LibreOffice/core.git $(BUILDDIR) || true
+	#git clone --depth 1 -vb libreoffice-5.2.0.0.alpha1 https://github.com/LibreOffice/core.git $(BUILDDIR) || true
+	git clone --depth 1 -vb libreoffice-5.2.0.0.alpha1 /home/bjoern/checkouts/libreoffice $(BUILDDIR) || true
 	cd $(BUILDDIR) && git clean -dfx
 	echo "SNAP: configuring"
 	cd $(BUILDDIR) && ./autogen.sh $(CONFFLAGS_HELP)
@@ -65,10 +72,16 @@ all: .fetch
 	echo "SNAP: patching source"
 	# lp#1548232: snapcraft messes with include paths in unhealthy ways
 	cp $(THISDIR)/final_FixNss.mk $(BUILDDIR)/solenv/gbuild/extensions/
+	cd $(BUILDDIR) && patch -p1 < $(THISDIR)/libwpd-werror.diff
 	echo "SNAP: configuring without help"
 	cd $(BUILDDIR) && ./autogen.sh --disable-fetch-external $(CONFFLAGS)
 	echo "SNAP: building without help"
-	cd $(BUILDDIR) && make verbose=t
+	#cd $(BUILDDIR) && make verbose=t libwpd.all 2>&1 | tee log
+	#bash
+	#cd $(BUILDDIR) && make verbose=t external external.all 2>&1 | tee log || true
+	#make
+	#echo "in snapcraft bash" 
+	#bash
 	echo "SNAP: configuring with help"
 	cd $(BUILDDIR) && ./autogen.sh --disable-fetch-external $(CONFFLAGS_HELP)
 	echo "SNAP: building without help"

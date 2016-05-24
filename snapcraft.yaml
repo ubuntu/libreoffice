@@ -41,16 +41,16 @@ parts:
             - libnss3-dev
             - libpython3.5-dev
             - libxml2-dev
+            - liborcus-dev
+            - libwpd-dev
+            - libwps-dev
+            - libwpg-dev
             - python3-dev
-            - gdb
             - graphviz
-            - strace
             - xmir
             - xorg
         snap:
             - usr/local/*
-            - usr/bin/gdb
-            - usr/bin/strace
             - usr/lib/x86_64-linux-gnu/lib*
             - usr/lib/x86_64-linux-gnu/mesa/lib*
 apps:
