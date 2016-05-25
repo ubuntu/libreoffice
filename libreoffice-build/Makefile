@@ -49,7 +49,8 @@ CONFFLAGS := \
 	--with-system-libwps \
 	--with-system-libwpg \
 
-CONFFLAGS_HELP := $(CONFFLAGS) --with-help --with-parallelism=1
+CONFFLAGS_HELP := $(CONFFLAGS) --with-help
+# --with-parallelism=1
 
 #see lp#1549691 -- fetching source cannot be done with default snapcraft tooling
 .fetch:
@@ -73,18 +74,9 @@ all: .fetch
 	# lp#1548232: snapcraft messes with include paths in unhealthy ways
 	cp $(THISDIR)/final_FixNss.mk $(BUILDDIR)/solenv/gbuild/extensions/
 	cd $(BUILDDIR) && patch -p1 < $(THISDIR)/libwpd-werror.diff
-	echo "SNAP: configuring without help"
-	cd $(BUILDDIR) && ./autogen.sh --disable-fetch-external $(CONFFLAGS)
-	echo "SNAP: building without help"
-	#cd $(BUILDDIR) && make verbose=t libwpd.all 2>&1 | tee log
-	#bash
-	#cd $(BUILDDIR) && make verbose=t external external.all 2>&1 | tee log || true
-	#make
-	#echo "in snapcraft bash" 
-	#bash
-	echo "SNAP: configuring with help"
+	echo "SNAP: building"
 	cd $(BUILDDIR) && ./autogen.sh --disable-fetch-external $(CONFFLAGS_HELP)
-	echo "SNAP: building without help"
+	echo "SNAP: building"
 	cd $(BUILDDIR) && make verbose=t
 	echo "SNAP: running checks"
 	cd $(BUILDDIR) && make check || true # lets not abort, it took a while to get here -- instead check the logs.
@@ -93,7 +85,7 @@ install:
 	echo "executing step: $@"
 	# lp#1548376: manually copy files from snap-packages to install, so that the will be part of the snap
 	cp -a $(shell readlink -f ../../../stage)/* $(shell readlink -f ../install) | true
-	cd $(BUILDDIR) && make install DESTDIR=$(shell readlink -f ../install)
+	cd $(BUILDDIR) && make install DESTDIR=$(DESTDIR) # DESTDIR=$(shell readlink -f ../install)
 
 
 .PHONY: all install

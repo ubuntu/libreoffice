@@ -46,15 +46,21 @@ parts:
             - libwps-dev
             - libwpg-dev
             - python3-dev
+            - gdb
             - graphviz
+            - strace
             - xmir
             - xorg
         snap:
+#            - usr/bin/gdb
+#            - usr/bin/strace
             - usr/local/*
             - usr/lib/x86_64-linux-gnu/lib*
             - usr/lib/x86_64-linux-gnu/mesa/lib*
 apps:
     libreoffice:
+        command: usr/local/lib/libreoffice/program/soffice
+    libreoffice-snap:
         command: usr/local/lib/libreoffice/program/soffice
 #    libreoffice-base:
 #        command: /usr/local/lib/libreoffice/program/sbase
