@@ -11,45 +11,50 @@ parts:
         source: ./libreoffice-build/
 #        build-packages:
         stage-packages:
+            - gdb
+            - fonts-sil-gentium
+            - fonts-sil-gentium-basic
+            - fonts-liberation
+            - graphviz
             - libatk1.0-0
+            - libatk1.0-dev
             - libcairo2
+            - libcairo2-dev
             - libdbus-glib-1-2
+            - libdbus-glib-1-dev
             - libexttextcat-dev
             - libfreetype6
-            - libldap2-dev
+            - libfreetype6-dev
             - libgconf-2-4
+            - libgconf2-dev
             - libgl1-mesa-glx
             - libglib2.0-0
-            - libgstreamer-plugins-base1.0-0
-            - libgstreamer1.0-0
-            - libgtk2.0-0
-            - libnspr4
-            - libnss3
-            - libxml2
-            - libxslt1.1
-            - libatk1.0-dev
-            - libcairo2-dev
-            - libdbus-glib-1-dev
-            - libfreetype6-dev
-            - libgconf2-dev
             - libglib2.0-dev
+            - libgstreamer-plugins-base1.0-0
             - libgstreamer-plugins-base1.0-dev
+            - libgstreamer1.0-0
             - libgstreamer1.0-dev
-            - libgtk2.0-dev
             - libgtk-3-dev
+            - libgtk2.0-0
+            - libgtk2.0-dev
             - libkrb5-dev
+            - libldap2-dev
+            - libnspr4
             - libnspr4-dev
+            - libnss3
             - libnss3-dev
-            - libpython3.5-dev
-            - libxml2-dev
             - liborcus-dev
+            - libpython3.5-dev
             - libwpd-dev
-            - libwps-dev
             - libwpg-dev
+            - libwps-dev
+            - libxml2
+            - libxml2-dev
+            - libxslt1.1
             - python3-dev
-            - gdb
-            - graphviz
             - strace
+            - ttf-dejavu-core
+            - ttf-ubuntu-font-family
             - xmir
             - xorg
         snap:
