@@ -35,7 +35,7 @@ CONFFLAGS := \
 	--enable-scripting-javascript \
 	--enable-symbols \
 	--with-alloc=system \
-	--with-build-version='libreoffice-5.2.0.0.alpha1~snap1' \
+	--with-build-version='libreoffice-5.2.0.0.beta1-hotfix1~snap1' \
 	--with-gdrive-client-id=$(GOOGLEAPI_CLIENTID_UBUNTU) \
 	--with-gdrive-client-secret=$(GOOGLEAPI_CLIENTSECRET_UBUNTU) \
 	--with-system-libexttextcat \
@@ -58,7 +58,7 @@ CONFFLAGS_HELP := $(CONFFLAGS) --with-help #--with-parallelism=1
 	echo "executing step: $@"
 	echo "SNAP: getting source"
 	#git clone --depth 1 -vb libreoffice-5.2.0.0.alpha1 https://github.com/LibreOffice/core.git $(BUILDDIR) || true
-	git clone --depth 1 -vb libreoffice-5.2.0.0.beta1 /home/bjoern/checkouts/libreoffice $(BUILDDIR) || true
+	git clone --depth 1 -vb libreoffice-5.2.0.0.beta1-hotfix1 /home/bjoern/checkouts/libreoffice $(BUILDDIR) || true
 	cd $(BUILDDIR) && git clean -dfx
 	echo "SNAP: configuring"
 	cd $(BUILDDIR) && ./autogen.sh $(CONFFLAGS_HELP)

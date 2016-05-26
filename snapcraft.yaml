@@ -1,5 +1,5 @@
 name: libreoffice
-version: 5.2.0.0.beta1
+version: 5.2.0.0.beta1-hotfix1
 # The vendor for the snap (replace 'Vendor <email@example.com>')
 #vendor: Canonical <info@canonical.com>
 summary: LibreOffice is a free and open source office suite
