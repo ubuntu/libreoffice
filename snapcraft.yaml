@@ -16,6 +16,7 @@ parts:
             - libdbus-glib-1-2
             - libexttextcat-dev
             - libfreetype6
+            - libldap2-dev
             - libgconf-2-4
             - libgl1-mesa-glx
             - libglib2.0-0

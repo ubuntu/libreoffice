@@ -39,6 +39,7 @@ CONFFLAGS := \
 	--with-gdrive-client-id=$(GOOGLEAPI_CLIENTID_UBUNTU) \
 	--with-gdrive-client-secret=$(GOOGLEAPI_CLIENTSECRET_UBUNTU) \
 	--with-system-libexttextcat \
+	--with-system-openldap \
 	--with-system-nss \
 	--with-theme="galaxy hicontrast oxygen tango sifr breeze elementary human" \
 	--with-vendor='Canonical, Ltd.' \
@@ -49,8 +50,7 @@ CONFFLAGS := \
 	--with-system-libwps \
 	--with-system-libwpg \
 
-CONFFLAGS_HELP := $(CONFFLAGS) --with-help
-# --with-parallelism=1
+CONFFLAGS_HELP := $(CONFFLAGS) --with-help #--with-parallelism=1
 
 #see lp#1549691 -- fetching source cannot be done with default snapcraft tooling
 .fetch:
@@ -77,6 +77,7 @@ all: .fetch
 	echo "SNAP: building"
 	cd $(BUILDDIR) && ./autogen.sh --disable-fetch-external $(CONFFLAGS_HELP)
 	echo "SNAP: building"
+	cd $(BUILDDIR) && make external.all verbose=t
 	cd $(BUILDDIR) && make verbose=t
 	echo "SNAP: running checks"
 	cd $(BUILDDIR) && make check || true # lets not abort, it took a while to get here -- instead check the logs.
