@@ -54,6 +54,7 @@ parts:
         snap:
 #            - usr/bin/gdb
 #            - usr/bin/strace
+            - usr/share/fonts/*
             - usr/local/*
             - usr/lib/x86_64-linux-gnu/lib*
             - usr/lib/x86_64-linux-gnu/mesa/lib*
