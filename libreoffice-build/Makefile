@@ -84,9 +84,9 @@ all: .fetch
 install:
 	echo "executing step: $@"
 	# lp#1548376: manually copy files from snap-packages to install, so that the will be part of the snap
-	touch $(shell readlink -f ../../../stage)/fromstage
-	touch $(DESTDIR)/destdir
-	cp -a $(shell readlink -f ../../../stage)/* $(shell readlink -f ../install) || true
+	#touch $(shell readlink -f ../../../stage)/fromstage
+	#touch $(DESTDIR)/destdir
+	#cp -a $(shell readlink -f ../../../stage)/* $(shell readlink -f ../install) || true
 	cd $(BUILDDIR) && make install DESTDIR=$(DESTDIR) # DESTDIR=$(shell readlink -f ../install)
 
 
