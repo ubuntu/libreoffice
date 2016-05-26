@@ -62,3 +62,4 @@ parts:
 apps:
     libreoffice:
         command: usr/local/lib/libreoffice/program/soffice
+        plugs: [ unity7, opengl, network, home ]
