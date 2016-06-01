@@ -64,7 +64,11 @@ parts:
             - usr/local/*
             - usr/lib/x86_64-linux-gnu/lib*
             - usr/lib/x86_64-linux-gnu/mesa/lib*
+    libreoffice-wrapper:
+        plugin: copy
+        files:
+            libreoffice.wrapper: libreoffice.wrapper
 apps:
     libreoffice:
-        command: usr/local/lib/libreoffice/program/soffice
+        command: libreoffice.wrapper
         plugs: [ unity7, opengl, network, home ]
