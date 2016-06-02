@@ -56,7 +56,6 @@ parts:
         snap:
 #            - usr/bin/gdb
 #            - usr/bin/strace
-            - usr/lib/jvm/*
             - usr/local/*
             - usr/lib/x86_64-linux-gnu/lib*
             - usr/lib/x86_64-linux-gnu/mesa/lib*
@@ -77,6 +76,17 @@ parts:
             - usr/share/fonts/*
         files:
             /usr/share/fonts/truetype/gentium-basic/GenBkBasR.ttf: usr/share/fonts/truetype/gentium-basic/
+    jvm:
+        plugin: copy
+        source: /usr/lib/jvm
+        stage-packages:
+            - openjdk-8-jdk
+            - openjdk-8-jre
+#        snap:
+#            - usr/lib/jvm/*
+        files:
+#            /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar: rt.jar
+            /usr/lib/jvm/java-8-openjdk-amd64/bin/java: java
 apps:
     libreoffice:
         command: libreoffice.wrapper
