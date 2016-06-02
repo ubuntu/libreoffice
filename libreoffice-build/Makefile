@@ -35,7 +35,7 @@ CONFFLAGS := \
 	--enable-scripting-javascript \
 	--enable-symbols \
 	--with-alloc=system \
-	--with-build-version='libreoffice-5.2.0.0.beta1-hotfix1~snap1' \
+	--with-build-version='libreoffice-5.2.0.0.beta1-hotfix1~snap2' \
 	--with-gdrive-client-id=$(GOOGLEAPI_CLIENTID_UBUNTU) \
 	--with-gdrive-client-secret=$(GOOGLEAPI_CLIENTSECRET_UBUNTU) \
 	--with-system-libexttextcat \
