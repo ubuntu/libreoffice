@@ -11,10 +11,8 @@ parts:
         source: ./libreoffice-build/
 #        build-packages:
         stage-packages:
+            - default-jdk
             - gdb
-            - fonts-sil-gentium
-            - fonts-sil-gentium-basic
-            - fonts-liberation
             - graphviz
             - libatk1.0-0
             - libatk1.0-dev
@@ -53,14 +51,12 @@ parts:
             - libxslt1.1
             - python3-dev
             - strace
-            - ttf-dejavu-core
-            - ttf-ubuntu-font-family
             - xmir
             - xorg
         snap:
 #            - usr/bin/gdb
 #            - usr/bin/strace
-            - usr/share/fonts/*
+            - usr/lib/jvm/*
             - usr/local/*
             - usr/lib/x86_64-linux-gnu/lib*
             - usr/lib/x86_64-linux-gnu/mesa/lib*
@@ -68,6 +64,19 @@ parts:
         plugin: copy
         files:
             libreoffice.wrapper: libreoffice.wrapper
+    selected-fonts:
+        plugin: copy
+        source: /usr/share/fonts
+        stage-packages:
+            - fonts-sil-gentium
+            - fonts-sil-gentium-basic
+            - fonts-liberation
+            - ttf-dejavu-core
+            - ttf-ubuntu-font-family
+        snap:
+            - usr/share/fonts/*
+        files:
+            /usr/share/fonts/truetype/gentium-basic/GenBkBasR.ttf: usr/share/fonts/truetype/gentium-basic/
 apps:
     libreoffice:
         command: libreoffice.wrapper
