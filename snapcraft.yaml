@@ -9,7 +9,6 @@ parts:
         source: ./libreoffice-build/
         stage-packages:
             - default-jdk
-            - gdb
             - graphviz
             - libatk1.0-0
             - libatk1.0-dev
@@ -47,12 +46,9 @@ parts:
             - libxml2-dev
             - libxslt1.1
             - python3-dev
-            - strace
             - xmir
             - xorg
         snap:
-#            - usr/bin/gdb
-#            - usr/bin/strace
             - usr/local/*
             - usr/lib/x86_64-linux-gnu/lib*
             - usr/lib/x86_64-linux-gnu/mesa/lib*
@@ -81,6 +77,15 @@ parts:
             - openjdk-8-jre
         files: # see lp#1588283
             /usr/lib/jvm/java-8-openjdk-amd64/bin/java: java
+    debug:
+        plugin: copy
+        source: /usr/bin
+        stage-packages:
+            - gdb
+            - strace
+        files: # see lp#1588283
+            /usr/bin/strace: strace
+
 apps:
     libreoffice:
         command: libreoffice.wrapper
