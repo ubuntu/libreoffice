@@ -1,7 +1,5 @@
 name: libreoffice
 version: 5.2.0.0.beta1-hotfix1
-# The vendor for the snap (replace 'Vendor <email@example.com>')
-#vendor: Canonical <info@canonical.com>
 summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 icon: libreoffice.png
@@ -9,7 +7,6 @@ parts:
     libreoffice-build:
         plugin: make
         source: ./libreoffice-build/
-#        build-packages:
         stage-packages:
             - default-jdk
             - gdb
@@ -74,7 +71,7 @@ parts:
             - ttf-ubuntu-font-family
         snap:
             - usr/share/fonts/*
-        files:
+        files: # see lp#1588283
             /usr/share/fonts/truetype/gentium-basic/GenBkBasR.ttf: usr/share/fonts/truetype/gentium-basic/
     jvm:
         plugin: copy
@@ -82,10 +79,7 @@ parts:
         stage-packages:
             - openjdk-8-jdk
             - openjdk-8-jre
-#        snap:
-#            - usr/lib/jvm/*
-        files:
-#            /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar: rt.jar
+        files: # see lp#1588283
             /usr/lib/jvm/java-8-openjdk-amd64/bin/java: java
 apps:
     libreoffice:
