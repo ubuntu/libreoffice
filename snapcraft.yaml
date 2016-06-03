@@ -46,7 +46,6 @@ parts:
             - libxml2-dev
             - libxslt1.1
             - python3-dev
-            - xmir
             - xorg
         snap:
             - usr/local/*
