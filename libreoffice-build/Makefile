@@ -71,14 +71,12 @@ all: .fetch
 	echo "SNAP: cleaning up"
 	cd $(BUILDDIR) && make clean || true
 	echo "SNAP: patching source"
-	# lp#1548232: snapcraft messes with include paths in unhealthy ways
-	cp $(THISDIR)/final_FixNss.mk $(BUILDDIR)/solenv/gbuild/extensions/
-	cd $(BUILDDIR) && patch -p1 < $(THISDIR)/libwpd-werror.diff
+	cd $(BUILDDIR) && git am $(THISDIR)/patches/*
 	echo "SNAP: building"
 	cd $(BUILDDIR) && ./autogen.sh --disable-fetch-external $(CONFFLAGS_HELP)
 	echo "SNAP: building"
 	cd $(BUILDDIR) && make external.all verbose=t
-	cd $(BUILDDIR) && make verbose=t
+	cd $(BUILDDIR) && make
 	echo "SNAP: running checks"
 	cd $(BUILDDIR) && make check || true # lets not abort, it took a while to get here -- instead check the logs.
 
