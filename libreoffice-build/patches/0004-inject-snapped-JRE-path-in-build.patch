@@ -1,22 +1,25 @@
-From 1635af548be4c882ef6da5e57ff55df49494fb68 Mon Sep 17 00:00:00 2001
+From 8df3968c19caae518c36194daa5e4615541b8ffa Mon Sep 17 00:00:00 2001
 From: Bjoern Michaelsen <bjoern.michaelsen@canonical.com>
-Date: Wed, 8 Jun 2016 20:10:26 +0200
+Date: Thu, 9 Jun 2016 12:45:14 +0200
 Subject: [PATCH 4/4] inject snapped JRE path in build
 
 ---
- jvmfwk/source/framework.cxx | 2 ++
- 1 file changed, 2 insertions(+)
+ jvmfwk/source/framework.cxx | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/jvmfwk/source/framework.cxx b/jvmfwk/source/framework.cxx
-index bf174e3..aab15fd 100644
+index bf174e3..a4a99d0 100644
 --- a/jvmfwk/source/framework.cxx
 +++ b/jvmfwk/source/framework.cxx
-@@ -74,6 +74,8 @@ javaFrameworkError jfw_findAllJREs(JavaInfo ***pparInfo, sal_Int32 *pSize)
+@@ -72,8 +72,9 @@ javaFrameworkError jfw_findAllJREs(JavaInfo ***pparInfo, sal_Int32 *pSize)
+         //get the list of paths to jre locations which have been
+         //added manually
          const jfw::MergedSettings settings;
-         const std::vector<OUString>& vecJRELocations =
-             settings.getJRELocations();
+-        const std::vector<OUString>& vecJRELocations =
+-            settings.getJRELocations();
++        std::vector<OUString> vecJRELocations = settings.getJRELocations();
 +        OUString sSnappedJRE("file:///snap/libreoffice/current/usr/lib/jvm/java-8-openjdk-amd64/"); // FIXME: use SNAP environment variable
-+        vecJRELocations.insert(vecJRELocations.begin(), sSnappedJRE);
++        vecJRELocations.insert(vecJRELocations.begin(), { sSnappedJRE } );
          //Use every plug-in library to get Java installations.
          typedef std::vector<OUString>::const_iterator ci_pl;
          for (ci_pl i = vecVendors.begin(); i != vecVendors.end(); ++i)
