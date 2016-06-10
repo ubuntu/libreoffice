@@ -123,4 +123,7 @@ if [ ! -d $XDG_DATA_HOME/icons ]; then
 fi
 #exec "$SNAP/usr/bin/ldd" "$SNAP/usr/local/lib/libreoffice/program/soffice.bin"
 #exec  strace "$SNAP/usr/local/lib/libreoffice/program/soffice.bin"
-exec  "$SNAP/usr/local/lib/libreoffice/program/soffice.bin" "$@"
+"$SNAP/usr/local/lib/libreoffice/program/soffice.bin" "$@"
+if [ $? -eq 81 ]; then
+  exec  "$SNAP/usr/local/lib/libreoffice/program/soffice.bin" "$@"
+fi
