@@ -33,7 +33,6 @@ CONFFLAGS := \
 	--enable-release-build \
 	--enable-scripting-beanshell \
 	--enable-scripting-javascript \
-	--enable-symbols \
 	--with-alloc=system \
 	--with-build-version='libreoffice-5.2.0.0.beta2-snap1' \
 	--with-gdrive-client-id=$(GOOGLEAPI_CLIENTID_UBUNTU) \
@@ -45,6 +44,7 @@ CONFFLAGS := \
 	--with-vendor='Canonical, Ltd.' \
 	--disable-postgresql-sdbc \
 
+#	--enable-symbols \
 #	--with-lang="en-US af am ar as ast be bg bn br bs ca ca-valencia cs cy da de dz el en-GB en-ZA eo es et eu fa fi fr ga gd gl gu gug he hi hr hu id is it ja ka kk km ko kmr-Latn lt lv mk mn ml mr nb ne nl nn nr nso oc om or pa-IN pl pt pt-BR ro ru rw si sk sl sr ss st sv ta te tg th tn tr ts ug uk uz ve vi xh zh-CN zh-TW zu" \
 
 CONFFLAGS_HELP := $(CONFFLAGS) --with-help #--with-parallelism=1
