@@ -89,4 +89,4 @@ parts:
 apps:
     libreoffice:
         command: libreoffice.wrapper
-        plugs: [ unity7, opengl, network, home ]
+        plugs: [ unity7, opengl, network, home, cups-control, network-bind, bluez ]
