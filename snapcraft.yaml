@@ -57,34 +57,18 @@ parts:
         files:
             libreoffice.wrapper: libreoffice.wrapper
     selected-fonts:
-        plugin: copy
-        source: /usr/share/fonts
+        plugin: nil
         stage-packages:
             - fonts-sil-gentium
             - fonts-sil-gentium-basic
             - fonts-liberation
             - ttf-dejavu-core
             - ttf-ubuntu-font-family
-        snap:
-            - usr/share/fonts/*
-        files: # see lp#1588283
-            /usr/share/fonts/truetype/gentium-basic/GenBkBasR.ttf: usr/share/fonts/truetype/gentium-basic/
     jvm:
-        plugin: copy
-        source: /usr/lib/jvm
+        plugin: nil
         stage-packages:
             - openjdk-8-jdk
             - openjdk-8-jre
-        files: # see lp#1588283
-            /usr/lib/jvm/java-8-openjdk-amd64/bin/java: java
-    debug:
-        plugin: copy
-        source: /usr/bin
-        stage-packages:
-            - gdb
-            - strace
-        files: # see lp#1588283
-            /usr/bin/strace: strace
 
 apps:
     libreoffice:
