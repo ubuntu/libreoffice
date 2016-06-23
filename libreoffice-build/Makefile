@@ -43,11 +43,102 @@ CONFFLAGS := \
 	--with-theme="galaxy hicontrast oxygen tango sifr breeze elementary human" \
 	--with-vendor='Canonical, Ltd.' \
 	--disable-postgresql-sdbc \
-	--with-lang="en-US af am ar as ast be bg bn br bs ca ca-valencia cs cy da de dz el en-GB en-ZA eo es et eu fa fi fr ga gd gl gu gug he hi hr hu id is it ja ka kk km ko kmr-Latn lt lv mk mn ml mr nb ne nl nn nr nso oc om or pa-IN pl pt pt-BR ro ru rw si sk sl sr ss st sv ta te tg th tn tr ts ug uk uz ve vi xh zh-CN zh-TW zu" \
+	--with-help
 
 #	--enable-symbols \
 
-CONFFLAGS_HELP := $(CONFFLAGS) --with-help #--with-parallelism=1
+LANGS := \
+	en-US \
+	af \
+	am \
+	ar \
+	as \
+	ast \
+	be \
+	bg \
+	bn \
+	br \
+	bs \
+	ca \
+	ca-valencia \
+	cs \
+	cy \
+	da \
+	de \
+	dz \
+	el \
+	en-GB \
+	en-ZA \
+	eo \
+	es \
+	et \
+	eu \
+	fa \
+	fi \
+	fr \
+	ga \
+	gd \
+	gl \
+	gu \
+	gug \
+	he \
+	hi \
+	hr \
+	hu \
+	id \
+	is \
+	it \
+	ja \
+	ka \
+	kk \
+	km \
+	ko \
+	kmr-Latn \
+	lt \
+	lv \
+	mk \
+	mn \
+	ml \
+	mr \
+	nb \
+	ne \
+	nl \
+	nn \
+	nr \
+	nso \
+	oc \
+	om \
+	or \
+	pa-IN \
+	pl \
+	pt \
+	pt-BR \
+	ro \
+	ru \
+	rw \
+	si \
+	sk \
+	sl \
+	sr \
+	ss \
+	st \
+	sv \
+	ta \
+	te \
+	tg \
+	th \
+	tn \
+	tr \
+	ts \
+	ug \
+	uk \
+	uz \
+	ve \
+	vi \
+	xh \
+	zh-CN \
+	zh-TW \
+	zu \
 
 #see lp#1549691 -- fetching source cannot be done with default snapcraft tooling
 .fetch:
@@ -58,7 +149,7 @@ CONFFLAGS_HELP := $(CONFFLAGS) --with-help #--with-parallelism=1
 	git clone --depth 1 -vb libreoffice-5.2.0.0.beta2 /home/bjoern/checkouts/libreoffice $(BUILDDIR) || true
 	cd $(BUILDDIR) && git clean -dfx
 	echo "SNAP: configuring"
-	cd $(BUILDDIR) && ./autogen.sh $(CONFFLAGS_HELP)
+	cd $(BUILDDIR) && ./autogen.sh $(CONFFLAGS) --with-lang="$(LANGS)"
 	echo "SNAP: fetching"
 	cd $(BUILDDIR) && make fetch
 	touch $@
@@ -70,13 +161,19 @@ all: .fetch
 	echo "SNAP: patching source"
 	cd $(BUILDDIR) && git am $(THISDIR)/patches/*
 	echo "SNAP: building"
-	cd $(BUILDDIR) && ./autogen.sh --disable-fetch-external $(CONFFLAGS_HELP)
+	cd $(BUILDDIR) && ./autogen.sh --disable-fetch-external $(CONFFLAGS)
 	echo "SNAP: building external"
 	cd $(BUILDDIR) && make external.all
 	echo "SNAP: building non-l10n"
-	cd $(BUILDDIR) && make build-non-l10n-only
-	echo "SNAP: building l10n/rest (single threaded)"
-	cd $(BUILDDIR) && make PARALLELISM=1
+	cd $(BUILDDIR) && make
+	echo "SNAP: building l10n/rest -- one by one"
+	for lang in $(LANGS); \
+	do \
+		cd $(BUILDDIR) && \
+        	./autogen.sh --disable-fetch-external $(CONFFLAGS) --with-lang="en-US $${lang}" && \
+			make build-nocheck; \
+	done
+	cd $(BUILDDIR) && ./autogen.sh --disable-fetch-external $(CONFFLAGS) --with-lang="$(LANGS)"
 	echo "SNAP: running checks"
 	cd $(BUILDDIR) && make check || true # lets not abort, it took a while to get here -- instead check the logs.
 
