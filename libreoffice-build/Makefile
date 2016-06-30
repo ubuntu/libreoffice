@@ -140,21 +140,21 @@ LANGS := \
 	zh-TW \
 	zu \
 
-#see lp#1549691 -- fetching source cannot be done with default snapcraft tooling
-.fetch:
-	sudo dot -c
-	echo "executing step: $@"
-	echo "SNAP: getting source"
-	#git clone --depth 1 -vb libreoffice-5.2.0.0.beta2 https://github.com/LibreOffice/core.git $(BUILDDIR) || true
-	git clone --depth 1 -vb libreoffice-5.2.0.0.beta2 /home/bjoern/checkouts/libreoffice $(BUILDDIR) || true
-	cd $(BUILDDIR) && git clean -dfx
-	echo "SNAP: configuring"
-	cd $(BUILDDIR) && ./autogen.sh $(CONFFLAGS) --with-lang="$(LANGS)"
-	echo "SNAP: fetching"
-	cd $(BUILDDIR) && make fetch
-	touch $@
+##see lp#1549691 -- fetching source cannot be done with default snapcraft tooling
+#.fetch:
+#	sudo dot -c
+#	echo "executing step: $@"
+#	echo "SNAP: getting source"
+#	#git clone --depth 1 -vb libreoffice-5.2.0.0.beta2 https://github.com/LibreOffice/core.git $(BUILDDIR) || true
+#	git clone --depth 1 -vb libreoffice-5.2.0.0.beta2 /home/bjoern/checkouts/libreoffice $(BUILDDIR) || true
+#	cd $(BUILDDIR) && git clean -dfx
+#	echo "SNAP: configuring"
+#	cd $(BUILDDIR) && ./autogen.sh $(CONFFLAGS) --with-lang="$(LANGS)"
+#	echo "SNAP: fetching"
+#	cd $(BUILDDIR) && make fetch
+#	touch $@
 	
-all: .fetch
+all:
 	echo "executing step: $@"
 	echo "SNAP: cleaning up"
 	cd $(BUILDDIR) && make clean || true

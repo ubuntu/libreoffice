@@ -6,7 +6,7 @@ icon: libreoffice.png
 confinement: strict
 parts:
     libreoffice-build:
-        plugin: make
+        plugin: x_libreoffice
         source: ./libreoffice-build/
         stage-packages:
             - default-jdk
