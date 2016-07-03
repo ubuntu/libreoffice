@@ -174,7 +174,7 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
             ['make', 'fetch'],
             os.path.join(self.builddir, 'build'))
     def build(self):
-        #self.fetch()
+        self.fetch()
         #super(autotools.AutotoolsPlugin, self).build()
         #super().build()
         LibreOfficePlugin.logger.info('cleaning up')
@@ -220,6 +220,9 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
         #    os.path.join(self.builddir, 'build'))
         self.run(
             ['make', 'build-nocheck'],
+            os.path.join(self.builddir, 'build'))
+        self.run(
+            ['make', 'install', 'DESTDIR=' + self.installdir],
             os.path.join(self.builddir, 'build'))
 
 # vim:set shiftwidth=4 softtabstop=4 expandtab
