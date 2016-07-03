@@ -4,6 +4,7 @@ import snapcraft
 from snapcraft.plugins import autotools
 import logging
 import os.path
+import os
 
 
 # Set up Google API keys, see http://www.chromium.org/developers/how-tos/api-keys .
@@ -173,21 +174,47 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
             ['make', 'fetch'],
             os.path.join(self.builddir, 'build'))
     def build(self):
-        self.fetch()
-        super(autotools.AutotoolsPlugin, self).build()
-
-        # run boostrap before autotools build
-        #self.run(['/bin/false'])
-
-        # the plugins hooks are not idemnpotent, where they should be.
-        # so we need to answer that calling the autotools plugins won't
-        # retrigger BasePlugin build() which erase the directory.
-        # However the issue with this hack is that other parts from this
-        # project will be impacted if they are instantiated after this
-        # method is ran, which is unlikely, but still possible.
-        # https://bugs.launchpad.net/snapcraft/+bug/1595964.
-        #snapcraft.BasePlugin.build = lambda self: None
+        #self.fetch()
+        #super(autotools.AutotoolsPlugin, self).build()
         #super().build()
-
+        LibreOfficePlugin.logger.info('cleaning up')
+        self.run(
+            ['make', 'clean'],
+            os.path.join(self.builddir, 'build'))
+        LibreOfficePlugin.logger.info('applying vendor patches from %s ' % os.path.join(self.builddir, '..' , 'src' ,'patches'))
+        for patch in os.walk(os.path.join(self.builddir, '..', 'src', 'patches')).__next__()[2]:
+            patchpath = os.path.join(self.builddir, '..', 'src', 'patches', patch)
+            LibreOfficePlugin.logger.info('applying %s from %s' % (patch, patchpath))
+            self.run(
+                ['git', 'am', patchpath],
+                os.path.join(self.builddir, 'build'))
+        LibreOfficePlugin.logger.info('configuring non-l10n')
+        self.run(
+            ['./autogen.sh'] + CONFFLAGS + ['--disable-fetch-external'],
+            os.path.join(self.builddir, 'build'))
+        LibreOfficePlugin.logger.info('building externals')
+        self.run(
+            ['make', 'external.all'],
+            os.path.join(self.builddir, 'build'))
+        LibreOfficePlugin.logger.info('building non-l10n')
+        self.run(
+            ['make'],
+            os.path.join(self.builddir, 'build'))
+        for lang in LANGS:
+            LibreOfficePlugin.logger.info('configuring for l10n: %s' % lang)
+            self.run(
+                ['./autogen.sh'] + CONFFLAGS + ['--with-lang=en-US %s' % lang],
+                os.path.join(self.builddir, 'build'))
+            self.run(
+                ['make', 'build-nocheck'],
+                os.path.join(self.builddir, 'build'))
+        LibreOfficePlugin.logger.info('configuring for full l10n')
+        self.run(
+            ['./autogen.sh'] + CONFFLAGS + ['--with-lang=' + ' '.join(LANGS)],
+            os.path.join(self.builddir, 'build'))
+        LibreOfficePlugin.logger.info('run tests')
+        self.run(
+            ['make', 'check'],
+            os.path.join(self.builddir, 'build'))
 
 # vim:set shiftwidth=4 softtabstop=4 expandtab
