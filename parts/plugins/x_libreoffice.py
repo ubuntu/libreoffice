@@ -151,12 +151,9 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
     def fetch(self):
         LibreOfficePlugin.logger.info('preparing dot/graphwiz')
         self.run(['sudo', 'dot', '-c'])
-        #self.run(['pwd'])
-        #self.run(['pwd'], '.')
-        #self.run(['pwd'], './build/build')
         LibreOfficePlugin.logger.info('getting core repo')
         # TODO: basic clone can be down by default plugin
-        #git clone --depth 1 -vb libreoffice-5.2.0.0.beta2 https://github.com/LibreOffice/core.git $(BUILDDIR) || true
+        # https://github.com/LibreOffice/core.git
         self.run(['git', 'clone',
             '--depth=1',
             '-v',
@@ -175,8 +172,6 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
             os.path.join(self.builddir, 'build'))
     def build(self):
         self.fetch()
-        #super(autotools.AutotoolsPlugin, self).build()
-        #super().build()
         LibreOfficePlugin.logger.info('cleaning up')
         self.run(
             ['make', 'clean'],
