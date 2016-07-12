@@ -21,7 +21,7 @@ CONFFLAGS = [
 	'--disable-ccache',
 	'--disable-coinmp',
 	'--disable-dconf',
-	'--disable-dependency-tracking',
+#	'--disable-dependency-tracking',
 	'--disable-evolution2',
 	'--disable-firebird-sdbc',
 	'--disable-gltf',
@@ -195,24 +195,34 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
         self.run(
             ['make'],
             os.path.join(self.builddir, 'build'))
-        for lang in LANGS:
-            LibreOfficePlugin.logger.info('configuring for l10n: %s' % lang)
-            self.run(
-                ['./autogen.sh'] + CONFFLAGS + ['--with-lang=en-US %s' % lang],
-                os.path.join(self.builddir, 'build'))
-            self.run(
-                ['make', 'build-nocheck'],
-                os.path.join(self.builddir, 'build'))
+        self.run(
+            ['rm', '-rf', os.path.join(self.builddir, 'build', 'workdir', 'SrsPartTarget')],
+            os.path.join(self.builddir, 'build'))
+        self.run(
+            ['rm', '-rf', os.path.join(self.builddir, 'build', 'workdir', 'SrsTarget')],
+            os.path.join(self.builddir, 'build'))
+#        for lang in [l for l in LANGS if l != 'en-US']:
+#            LibreOfficePlugin.logger.info('configuring for l10n: %s' % lang)
+#            self.run(
+#                ['./autogen.sh'] + CONFFLAGS + ['--with-lang=%s' % lang],
+#                os.path.join(self.builddir, 'build'))
+#            self.run(
+#                ['make', 'build-nocheck', 'verbose=T'],
+#                os.path.join(self.builddir, 'build'))
+#            self.run(
+#                ['rm', '-rf', os.path.join(self.builddir, 'build', 'workdir', 'SrsPartTarget')],
+#                os.path.join(self.builddir, 'build'))
+#            self.run(
+#                ['rm', '-rf', os.path.join(self.builddir, 'build', 'workdir', 'SrsTarget')],
+#                os.path.join(self.builddir, 'build'))
         LibreOfficePlugin.logger.info('configuring for full l10n')
         self.run(
             ['./autogen.sh'] + CONFFLAGS + ['--with-lang=' + ' '.join(LANGS)],
             os.path.join(self.builddir, 'build'))
         LibreOfficePlugin.logger.info('run tests')
-        # disable tests for now
-        # failing in at least: CppunitTest_dbaccess_RowSetClones
-        #self.run(
-        #    ['make', 'check'],
-        #    os.path.join(self.builddir, 'build'))
+        self.run(
+            ['bash'],
+            os.path.join(self.builddir, 'build'))
         self.run(
             ['make', 'build-nocheck'],
             os.path.join(self.builddir, 'build'))
