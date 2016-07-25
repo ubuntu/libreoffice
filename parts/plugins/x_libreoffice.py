@@ -40,7 +40,7 @@ CONFFLAGS = [
 	'--enable-scripting-beanshell',
 	'--enable-scripting-javascript',
 	'--with-alloc=system',
-	'--with-build-version=libreoffice-5.2.0.2-snap1',
+	'--with-build-version=libreoffice-5.2.0.3-snap1',
 	'--with-gdrive-client-id=$(GOOGLEAPI_CLIENTID_UBUNTU)',
 	'--with-gdrive-client-secret=$(GOOGLEAPI_CLIENTSECRET_UBUNTU)',
 	'--with-system-libexttextcat',
@@ -144,6 +144,16 @@ LANGS = [
     'zh-TW',
     'zu']
 
+# smaller langset to reduce snap size for now
+LANGS = [ 
+    'en-US',
+    'de',
+    'es',
+    'fr',
+    'it',
+    'pt',
+    'pt-BR']
+
 #	--enable-symbols \
 
 class LibreOfficePlugin(autotools.AutotoolsPlugin):
@@ -157,7 +167,7 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
         self.run(['git', 'clone',
             '--depth=1',
             '-v',
-            '--branch=libreoffice-5.2.0.2',
+            '--branch=libreoffice-5.2.0.3',
             '/home/bjoern/checkouts/libreoffice',
             os.path.join(self.builddir, 'build')])
         self.run(
@@ -220,9 +230,6 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
             ['./autogen.sh'] + CONFFLAGS + ['--with-lang=' + ' '.join(LANGS)],
             os.path.join(self.builddir, 'build'))
         LibreOfficePlugin.logger.info('run tests')
-        self.run(
-            ['bash'],
-            os.path.join(self.builddir, 'build'))
         self.run(
             ['make', 'build-nocheck'],
             os.path.join(self.builddir, 'build'))
