@@ -160,7 +160,7 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
     logger = logging.getLogger('snapcraft')
     def fetch(self):
         LibreOfficePlugin.logger.info('preparing dot/graphwiz')
-        self.run(['sudo', 'dot', '-c'])
+#        self.run(['sudo', 'dot', '-c'])
         LibreOfficePlugin.logger.info('getting core repo')
         # TODO: basic clone can be down by default plugin
         # https://github.com/LibreOffice/core.git
