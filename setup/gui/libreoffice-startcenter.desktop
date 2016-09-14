@@ -22,7 +22,7 @@ NoDisplay=false
 Icon=libreoffice-startcenter
 Type=Application
 Categories=Office;X-Red-Hat-Base;X-SuSE-Core-Office;X-MandrivaLinux-Office-Other;
-Exec=libreoffice.libreoffice-wrapper %U
+Exec=libreoffice.libreoffice.wrapper %U
 MimeType=application/vnd.openofficeorg.extension;x-scheme-handler/vnd.libreoffice.cmis;
 Name=LibreOffice
 GenericName=Office
@@ -219,26 +219,26 @@ Actions=Writer;Calc;Impress;Draw;Base;Math;
 
 [Desktop Action Writer]
 Name=Writer
-Exec=libreoffice.libreoffice-wrapper --writer
+Exec=libreoffice.libreoffice.wrapper --writer
 
 [Desktop Action Calc]
 Name=Calc
-Exec=libreoffice.libreoffice-wrapper --calc
+Exec=libreoffice.libreoffice.wrapper --calc
 
 [Desktop Action Impress]
 Name=Impress
-Exec=libreoffice.libreoffice-wrapper --impress
+Exec=libreoffice.libreoffice.wrapper --impress
 
 [Desktop Action Draw]
 Name=Draw
-Exec=libreoffice.libreoffice-wrapper --draw
+Exec=libreoffice.libreoffice.wrapper --draw
 
 [Desktop Action Base]
 Name=Base
-Exec=libreoffice.libreoffice-wrapper --base
+Exec=libreoffice.libreoffice.wrapper --base
 
 [Desktop Action Math]
 Name=Math
-Exec=libreoffice.libreoffice-wrapper --math
+Exec=libreoffice.libreoffice.wrapper --math
 
 ##End of actions menu
