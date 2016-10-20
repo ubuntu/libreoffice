@@ -168,7 +168,7 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
             '--depth=1',
             '-v',
             '--branch=libreoffice-5.2.1.2',
-            'git://anongit.freedesktop.org/libreoffice/core',
+            'https://anongit.freedesktop.org/git/libreoffice/core.git',
             os.path.join(self.builddir, 'build')])
         self.run(
             ['git', '-C', os.path.join(self.builddir, 'build'), 'clean', '-dfx'])
