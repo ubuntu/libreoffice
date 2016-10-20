@@ -158,7 +158,8 @@ LANGS = [
 
 class LibreOfficePlugin(autotools.AutotoolsPlugin):
     logger = logging.getLogger('snapcraft')
-    def fetch(self):
+    def pull(self):
+        super().pull()
         LibreOfficePlugin.logger.info('preparing dot/graphwiz')
 #        self.run(['sudo', 'dot', '-c'])
         LibreOfficePlugin.logger.info('getting core repo')
@@ -181,7 +182,6 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
             ['make', 'fetch'],
             os.path.join(self.builddir, 'build'))
     def build(self):
-        self.fetch()
         LibreOfficePlugin.logger.info('cleaning up')
         self.run(
             ['make', 'clean'],
