@@ -177,6 +177,13 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
         self.run(
             ['./autogen.sh'] + CONFFLAGS + ['--with-lang=' + ' '.join(LANGS)],
             os.path.join(self.builddir, 'build'))
+        LibreOfficePlugin.logger.info('applying vendor patches from %s ' % os.path.join(self.builddir, '..' , 'src' ,'patches'))
+        for patch in os.walk(os.path.join(self.builddir, '..', 'src', 'patches')).__next__()[2]:
+            patchpath = os.path.join(self.builddir, '..', 'src', 'patches', patch)
+            LibreOfficePlugin.logger.info('applying %s from %s' % (patch, patchpath))
+            self.run(
+                ['git', 'am', patchpath],
+                os.path.join(self.builddir, 'build'))
         LibreOfficePlugin.logger.info('fetching additional source')
         self.run(
             ['make', 'fetch'],
@@ -186,13 +193,6 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
         self.run(
             ['make', 'clean'],
             os.path.join(self.builddir, 'build'))
-        LibreOfficePlugin.logger.info('applying vendor patches from %s ' % os.path.join(self.builddir, '..' , 'src' ,'patches'))
-        for patch in os.walk(os.path.join(self.builddir, '..', 'src', 'patches')).__next__()[2]:
-            patchpath = os.path.join(self.builddir, '..', 'src', 'patches', patch)
-            LibreOfficePlugin.logger.info('applying %s from %s' % (patch, patchpath))
-            self.run(
-                ['git', 'am', patchpath],
-                os.path.join(self.builddir, 'build'))
         LibreOfficePlugin.logger.info('configuring non-l10n')
         self.run(
             ['./autogen.sh'] + CONFFLAGS + ['--disable-fetch-external'],
