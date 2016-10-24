@@ -19,6 +19,7 @@ parts:
             - gettext
             - gperf
             - graphviz
+            - junit4
             - kdelibs5-dev
             - libarchive-zip-perl
             - libatk1.0-dev
