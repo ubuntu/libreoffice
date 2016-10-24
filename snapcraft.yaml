@@ -8,6 +8,8 @@ parts:
         plugin: x_libreoffice
         source: ./libreoffice-build/
         build-packages:
+            - ant
+            - ant-optional
             - bison
             - build-essential
             - default-jdk
