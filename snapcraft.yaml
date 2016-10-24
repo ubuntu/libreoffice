@@ -49,6 +49,7 @@ parts:
             - python3-dev
             - xorg
             - libcups2-dev
+            - libarchive-zip-perl
         stage-packages:
             - default-jdk
             - graphviz
