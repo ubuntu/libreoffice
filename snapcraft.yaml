@@ -8,48 +8,98 @@ parts:
         plugin: x_libreoffice
         source: ./libreoffice-build/
         build-packages:
+            - bison
             - build-essential
             - default-jdk
+            - gdb
+            - gettext
+            - gperf
             - graphviz
+            - kdelibs5-dev
+            - libarchive-zip-perl
             - libatk1.0-0
             - libatk1.0-dev
-            - libcairo2
+            - libbluetooth-dev
             - libcairo2-dev
-            - libdbus-glib-1-2
+            - libcups2-dev
+            - libcurl4-gnutls-dev
             - libdbus-glib-1-dev
+            - libe-book-dev
+            - libeot-dev
+            - libexpat1-dev
             - libexttextcat-dev
-            - libfreetype6
+            - libfontconfig1-dev
+            - libfreehand-dev
             - libfreetype6-dev
-            - libgconf-2-4
             - libgconf2-dev
+            - libgirepository1.0-dev
             - libgl1-mesa-glx
-            - libglib2.0-0
+            - libglew-dev,
             - libglib2.0-dev
-            - libgstreamer-plugins-base1.0-0
+            - libglm-dev
+            - libgraphite2-dev
             - libgstreamer-plugins-base1.0-dev
-            - libgstreamer1.0-0
             - libgstreamer1.0-dev
             - libgtk-3-dev
-            - libgtk2.0-0
             - libgtk2.0-dev
+            - libharfbuzz-dev
+            - libhsqldb1.8.0-java
+            - libhunspell-dev
+            - libhyphen-dev
+            - libice-dev
+            - libicu-dev
+            - libjpeg-dev
             - libkrb5-dev
+            - liblangtag-dev
+            - liblcms2-dev
             - libldap2-dev
-            - libnspr4
+            - libmysqlclient-dev
+            - libmysqlcppconn-dev
+            - libmythes-dev
             - libnspr4-dev
-            - libnss3
             - libnss3-dev
             - liborcus-dev
+            - libpng12-dev
+            - libpoppler-cpp-dev
+            - libpoppler-dev
+            - libpoppler-private-dev
+            - libpq-dev
             - libpython3.5-dev
+            - libqt4-dev
+            - librdf0-dev
+            - libsane-dev
+            - libsm-dev
+            - libssl-dev
+            - libsuitesparse-dev
+            - libvigraimpex-dev
+            - libvisio-dev
             - libwpd-dev
             - libwpg-dev
             - libwps-dev
+            - libx11-dev
+            - libxaw7-dev
+            - libxext-dev
+            - libxinerama-dev
+            - libxkbfile-dev
             - libxml2
             - libxml2-dev
+            - libxml2-dev
+            - libxml2-utils
+            - libxrandr-dev
+            - libxrender-dev
+            - libxslt1-dev
             - libxslt1.1
+            - libxt-dev
+            - libxtst-dev
+            - maven-repo-helper
             - python3-dev
+            - unixodbc-dev
+            - unzip
+            - x11proto-render-dev
             - xorg
-            - libcups2-dev
-            - libarchive-zip-perl
+            - xsltproc
+            - zip
+            - zlib1g-dev
         stage-packages:
             - default-jdk
             - graphviz
