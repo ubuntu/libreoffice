@@ -12,6 +12,7 @@ parts:
             - build-essential
             - default-jdk
             - doxygen
+            - flex
             - gdb
             - gettext
             - gperf
