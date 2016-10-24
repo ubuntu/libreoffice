@@ -12,6 +12,7 @@ parts:
             - ant-optional
             - bison
             - build-essential
+            - curl
             - default-jdk
             - doxygen
             - flex
