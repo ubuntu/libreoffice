@@ -17,7 +17,6 @@ parts:
             - graphviz
             - kdelibs5-dev
             - libarchive-zip-perl
-            - libatk1.0-0
             - libatk1.0-dev
             - libbluetooth-dev
             - libcairo2-dev
@@ -34,7 +33,7 @@ parts:
             - libgconf2-dev
             - libgirepository1.0-dev
             - libgl1-mesa-glx
-            - libglew-dev,
+            - libglew-dev
             - libglib2.0-dev
             - libglm-dev
             - libgraphite2-dev
@@ -82,7 +81,6 @@ parts:
             - libxinerama-dev
             - libxkbfile-dev
             - libxml2
-            - libxml2-dev
             - libxml2-dev
             - libxml2-utils
             - libxrandr-dev
