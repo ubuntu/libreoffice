@@ -34,7 +34,7 @@ CONFFLAGS = [
 	'--enable-ext-wiki-publisher',
 	'--enable-extension-integration',
 	'--enable-gstreamer-1-0',
-	'--enable-hardlink-deliver',
+#	'--enable-hardlink-deliver',
 	'--enable-mergelibs',
 	'--enable-release-build',
 	'--enable-scripting-beanshell',
