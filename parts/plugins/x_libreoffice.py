@@ -46,7 +46,7 @@ CONFFLAGS = [
 	'--with-system-libexttextcat',
 	'--with-system-openldap',
 	'--with-system-nss',
-	'--with-theme=galaxy hicontrast oxygen tango sifr breeze elementary human',
+	'--with-theme=galaxy hicontrast oxygen tango sifr breeze elementary',
 	'--with-vendor=Canonical, Ltd.',
 	'--disable-postgresql-sdbc',
 	'--with-help']
