@@ -1,17 +1,17 @@
-From 573d2c7293df1e476bb21990fa0ca9bfdc65ae86 Mon Sep 17 00:00:00 2001
+From 647a19325354d2b2dc89759cc7cbf31975ab6493 Mon Sep 17 00:00:00 2001
 From: Bjoern Michaelsen <bjoern.michaelsen@canonical.com>
 Date: Wed, 8 Jun 2016 18:52:47 +0200
-Subject: [PATCH 3/4] use LO internal dialogs for now, as gtk3 seems to crash
+Subject: [PATCH 3/6] use LO internal dialogs for now, as gtk3 seems to crash
 
 ---
  officecfg/registry/data/org/openoffice/Office/Common.xcu | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/officecfg/registry/data/org/openoffice/Office/Common.xcu b/officecfg/registry/data/org/openoffice/Office/Common.xcu
-index 074c475..54c1cac 100644
+index 00ba109..1e6c1c6 100644
 --- a/officecfg/registry/data/org/openoffice/Office/Common.xcu
 +++ b/officecfg/registry/data/org/openoffice/Office/Common.xcu
-@@ -539,6 +539,7 @@
+@@ -451,6 +451,7 @@
    </node>
    <node oor:name="Misc">
      <prop oor:name="UseSystemFileDialog">

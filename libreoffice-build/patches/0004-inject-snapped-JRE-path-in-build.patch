@@ -1,17 +1,17 @@
-From 8df3968c19caae518c36194daa5e4615541b8ffa Mon Sep 17 00:00:00 2001
+From 12135d950730171c7766eedcf31b572a935f428e Mon Sep 17 00:00:00 2001
 From: Bjoern Michaelsen <bjoern.michaelsen@canonical.com>
 Date: Thu, 9 Jun 2016 12:45:14 +0200
-Subject: [PATCH 4/4] inject snapped JRE path in build
+Subject: [PATCH 4/6] inject snapped JRE path in build
 
 ---
  jvmfwk/source/framework.cxx | 5 +++--
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/jvmfwk/source/framework.cxx b/jvmfwk/source/framework.cxx
-index bf174e3..a4a99d0 100644
+index 94f7c2c..c9c797b 100644
 --- a/jvmfwk/source/framework.cxx
 +++ b/jvmfwk/source/framework.cxx
-@@ -72,8 +72,9 @@ javaFrameworkError jfw_findAllJREs(JavaInfo ***pparInfo, sal_Int32 *pSize)
+@@ -70,8 +70,9 @@ javaFrameworkError jfw_findAllJREs(JavaInfo ***pparInfo, sal_Int32 *pSize)
          //get the list of paths to jre locations which have been
          //added manually
          const jfw::MergedSettings settings;

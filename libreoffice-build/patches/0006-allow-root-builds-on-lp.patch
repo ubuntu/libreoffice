@@ -1,7 +1,7 @@
-From c99ae0d005a33893de9dd287c204866447a86e86 Mon Sep 17 00:00:00 2001
+From 890347280ac08d676a1d08bf284fbce29b54fa61 Mon Sep 17 00:00:00 2001
 From: Bjoern Michaelsen <bjoern.michaelsen@canonical.com>
 Date: Tue, 25 Oct 2016 11:38:06 +0200
-Subject: [PATCH] allow root builds on lp
+Subject: [PATCH 6/6] allow root builds on lp
 
 Change-Id: Ic809f277cfac5e26438667d331c1850f646e71f4
 ---
@@ -9,11 +9,11 @@ Change-Id: Ic809f277cfac5e26438667d331c1850f646e71f4
  1 file changed, 1 insertion(+), 6 deletions(-)
 
 diff --git a/Makefile.in b/Makefile.in
-index 482fc50..94eaa60 100644
+index cf3e71f..3092c07 100644
 --- a/Makefile.in
 +++ b/Makefile.in
 @@ -55,12 +55,7 @@ else # MAKE_RESTARTS
- all: check-if-root build
+ all: build
  
  check-if-root:
 -	@if test `id -u` = 0; then \

@@ -1,7 +1,7 @@
-From 87daaf520da7ba4d4559447dca8ba75501575cbd Mon Sep 17 00:00:00 2001
+From 393d44c9cf9dc2c5f7790ed7775632ac58a54e7e Mon Sep 17 00:00:00 2001
 From: Bjoern Michaelsen <bjoern.michaelsen@canonical.com>
 Date: Wed, 8 Jun 2016 18:42:42 +0200
-Subject: [PATCH 2/4] dont ftbfs on warnings in libwpd
+Subject: [PATCH 2/6] dont ftbfs on warnings in libwpd
 
 ---
  external/libwpd/ExternalProject_libwpd.mk | 1 +

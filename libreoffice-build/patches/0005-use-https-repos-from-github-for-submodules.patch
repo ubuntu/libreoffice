@@ -1,7 +1,7 @@
-From c100b59cb32bd2b2784388d6feecc81d38e27224 Mon Sep 17 00:00:00 2001
+From 02417d2279c9e6642b9c6281cdc970510fcc204f Mon Sep 17 00:00:00 2001
 From: Bjoern Michaelsen <bjoern.michaelsen@canonical.com>
 Date: Mon, 24 Oct 2016 17:01:18 +0200
-Subject: [PATCH] use https repos from github for submodules
+Subject: [PATCH 5/6] use https repos from github for submodules
 
 Change-Id: Id6c7d2dd81dafff26bd775a58620f20553d5027b
 ---
