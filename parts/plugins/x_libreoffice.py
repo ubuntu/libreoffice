@@ -175,7 +175,7 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
             ['git', '-C', os.path.join(self.builddir, 'build'), 'clean', '-dfx'])
         LibreOfficePlugin.logger.info('configuring for fetch')
         self.run(
-            ['./autogen.sh'] + CONFFLAGS # + ['--with-lang=' + ' '.join(LANGS)],
+            ['./autogen.sh'] + CONFFLAGS, # + ['--with-lang=' + ' '.join(LANGS)],
             os.path.join(self.builddir, 'build'))
         LibreOfficePlugin.logger.info('applying vendor patches from %s ' % os.path.join(self.builddir, '..' , 'src' ,'patches'))
         for patch in os.walk(os.path.join(self.builddir, '..', 'src', 'patches')).__next__()[2]:
