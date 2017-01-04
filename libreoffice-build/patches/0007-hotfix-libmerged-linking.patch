@@ -1,4 +1,4 @@
-from e6b936cf8ad90255f59978ed907290418f8baa44 Mon Sep 17 00:00:00 2001
+From e6b936cf8ad90255f59978ed907290418f8baa44 Mon Sep 17 00:00:00 2001
 From: Bjoern Michaelsen <bjoern.michaelsen@canonical.com>
 Date: Wed, 4 Jan 2017 03:52:16 +0100
 Subject: [PATCH] hotfix libmerged => harfbuzz linking
@@ -31,3 +31,4 @@ index a51db16..96b8a90 100644
  	$(if $(filter Library,$(TARGETTYPE)), $(call gb_Helper_abbreviate_dirs,\
 -- 
 2.7.4
+
