@@ -189,13 +189,13 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
             ['make', 'fetch'],
             os.path.join(self.builddir, 'build'))
     def build(self):
-        LibreOfficePlugin.logger.info('cleaning up')
-        self.run(
-            ['make', 'clean'],
-            os.path.join(self.builddir, 'build'))
         LibreOfficePlugin.logger.info('configuring non-l10n')
         self.run(
             ['./autogen.sh'] + CONFFLAGS + ['--disable-fetch-external'],
+            os.path.join(self.builddir, 'build'))
+        LibreOfficePlugin.logger.info('cleaning up')
+        self.run(
+            ['make', 'clean'],
             os.path.join(self.builddir, 'build'))
         LibreOfficePlugin.logger.info('building externals')
         self.run(
