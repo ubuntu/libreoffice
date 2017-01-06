@@ -160,6 +160,7 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
     logger = logging.getLogger('snapcraft')
     def pull(self):
         super().pull()
+    def build(self):
         LibreOfficePlugin.logger.info('preparing dot/graphwiz')
 #        self.run(['sudo', 'dot', '-c'])
         LibreOfficePlugin.logger.info('getting core repo')
@@ -188,7 +189,7 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
         self.run(
             ['make', 'fetch'],
             os.path.join(self.builddir, 'build'))
-    def build(self):
+#    def build(self):
         LibreOfficePlugin.logger.info('configuring non-l10n')
         self.run(
             ['./autogen.sh'] + CONFFLAGS + ['--disable-fetch-external'],
