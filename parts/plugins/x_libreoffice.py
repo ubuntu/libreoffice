@@ -204,7 +204,7 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
             os.path.join(self.builddir, 'build'))
         LibreOfficePlugin.logger.info('building non-l10n')
         self.run(
-            ['make'],
+            ['make', 'build-nocheck'],
             os.path.join(self.builddir, 'build'))
         self.run(
             ['rm', '-rf', os.path.join(self.builddir, 'build', 'workdir', 'SrsPartTarget')],
