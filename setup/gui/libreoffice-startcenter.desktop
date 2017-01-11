@@ -219,26 +219,26 @@ Actions=Writer;Calc;Impress;Draw;Base;Math;
 
 [Desktop Action Writer]
 Name=Writer
-Exec=libreoffice --writer
+Exec=libreoffice.writer
 
 [Desktop Action Calc]
 Name=Calc
-Exec=libreoffice --calc
+Exec=libreoffice.calc
 
 [Desktop Action Impress]
 Name=Impress
-Exec=libreoffice --impress
+Exec=libreoffice.impress
 
 [Desktop Action Draw]
 Name=Draw
-Exec=libreoffice --draw
+Exec=libreoffice.draw
 
 [Desktop Action Base]
 Name=Base
-Exec=libreoffice --base
+Exec=libreoffice.base
 
 [Desktop Action Math]
 Name=Math
-Exec=libreoffice --math
+Exec=libreoffice.math
 
 ##End of actions menu
