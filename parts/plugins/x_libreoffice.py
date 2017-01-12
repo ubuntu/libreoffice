@@ -235,6 +235,9 @@ class LibreOfficePlugin(autotools.AutotoolsPlugin):
             ['make', 'build-nocheck'],
             os.path.join(self.builddir, 'build'))
         self.run(
+            ['make', 'check'],
+            os.path.join(self.builddir, 'build'))
+        self.run(
             ['make', 'install', 'DESTDIR=' + self.installdir],
             os.path.join(self.builddir, 'build'))
 
