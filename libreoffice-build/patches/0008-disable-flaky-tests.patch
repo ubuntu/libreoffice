@@ -1,4 +1,4 @@
-From 20eb80482c6d239df4a96f6a6e0d0eb3ec6555e9 Mon Sep 17 00:00:00 2001
+From 43b210c2cd5b6c2b49a866ec2479d3b9320d173c Mon Sep 17 00:00:00 2001
 From: Bjoern Michaelsen <bjoern.michaelsen@canonical.com>
 Date: Mon, 23 Jan 2017 17:26:13 +0100
 Subject: [PATCH] disable flaky tests
@@ -9,10 +9,12 @@ Subject: [PATCH] disable flaky tests
   https://i303082137.restricted.launchpadlibrarian.net/303082137/buildlog_snap_ubuntu_xenial_i386_libreoffice-snap-test_BUILDING.txt.gz?token=KtV79qNMcRNSGN6QwgfP7DRhPQXmkQKw
 - disable CppunitTest_sd_export_ooxml1 for now as per (i386):
   https://i303582986.restricted.launchpadlibrarian.net/303582986/buildlog_snap_ubuntu_xenial_i386_libreoffice-snap-test_BUILDING.txt.gz?token=N94ckwBgPFsrJfcMm4hMNqNqhHPZljNk
+- disable CppunitTest_sd_import_tests for as per (i386):
+  https://i303720533.restricted.launchpadlibrarian.net/303720533/buildlog_snap_ubuntu_xenial_i386_libreoffice-snap-test_BUILDING.txt.gz?token=ZMD9X52zMZfNSzjGLvB5Szb5rdz1bTJB
 ---
  sc/Module_sc.mk | 1 -
- sd/Module_sd.mk | 2 --
- 2 files changed, 3 deletions(-)
+ sd/Module_sd.mk | 3 ---
+ 2 files changed, 4 deletions(-)
 
 diff --git a/sc/Module_sc.mk b/sc/Module_sc.mk
 index 5493c09..bb9a117 100644
@@ -27,13 +29,14 @@ index 5493c09..bb9a117 100644
  	CppunitTest_sc_anchor_test \
  	CppunitTest_sc_annotationshapeobj \
 diff --git a/sd/Module_sd.mk b/sd/Module_sd.mk
-index 62bfd89..27cdf83 100644
+index 62bfd89..c4fd75a 100644
 --- a/sd/Module_sd.mk
 +++ b/sd/Module_sd.mk
-@@ -30,8 +30,6 @@ $(eval $(call gb_Module_add_check_targets,sd,\
+@@ -29,9 +29,6 @@ ifeq ($(filter DRAGONFLY FREEBSD,$(OS)),)
+ $(eval $(call gb_Module_add_check_targets,sd,\
  	$(if $(and $(filter $(COM),MSC),$(MERGELIBS)),, \
  		CppunitTest_sd_uimpress) \
-     CppunitTest_sd_import_tests \
+-    CppunitTest_sd_import_tests \
 -    CppunitTest_sd_export_ooxml1 \
 -    CppunitTest_sd_export_ooxml2 \
      CppunitTest_sd_export_tests \
