@@ -144,14 +144,16 @@ parts:
             - libxslt1.1
             - python3-dev
             - xorg
-        snap:
+        prime:
             - usr/local/*
             - usr/lib/x86_64-linux-gnu/lib*
             - usr/lib/x86_64-linux-gnu/mesa/lib*
     libreoffice-wrapper:
-        plugin: copy
-        files:
+        plugin: dump
+        organize:
             libreoffice.wrapper: libreoffice.wrapper
+        prime:
+            - libreoffice.wrapper
     selected-fonts:
         plugin: nil
         stage-packages:
