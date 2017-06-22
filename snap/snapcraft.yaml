@@ -171,22 +171,15 @@ parts:
 apps:
     libreoffice:
         command: libreoffice.wrapper
-        plugs: [ unity7, opengl, network, home, cups-control, network-bind, bluez ]
     base:
         command: libreoffice.wrapper --base
-        plugs: [ unity7, opengl, network, home, cups-control, network-bind, bluez ]
     calc:
         command: libreoffice.wrapper --calc
-        plugs: [ unity7, opengl, network, home, cups-control, network-bind, bluez ]
     draw:
         command: libreoffice.wrapper --draw
-        plugs: [ unity7, opengl, network, home, cups-control, network-bind, bluez ]
     impress:
         command: libreoffice.wrapper --impress
-        plugs: [ unity7, opengl, network, home, cups-control, network-bind, bluez ]
     math:
         command: libreoffice.wrapper --math
-        plugs: [ unity7, opengl, network, home, cups-control, network-bind, bluez ]
     writer:
         command: libreoffice.wrapper --writer
-        plugs: [ unity7, opengl, network, home, cups-control, network-bind, bluez ]
