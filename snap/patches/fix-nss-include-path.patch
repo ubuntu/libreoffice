@@ -1,0 +1,38 @@
+Description: Make NSS include path less ambiguous (we want the one provided by libnss3-dev in /usr/include/nss/, not the one installed by libc6-dev in /usr/include/).
+Author: Olivier Tilloy <olivier.tilloy@canonical.com>
+
+--- a/xmlsecurity/source/xmlsec/nss/nssinitializer.cxx
++++ b/xmlsecurity/source/xmlsec/nss/nssinitializer.cxx
+@@ -48,7 +48,7 @@
+ 
+ #include <nspr.h>
+ #include <cert.h>
+-#include <nss.h>
++#include <nss/nss.h>
+ #include <pk11pub.h>
+ #include <secmod.h>
+ #include <nssckbi.h>
+
+--- a/include/oox/crypto/CryptTools.hxx
++++ b/include/oox/crypto/CryptTools.hxx
+@@ -28,7 +28,7 @@
+ #endif // USE_TLS_OPENSSL
+ 
+ #if USE_TLS_NSS
+-#include <nss.h>
++#include <nss/nss.h>
+ #include <pk11pub.h>
+ #include <sechash.h>
+ #endif // USE_TLS_NSS
+
+--- a/onlineupdate/source/update/updater/updater.cxx
++++ b/onlineupdate/source/update/updater/updater.cxx
+@@ -122,7 +122,7 @@ static bool sUseHardLinks = true;
+ #endif
+ 
+ #if defined(MOZ_VERIFY_MAR_SIGNATURE) && !defined(_WIN32) && !defined(MACOSX)
+-#include "nss.h"
++#include "nss/nss.h"
+ #include "prerror.h"
+ #endif
+

@@ -1,7 +1,6 @@
 #!/bin/bash
 export PATH="$SNAP/bin:$SNAP/usr/bin:$PATH"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SNAP/usr/lib:$SNAP/usr/lib/x86_64-linux-gnu"
-export LD_LIBRARY_PATH="$SNAP$SNAP/usr/local/lib/libreoffice/program:$SNAP$SNAP/usr/local/lib/libreoffice/sdk/bin/../../program:$SNAP/usr/lib/nvidia-340:$SNAP/usr/lib/nvidia-340/tls:$SNAP/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SNAP/usr/lib:$SNAP/lib/libreoffice/program"
 
 #export SAL_USE_VCLPLUGIN=gen
 
@@ -14,6 +13,8 @@ if [ "$SNAP_ARCH" == "amd64" ]; then
   ARCH='x86_64-linux-gnu'
 elif [ "$SNAP_ARCH" == "armhf" ]; then
   ARCH="arm-linux-gnueabihf"
+elif [ "$SNAP_ARCH" == "arm64" ]; then
+  ARCH="aarch64-linux-gnu"
 else
   ARCH="$SNAP_ARCH-linux-gnu"
 fi
@@ -121,9 +122,8 @@ if [ ! -d $XDG_DATA_HOME/icons ]; then
     done
   done
 fi
-#exec "$SNAP/usr/bin/ldd" "$SNAP/usr/local/lib/libreoffice/program/soffice.bin"
-#exec  strace "$SNAP/usr/local/lib/libreoffice/program/soffice.bin"
-"$SNAP/usr/local/lib/libreoffice/program/soffice.bin" "$@"
+
+"$SNAP/lib/libreoffice/program/soffice.bin" "$@"
 if [ $? -eq 81 ]; then
-  exec  "$SNAP/usr/local/lib/libreoffice/program/soffice.bin" "$@"
+  exec  "$SNAP/lib/libreoffice/program/soffice.bin" "$@"
 fi
