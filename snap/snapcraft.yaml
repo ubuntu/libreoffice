@@ -204,6 +204,7 @@ parts:
         source: .
         prime:
             - libreoffice.wrapper
+        after: [desktop-gtk3]
 
     selected-fonts:
         plugin: nil
