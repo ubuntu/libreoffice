@@ -2,7 +2,7 @@ name: libreoffice
 version: 5.3.3.2
 summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
-confinement: classic
+confinement: strict
 
 parts:
     libreoffice:
@@ -225,21 +225,28 @@ apps:
     libreoffice:
         command: libreoffice.wrapper
         desktop: lib/libreoffice/share/xdg/startcenter.desktop
+        plugs: [bluez, cups-control, home, network, network-bind, opengl, unity7]
     base:
         command: libreoffice.wrapper --base
         desktop: lib/libreoffice/share/xdg/base.desktop
+        plugs: [bluez, cups-control, home, network, network-bind, opengl, unity7]
     calc:
         command: libreoffice.wrapper --calc
         desktop: lib/libreoffice/share/xdg/calc.desktop
+        plugs: [bluez, cups-control, home, network, network-bind, opengl, unity7]
     draw:
         command: libreoffice.wrapper --draw
         desktop: lib/libreoffice/share/xdg/draw.desktop
+        plugs: [bluez, cups-control, home, network, network-bind, opengl, unity7]
     impress:
         command: libreoffice.wrapper --impress
         desktop: lib/libreoffice/share/xdg/impress.desktop
+        plugs: [bluez, cups-control, home, network, network-bind, opengl, unity7]
     math:
         command: libreoffice.wrapper --math
         desktop: lib/libreoffice/share/xdg/math.desktop
+        plugs: [bluez, cups-control, home, network, network-bind, opengl, unity7]
     writer:
         command: libreoffice.wrapper --writer
         desktop: lib/libreoffice/share/xdg/writer.desktop
+        plugs: [bluez, cups-control, home, network, network-bind, opengl, unity7]
