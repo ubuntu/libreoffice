@@ -1,4 +1,5 @@
 Description: When in a strictly confined snap, use the xdg-open shim provided by the core snap.
+  This patch will become useless when https://github.com/snapcore/core/pull/35/files is released.
 Bug-Ubuntu: https://launchpad.net/bugs/1665106
 Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 
