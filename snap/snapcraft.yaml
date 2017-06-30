@@ -46,7 +46,6 @@ parts:
             - ant-optional
             - bison
             - build-essential
-            - curl
             - default-jdk
             - doxygen
             - flex
@@ -134,6 +133,7 @@ parts:
             - python3-dev
             - unixodbc-dev
             - unzip
+            - wget
             - x11proto-render-dev
             - xorg
             - xsltproc
