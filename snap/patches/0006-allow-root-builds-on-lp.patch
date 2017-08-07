@@ -8,15 +8,13 @@ Change-Id: Ic809f277cfac5e26438667d331c1850f646e71f4
  Makefile.in | 7 +------
  1 file changed, 1 insertion(+), 6 deletions(-)
 
-diff --git a/Makefile.in b/Makefile.in
-index cf3e71f..3092c07 100644
 --- a/Makefile.in
 +++ b/Makefile.in
 @@ -55,12 +55,7 @@ else # MAKE_RESTARTS
  all: build
  
  check-if-root:
--	@if test `id -u` = 0; then \
+-	@if test `id -u` = 0 && ! grep -q 'lxc\|docker' /proc/self/cgroup; then \
 -		echo; \
 -		echo 'No. You make ME a sandwich.'; \
 -		echo; \
@@ -26,6 +24,3 @@ index cf3e71f..3092c07 100644
  
  gb_Side ?= host
  
--- 
-2.7.4
-

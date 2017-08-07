@@ -8,27 +8,16 @@ Change-Id: I2aeb3869c662d112d00dca4c6a23d1f724b7760b
  solenv/gbuild/platform/unxgcc.mk | 5 +++--
  1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/solenv/gbuild/platform/unxgcc.mk b/solenv/gbuild/platform/unxgcc.mk
-index a51db16..96b8a90 100644
 --- a/solenv/gbuild/platform/unxgcc.mk
 +++ b/solenv/gbuild/platform/unxgcc.mk
-@@ -133,13 +133,14 @@ $(call gb_Helper_abbreviate_dirs,\
+@@ -133,6 +133,10 @@ $(call gb_Helper_abbreviate_dirs,\
  		$(foreach object,$(GENCOBJECTS),$(call gb_GenCObject_get_target,$(object))) \
  		$(foreach object,$(GENCXXOBJECTS),$(call gb_GenCxxObject_get_target,$(object))) \
  		$(foreach extraobjectlist,$(EXTRAOBJECTLISTS),`cat $(extraobjectlist)`) \
-+		-Wl$(COMMA)--no-as-needed \
- 		-Wl$(COMMA)--start-group \
-+		$(if $(filter Library/libmerged%,$(2)), $(WORKDIR)/UnpackedTarball/icu/source/lib/libicuuc.so $(WORKDIR)/UnpackedTarball/harfbuzz/src/.libs/libharfbuzz.a) \
- 		$(foreach lib,$(LINKED_STATIC_LIBS),\
- 			$(call gb_StaticLibrary_get_target,$(lib))) \
- 		$(T_LIBS) \
--		-Wl$(COMMA)--end-group \
--		-Wl$(COMMA)--no-as-needed \
- 		$(patsubst lib%.a,-l%,$(patsubst lib%.so,-l%,$(patsubst %.$(gb_Library_UDK_MAJORVER),%,$(foreach lib,$(LINKED_LIBS),$(call gb_Library_get_filename,$(lib)))))) \
-+		-Wl$(COMMA)--end-group \
- 		-o $(1) \
- 	$(if $(SOVERSIONSCRIPT),&& ln -sf ../../program/$(notdir $(1)) $(ILIBTARGET)))
- 	$(if $(filter Library,$(TARGETTYPE)), $(call gb_Helper_abbreviate_dirs,\
--- 
-2.7.4
-
++        -Wl$(COMMA)--no-as-needed \
++        -Wl$(COMMA)--start-group \
++        $(if $(filter Library/libmerged%,$(2)), $(WORKDIR)/UnpackedTarball/icu/source/lib/libicuuc.so $(WORKDIR)/UnpackedTarball/harfbuzz/src/.libs/libharfbuzz.a) \
++        -Wl$(COMMA)--end-group \
+ 		$(if $(filter TRUE,$(DISABLE_DYNLOADING)), \
+ 		    -Wl$(COMMA)--start-group \
+ 		    $(patsubst lib%.a,-l%,$(patsubst lib%.so,-l%,$(patsubst %.$(gb_Library_UDK_MAJORVER),%,$(foreach lib,$(LINKED_LIBS),$(call gb_Library_get_filename,$(lib)))))) \
