@@ -1,0 +1,15 @@
+Description: fetch submodules from a reliable mirror.
+  download.documentfoundation.org appears to be very slow and unreliable these days.
+Author: Olivier Tilloy <olivier.tilloy@canonical.com>
+
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -230,7 +230,7 @@ $(if $(gb_LO_VER),,$(error Error while r
+ get-submodules: | download
+ ifneq ($(foreach i,$(subst helpcontent2,help,$(GIT_NEEDED_SUBMODULES)),$(SRCDIR)/src/libreoffice-$(i)-$(gb_LO_VER)),$(wildcard $(foreach i,$(subst helpcontent2,help,$(GIT_NEEDED_SUBMODULES)),$(SRCDIR)/src/libreoffice-$(i)-$(gb_LO_VER))))
+ 	$(foreach i,$(subst helpcontent2,help,$(GIT_NEEDED_SUBMODULES)),\
+-		$(call fetch_Download_item_unchecked,http://download.documentfoundation.org/libreoffice/src/$(shell echo $(gb_LO_VER) | sed -e "s/\([0-9]*\.[0-9]*\.[0-9]*\).*/\1/"),libreoffice-$(i)-$(gb_LO_VER).tar.xz))
++		$(call fetch_Download_item_unchecked,http://ftp.utexas.edu/libreoffice/libreoffice/src/$(shell echo $(gb_LO_VER) | sed -e "s/\([0-9]*\.[0-9]*\.[0-9]*\).*/\1/"),libreoffice-$(i)-$(gb_LO_VER).tar.xz))
+ 	$(SRCDIR)/bin/unpack-sources $(SRCDIR) $(foreach i,$(subst helpcontent2,help,$(GIT_NEEDED_SUBMODULES)),\
+ 		$(TARFILE_LOCATION)/libreoffice-$(i)-$(gb_LO_VER).tar.xz)
+ endif
