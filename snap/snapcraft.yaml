@@ -111,9 +111,6 @@ parts:
             - libsuitesparse-dev
             - libvigraimpex-dev
             - libvisio-dev
-            - libwpd-dev
-            - libwpg-dev
-            - libwps-dev
             - libx11-dev
             - libxaw7-dev
             - libxext-dev
@@ -172,9 +169,6 @@ parts:
             - libnss3-dev
             - liborcus-dev
             - libpython3.5-dev
-            - libwpd-dev
-            - libwpg-dev
-            - libwps-dev
             - libxml2
             - libxml2-dev
             - libxslt1.1
