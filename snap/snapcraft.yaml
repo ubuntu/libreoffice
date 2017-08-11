@@ -35,6 +35,8 @@ parts:
             - --with-system-libexttextcat
             - --with-system-openldap
             - --with-system-nss
+            - --with-system-hsqldb
+            - --with-hsqldb-jar=/usr/share/java/hsqldb1.8.0.jar
             - --with-theme=galaxy hicontrast oxygen tango sifr breeze elementary
             - --with-vendor=Canonical, Ltd.
             - --disable-postgresql-sdbc
@@ -161,6 +163,7 @@ parts:
             - libgtk-3-dev
             - libgtk2.0-0
             - libgtk2.0-dev
+            - libhsqldb1.8.0-java
             - libkrb5-dev
             - libldap2-dev
             - libnspr4
