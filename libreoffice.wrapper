@@ -4,6 +4,8 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SNAP/lib/libreoffice/program"
 
 #export SAL_USE_VCLPLUGIN=gen
 
+export SAL_LOG="+INFO.sal.osl"
+
 soffice=$SNAP/lib/libreoffice/program/soffice.bin
 EXITHELPER_NORMAL_RESTART=81
 "$SNAP/bin/desktop-launch" "$soffice" "$@"
