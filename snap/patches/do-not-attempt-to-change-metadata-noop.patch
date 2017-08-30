@@ -1,0 +1,18 @@
+Description: Do not attempt to change the metadata (UID and GID) of a file when that would result in a no-op anyway (because UID and GID already match). The lchown syscall is intercepted by seccomp.
+Author: Olivier Tilloy <olivier.tilloy@canonical.com>
+Bug-Ubuntu: https://launchpad.net/bugs/1713730
+
+--- a/sal/osl/unx/file_misc.cxx
++++ b/sal/osl/unx/file_misc.cxx
+@@ -892,6 +892,10 @@
+     {
+         nUID=getuid();
+     }
++    struct stat aStat;
++    if (lstat_c(pszFileName,&aStat) == 0) {
++        if (aStat.st_uid == nUID && aStat.st_gid == nGID) return;
++    } else return;
+     if ( lchown(pszFileName,nUID,nGID) < 0 )
+     {
+         int e = errno;
+
