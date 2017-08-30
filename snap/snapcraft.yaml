@@ -43,7 +43,6 @@ parts:
             - --with-help
             - --without-doxygen
             - --with-lang=en-US de es fr it pt pt-BR
-            - --enable-sal-log
         build-packages:
             - ant
             - ant-optional
