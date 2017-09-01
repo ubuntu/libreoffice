@@ -1,0 +1,96 @@
+Description: Ensure that the local copy of expat_config.h is used, not the one installed by libexpat1-dev
+Author: Olivier Tilloy <olivier.tilloy@canonical.com>
+
+--- a/external/expat/UnpackedTarball_expat.mk
++++ b/external/expat/UnpackedTarball_expat.mk
+@@ -13,6 +13,7 @@ $(eval $(call gb_UnpackedTarball_set_tar
+ 
+ $(eval $(call gb_UnpackedTarball_add_patches,expat,\
+ 	external/expat/expat-winapi.patch \
++	external/expat/expat-include-config.patch \
+ ))
+ 
+ # This is a bit hackish.
+--- /dev/null
++++ b/external/expat/expat-include-config.patch
+@@ -0,0 +1,80 @@
++Description: Ensure that the local copy of expat_config.h is used, not the one installed by libexpat1-dev
++Author: Olivier Tilloy <olivier.tilloy@canonical.com>
++
++--- a/expat-2.2.3/lib/winconfig.h
+++++ b/expat-2.2.3/lib/winconfig.h
++@@ -19,7 +19,7 @@
++ 
++ 
++ #if defined(HAVE_EXPAT_CONFIG_H)  /* e.g. MinGW */
++-# include <expat_config.h>
+++# include "../expat_config.h"
++ #else  /* !defined(HAVE_EXPAT_CONFIG_H) */
++ 
++ 
++--- a/expat-2.2.3/lib/xmlparse.c
+++++ b/expat-2.2.3/lib/xmlparse.c
++@@ -30,7 +30,7 @@
++ #ifdef _WIN32
++ #include "winconfig.h"
++ #elif defined(HAVE_EXPAT_CONFIG_H)
++-#include <expat_config.h>
+++#include "../expat_config.h"
++ #endif /* ndef _WIN32 */
++ 
++ #include "ascii.h"
++--- a/expat-2.2.3/lib/xmlrole.c
+++++ b/expat-2.2.3/lib/xmlrole.c
++@@ -8,7 +8,7 @@
++ #include "winconfig.h"
++ #else
++ #ifdef HAVE_EXPAT_CONFIG_H
++-#include <expat_config.h>
+++#include "../expat_config.h"
++ #endif
++ #endif /* ndef _WIN32 */
++ 
++--- a/expat-2.2.3/lib/xmltok.c
+++++ b/expat-2.2.3/lib/xmltok.c
++@@ -8,7 +8,7 @@
++ #include "winconfig.h"
++ #else
++ #ifdef HAVE_EXPAT_CONFIG_H
++-#include <expat_config.h>
+++#include "../expat_config.h"
++ #endif
++ #endif /* ndef _WIN32 */
++ 
++--- a/expat-2.2.3/tests/chardata.c
+++++ b/expat-2.2.3/tests/chardata.c
++@@ -5,7 +5,7 @@
++ */
++ 
++ #ifdef HAVE_EXPAT_CONFIG_H
++-#include <expat_config.h>
+++#include "../expat_config.h"
++ #endif
++ #include "minicheck.h"
++ 
++--- a/expat-2.2.3/tests/runtests.c
+++++ b/expat-2.2.3/tests/runtests.c
++@@ -5,7 +5,7 @@
++ */
++ 
++ #ifdef HAVE_EXPAT_CONFIG_H
++-#include <expat_config.h>
+++#include "../expat_config.h"
++ #endif
++ 
++ #include <assert.h>
++--- a/expat-2.2.3/xmlwf/xmlfile.c
+++++ b/expat-2.2.3/xmlwf/xmlfile.c
++@@ -11,7 +11,7 @@
++ #ifdef _WIN32
++ #include "winconfig.h"
++ #elif defined(HAVE_EXPAT_CONFIG_H)
++-#include <expat_config.h>
+++#include "../expat_config.h"
++ #endif /* ndef _WIN32 */
++ 
++ #include "expat.h"
