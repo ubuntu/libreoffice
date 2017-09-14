@@ -183,11 +183,12 @@ parts:
                 patch -d . -p1 < ../../../snap/patches/$patch
             done
         install: |
-            DESTDIR=$SNAPCRAFT_PART_INSTALL GNOMEDIR=usr ICON_SOURCE_DIR=sysui/desktop/icons ./sysui/desktop/share/create_tree.sh
+            cd workdir/CustomTarget/sysui/share/libreoffice
+            DESTDIR=$SNAPCRAFT_PART_INSTALL PREFIXDIR=usr GNOMEDIR=usr ./create_tree.sh
             chmod a+x $SNAPCRAFT_PART_INSTALL/usr/share
             for app in base calc draw impress math startcenter writer
             do
-                sed -i "s#Icon=libreoffice5.4-$app#Icon=/usr/share/icons/gnome/256x256/apps/$app.png#" $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/xdg/$app.desktop
+                sed -i "s#Icon=libreoffice5.4-$app#Icon=/usr/share/icons/gnome/256x256/apps/libreoffice5.4-$app.png#" $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/xdg/$app.desktop
             done
         prime:
             - lib/libreoffice/*
