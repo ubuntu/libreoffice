@@ -202,6 +202,7 @@ parts:
         source: .
         prime:
             - libreoffice.wrapper
+            - no-wayland-hack
         after: [desktop-gtk3]
 
     selected-fonts:
