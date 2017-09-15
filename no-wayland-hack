@@ -1,0 +1,5 @@
+#!/bin/bash
+# Temporary hack to not use the Wayland GDK backend until I find a proper fix
+# for https://bugs.launchpad.net/ubuntu/+source/libreoffice/+bug/1714520.
+export GDK_BACKEND=
+exec "$@"
