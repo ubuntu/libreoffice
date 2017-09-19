@@ -230,6 +230,7 @@ apps:
             - network
             - network-bind
             - opengl
+            - removable-media
             - unity7
     base:
         command: libreoffice.wrapper --base
