@@ -219,12 +219,16 @@ parts:
             - ttf-ubuntu-font-family
             - dmz-cursor-theme
             - light-themes
+            - adwaita-icon-theme
+            - gnome-themes-standard
             - shared-mime-info
             - libgtk-3-0
             - libgdk-pixbuf2.0-0
             - libglib2.0-bin
             - libgtk-3-bin
             - unity-gtk3-module
+            - libappindicator3-1
+            - locales-all
 
     selected-fonts:
         plugin: nil
