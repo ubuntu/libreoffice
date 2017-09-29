@@ -252,12 +252,14 @@ apps:
         plugs: &plugs
             - bluez
             - cups-control
+            - desktop
             - home
             - network
             - network-bind
             - opengl
             - removable-media
             - unity7
+            - wayland
     base:
         command: libreoffice.wrapper --base
         desktop: lib/libreoffice/share/xdg/base.desktop
