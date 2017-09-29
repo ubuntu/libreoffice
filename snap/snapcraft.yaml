@@ -99,7 +99,7 @@ parts:
             - libnspr4-dev
             - libnss3-dev
             - liborcus-dev
-            - libpng12-dev
+            - libpng-dev
             - libpoppler-cpp-dev
             - libpoppler-dev
             - libpoppler-private-dev
@@ -111,7 +111,6 @@ parts:
             - libsm-dev
             - libssl-dev
             - libsuitesparse-dev
-            - libvigraimpex-dev
             - libvisio-dev
             - libx11-dev
             - libxaw7-dev
