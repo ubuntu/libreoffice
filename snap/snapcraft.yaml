@@ -202,33 +202,7 @@ parts:
         source: .
         prime:
             - libreoffice.wrapper
-        after: [desktop-gtk3-no-wayland]
-
-    desktop-gtk3-no-wayland:
-        # Temporary workaround for https://launchpad.net/bugs/1714520, use a
-        # custom branch of the desktop helpers instead of the upstream one.
-        source: https://github.com/oSoMoN/snapcraft-desktop-helpers.git
-        source-branch: no-wayland
-        source-subdir: gtk
-        plugin: make
-        make-parameters: ["FLAVOR=gtk3"]
-        build-packages:
-            - libgtk-3-dev
-        stage-packages:
-            - libxkbcommon0  # XKB_CONFIG_ROOT
-            - ttf-ubuntu-font-family
-            - dmz-cursor-theme
-            - light-themes
-            - adwaita-icon-theme
-            - gnome-themes-standard
-            - shared-mime-info
-            - libgtk-3-0
-            - libgdk-pixbuf2.0-0
-            - libglib2.0-bin
-            - libgtk-3-bin
-            - unity-gtk3-module
-            - libappindicator3-1
-            - locales-all
+        after: [desktop-gtk3]
 
     selected-fonts:
         plugin: nil
