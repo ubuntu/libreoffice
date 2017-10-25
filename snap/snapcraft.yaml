@@ -206,9 +206,13 @@ parts:
     selected-fonts:
         plugin: nil
         stage-packages:
+            - fonts-cantarell
+            - fonts-liberation
+            - fonts-noto-cjk
+            - fonts-roboto
             - fonts-sil-gentium
             - fonts-sil-gentium-basic
-            - fonts-liberation
+            - fonts-thai-tlwg
             - ttf-dejavu-core
             - ttf-ubuntu-font-family
 
