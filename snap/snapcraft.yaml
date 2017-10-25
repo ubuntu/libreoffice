@@ -7,7 +7,7 @@ confinement: strict
 parts:
     libreoffice:
         plugin: autotools
-        source: http://ftp.utexas.edu/libreoffice/libreoffice/src/5.4.1/libreoffice-5.4.1.2.tar.xz
+        source: https://download.documentfoundation.org/libreoffice/src/5.4.1/libreoffice-5.4.1.2.tar.xz
         configflags:
             - --disable-ccache
             - --disable-coinmp

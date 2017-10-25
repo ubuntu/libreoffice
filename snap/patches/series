@@ -3,6 +3,5 @@ fix-nss-include-path.patch
 0004-inject-snapped-JRE-path-in-build.patch
 0006-allow-root-builds-on-lp.patch
 0007-hotfix-libmerged-linking.patch
-fetch-submodules-from-reliable-mirror.patch
 do-not-attempt-to-change-metadata-noop.patch
 fix-expat-include-config.patch
