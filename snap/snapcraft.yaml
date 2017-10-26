@@ -246,6 +246,13 @@ parts:
             - hyphen-pt-br
             - hyphen-pt-pt
 
+    thesauri:
+        plugin: nil
+        stage-packages:
+            - mythes-en-au
+            - mythes-en-us
+            - mythes-fr
+
     jvm:
         plugin: nil
         stage-packages:

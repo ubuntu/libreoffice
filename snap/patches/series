@@ -5,4 +5,4 @@ fix-nss-include-path.patch
 0007-hotfix-libmerged-linking.patch
 do-not-attempt-to-change-metadata-noop.patch
 fix-expat-include-config.patch
-hyphen-dicts-in-snap.patch
+dicts-in-snap.patch

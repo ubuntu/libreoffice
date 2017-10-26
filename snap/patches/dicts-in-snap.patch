@@ -1,4 +1,4 @@
-Description: look up hyphenation dictionaries inside the snap
+Description: look up hyphenation and thesaurus dictionaries inside the snap
 Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 
 --- a/lingucomponent/source/lingutil/lingutil.cxx
@@ -18,4 +18,12 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 +        aSystemDir.replaceAt(7, 0, std::getenv("SNAP")); // results in file://$SNAP/usr/share/hypen
          aSystemPrefix   = "hyph_";
          aSystemSuffix   = aDicExtension;
+ #endif
+@@ -170,6 +172,7 @@
+         aDicExtension   = ".dat";
+ #ifdef SYSTEM_DICTS
+         aSystemDir      = THES_SYSTEM_DIR;
++        aSystemDir.replaceAt(7, 0, std::getenv("SNAP")); // results in file://$SNAP/usr/share/mythes
+         aSystemPrefix   = "th_";
+         aSystemSuffix   = "_v2.dat";
  #endif
