@@ -267,6 +267,7 @@ apps:
             - bluez
             - cups-control
             - desktop
+            - gsettings
             - home
             - network
             - network-bind
