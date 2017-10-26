@@ -177,17 +177,6 @@ parts:
             - light-themes
             - python3-dev
             - xorg
-            - hunspell-de-de
-            - hunspell-en-au
-            - hunspell-en-ca
-            - hunspell-en-gb
-            - hunspell-en-us
-            - hunspell-en-za
-            - hunspell-fr-classical
-            - hunspell-it
-            - myspell-es
-            - myspell-pt-br
-            - myspell-pt-pt
         prepare: |
             for patch in $(cat ../../../snap/patches/series)
             do
@@ -208,8 +197,6 @@ parts:
             - usr/sbin/*
             - usr/share/icons/gnome*
             - usr/share/themes/*
-            - usr/share/hunspell/*
-            - usr/share/myspell/*
 
     libreoffice-wrapper:
         plugin: dump
@@ -230,6 +217,21 @@ parts:
             - fonts-thai-tlwg
             - ttf-dejavu-core
             - ttf-ubuntu-font-family
+
+    spellchecking:
+        plugin: nil
+        stage-packages:
+            - hunspell-de-de
+            - hunspell-en-au
+            - hunspell-en-ca
+            - hunspell-en-gb
+            - hunspell-en-us
+            - hunspell-en-za
+            - hunspell-fr-classical
+            - hunspell-it
+            - myspell-es
+            - myspell-pt-br
+            - myspell-pt-pt
 
     jvm:
         plugin: nil
