@@ -15,7 +15,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
          aDicExtension   = ".dic";
  #ifdef SYSTEM_DICTS
          aSystemDir      = HYPH_SYSTEM_DIR;
-+        aSystemDir.replaceAt(7, 0, std::getenv("SNAP")); // results in file://$SNAP/usr/share/hypen
++        aSystemDir      = aSystemDir.replaceAt(7, 0, OUString::fromUtf8(std::getenv("SNAP"))); // results in file://$SNAP/usr/share/hypen
          aSystemPrefix   = "hyph_";
          aSystemSuffix   = aDicExtension;
  #endif
@@ -23,7 +23,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
          aDicExtension   = ".dat";
  #ifdef SYSTEM_DICTS
          aSystemDir      = THES_SYSTEM_DIR;
-+        aSystemDir.replaceAt(7, 0, std::getenv("SNAP")); // results in file://$SNAP/usr/share/mythes
++        aSystemDir      = aSystemDir.replaceAt(7, 0, OUString::fromUtf8(std::getenv("SNAP"))); // results in file://$SNAP/usr/share/mythes
          aSystemPrefix   = "th_";
          aSystemSuffix   = "_v2.dat";
  #endif
