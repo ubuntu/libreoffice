@@ -233,6 +233,19 @@ parts:
             - myspell-pt-br
             - myspell-pt-pt
 
+    hyphenation:
+        plugin: nil
+        stage-packages:
+            - hyphen-de
+            - hyphen-en-ca
+            - hyphen-en-gb
+            - hyphen-en-us
+            - hyphen-es
+            - hyphen-fr
+            - hyphen-it
+            - hyphen-pt-br
+            - hyphen-pt-pt
+
     jvm:
         plugin: nil
         stage-packages:

@@ -1,0 +1,21 @@
+Description: look up hyphenation dictionaries inside the snap
+Author: Olivier Tilloy <olivier.tilloy@canonical.com>
+
+--- a/lingucomponent/source/lingutil/lingutil.cxx
++++ b/lingucomponent/source/lingutil/lingutil.cxx
+@@ -36,6 +36,7 @@
+ #include <rtl/tencinfo.h>
+ #include <linguistic/misc.hxx>
+ 
++#include <cstdlib>
+ #include <set>
+ #include <vector>
+ #include <string.h>
+@@ -160,6 +161,7 @@
+         aDicExtension   = ".dic";
+ #ifdef SYSTEM_DICTS
+         aSystemDir      = HYPH_SYSTEM_DIR;
++        aSystemDir.replaceAt(7, 0, std::getenv("SNAP")); // results in file://$SNAP/usr/share/hypen
+         aSystemPrefix   = "hyph_";
+         aSystemSuffix   = aDicExtension;
+ #endif
