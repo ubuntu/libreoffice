@@ -237,7 +237,6 @@ parts:
         plugin: nil
         stage-packages:
             - hyphen-de
-            - hyphen-en-ca
             - hyphen-en-gb
             - hyphen-en-us
             - hyphen-es
