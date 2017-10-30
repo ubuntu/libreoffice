@@ -229,6 +229,7 @@ parts:
             - hunspell-en-za
             - hunspell-fr-classical
             - hunspell-it
+            - hunspell-pl
             - myspell-es
             - myspell-pt-br
             - myspell-pt-pt
