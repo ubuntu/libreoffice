@@ -188,7 +188,10 @@ parts:
             chmod a+x $SNAPCRAFT_PART_INSTALL/usr/share
             for app in base calc draw impress math startcenter writer
             do
-                sed -i "s#Icon=libreoffice5.4-$app#Icon=/usr/share/icons/gnome/256x256/apps/libreoffice5.4-$app.png#" $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/xdg/$app.desktop
+                sed -i \
+                    -e "s#Icon=libreoffice5.4-$app#Icon=/usr/share/icons/gnome/256x256/apps/libreoffice5.4-$app.png#" \
+                    -e "s#^Exec=libreoffice5.4 --\(.*\)#Exec=libreoffice.\1#g" \
+                    $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/xdg/$app.desktop
             done
         prime:
             - lib/libreoffice/*
