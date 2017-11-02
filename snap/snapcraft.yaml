@@ -176,6 +176,7 @@ parts:
             - libxslt1.1
             - light-themes
             - python3-dev
+            - ubuntu-settings
             - xorg
         prepare: |
             for patch in $(cat ../../../snap/patches/series)
@@ -198,6 +199,7 @@ parts:
             - usr/lib/*/lib*
             - usr/lib/*/mesa/lib*
             - usr/sbin/*
+            - usr/share/glib-2.0/schemas/*
             - usr/share/icons/gnome*
             - usr/share/themes/*
 
