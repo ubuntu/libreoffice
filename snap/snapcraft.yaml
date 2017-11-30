@@ -197,7 +197,6 @@ parts:
             - usr/lib/*/lib*
             - usr/lib/*/mesa/lib*
             - usr/sbin/*
-            - usr/share/icons/gnome*
 
     libreoffice-wrapper:
         plugin: dump
@@ -252,6 +251,44 @@ parts:
         stage-packages:
             - openjdk-8-jdk
             - openjdk-8-jre
+
+    caches:
+        plugin: nil
+        after: [libreoffice]
+        stage-packages:
+            - adwaita-icon-theme
+            - gnome-icon-theme
+            - gsettings-desktop-schemas
+            - hicolor-icon-theme
+            - humanity-icon-theme
+            - libgtk-3-common
+            - shared-mime-info
+            - ubuntu-mono
+            - ubuntu-settings
+            - unity-gtk-module-common
+        build-packages:
+            - gtk-update-icon-cache
+            - libglib2.0-bin
+            - shared-mime-info
+        install: |
+            set -eux
+            mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share/mime/packages
+            cp $SNAPCRAFT_STAGE/usr/share/mime/packages/libreoffice5.4.xml \
+                $SNAPCRAFT_PART_INSTALL/usr/share/mime/packages/libreoffice.xml
+            mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share/icons/gnome
+            cp -R $SNAPCRAFT_STAGE/usr/share/icons/gnome/* \
+                $SNAPCRAFT_PART_INSTALL/usr/share/icons/gnome/
+            glib-compile-schemas $SNAPCRAFT_PART_INSTALL/usr/share/glib-2.0/schemas
+            update-mime-database $SNAPCRAFT_PART_INSTALL/usr/share/mime
+            for dir in $SNAPCRAFT_PART_INSTALL/usr/share/icons/*; do
+                if [ -f "$dir/index.theme" ]; then
+                    gtk-update-icon-cache --force "$dir"
+                fi
+            done
+        prime:
+            - usr/share/glib-2.0/schemas/*
+            - usr/share/icons/*
+            - usr/share/mime/*
 
 apps:
     libreoffice:
