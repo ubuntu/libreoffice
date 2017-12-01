@@ -5,7 +5,26 @@ description: LibreOffice is a free and open source office suite, developed by Th
 confinement: strict
 
 parts:
+    # Launchpad builders have a timeout for how long they are allowed to access
+    # the internet (through a proxy) starting from the start of the build.
+    # Since the libreoffice part takes a long time to build, we need to ensure
+    # that it is the last one to build, so that all other parts have had a
+    # chance to pull their build and stage packages before the proxy
+    # authentication is revoked.
+    # Since the generation of the caches needs to run after the libreoffice
+    # part, it is artificially split into two parts: one that installs the build
+    # and stage packages before the libreoffice part is built, and one that does
+    # the actual generation of the caches after the libreoffice part is built.
+
     libreoffice:
+        after:
+            - libreoffice-wrapper
+            - themes
+            - spellchecking
+            - hyphenation
+            - thesauri
+            - jvm
+            - caches-packages
         plugin: autotools
         source: https://download.documentfoundation.org/libreoffice/src/5.4.3/libreoffice-5.4.3.2.tar.xz
         configflags:
@@ -252,9 +271,8 @@ parts:
             - openjdk-8-jdk
             - openjdk-8-jre
 
-    caches:
+    caches-packages:
         plugin: nil
-        after: [libreoffice]
         stage-packages:
             - adwaita-icon-theme
             - gnome-icon-theme
@@ -270,14 +288,16 @@ parts:
             - gtk-update-icon-cache
             - libglib2.0-bin
             - shared-mime-info
+
+    caches-compilation:
+        plugin: nil
+        after: [libreoffice]
         install: |
             set -eux
-            mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share/mime/packages
-            cp $SNAPCRAFT_STAGE/usr/share/mime/packages/libreoffice5.4.xml \
-                $SNAPCRAFT_PART_INSTALL/usr/share/mime/packages/libreoffice.xml
-            mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share/icons/gnome
-            cp -R $SNAPCRAFT_STAGE/usr/share/icons/gnome/* \
-                $SNAPCRAFT_PART_INSTALL/usr/share/icons/gnome/
+            mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share
+            cp -R $SNAPCRAFT_STAGE/usr/share/mime $SNAPCRAFT_PART_INSTALL/usr/share/
+            cp -R $SNAPCRAFT_STAGE/usr/share/icons $SNAPCRAFT_PART_INSTALL/usr/share/
+            cp -R $SNAPCRAFT_STAGE/usr/share/glib-2.0 $SNAPCRAFT_PART_INSTALL/usr/share/
             glib-compile-schemas $SNAPCRAFT_PART_INSTALL/usr/share/glib-2.0/schemas
             update-mime-database $SNAPCRAFT_PART_INSTALL/usr/share/mime
             for dir in $SNAPCRAFT_PART_INSTALL/usr/share/icons/*; do
