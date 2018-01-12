@@ -61,7 +61,6 @@ parts:
             - --disable-postgresql-sdbc
             - --with-help
             - --without-doxygen
-            - --without-fonts
             - --with-lang=en-US de es fr it pt pt-BR ja zh-TW
         build-packages:
             - ant
@@ -217,6 +216,7 @@ parts:
             done
         prime:
             - lib/libreoffice/*
+            - -lib/libreoffice/share/fonts
             - usr/lib/*/lib*
             - usr/lib/*/mesa/lib*
             - usr/sbin/*
