@@ -10,7 +10,7 @@ Change-Id: Ic809f277cfac5e26438667d331c1850f646e71f4
 
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -58,12 +58,7 @@ else # MAKE_RESTARTS
+@@ -59,12 +59,7 @@ else # MAKE_RESTARTS
  all: build
  
  check-if-root:

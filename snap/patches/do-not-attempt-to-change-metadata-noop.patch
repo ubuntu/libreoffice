@@ -4,7 +4,7 @@ Bug-Ubuntu: https://launchpad.net/bugs/1713730
 
 --- a/sal/osl/unx/file_misc.cxx
 +++ b/sal/osl/unx/file_misc.cxx
-@@ -892,6 +892,10 @@
+@@ -891,6 +891,10 @@ void attemptChangeMetadata( const sal_Ch
      {
          nUID=getuid();
      }
@@ -15,4 +15,3 @@ Bug-Ubuntu: https://launchpad.net/bugs/1713730
      if ( lchown(pszFileName,nUID,nGID) < 0 )
      {
          int e = errno;
-

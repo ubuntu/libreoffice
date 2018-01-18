@@ -3,7 +3,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 
 --- a/lingucomponent/source/lingutil/lingutil.cxx
 +++ b/lingucomponent/source/lingutil/lingutil.cxx
-@@ -36,6 +36,7 @@
+@@ -39,6 +39,7 @@
  #include <rtl/tencinfo.h>
  #include <linguistic/misc.hxx>
  
@@ -11,7 +11,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
  #include <set>
  #include <vector>
  #include <string.h>
-@@ -160,6 +161,7 @@
+@@ -163,6 +164,7 @@ std::vector< SvtLinguConfigDictionaryEnt
          aDicExtension   = ".dic";
  #ifdef SYSTEM_DICTS
          aSystemDir      = HYPH_SYSTEM_DIR;
@@ -19,7 +19,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
          aSystemPrefix   = "hyph_";
          aSystemSuffix   = aDicExtension;
  #endif
-@@ -170,6 +172,7 @@
+@@ -173,6 +175,7 @@ std::vector< SvtLinguConfigDictionaryEnt
          aDicExtension   = ".dat";
  #ifdef SYSTEM_DICTS
          aSystemDir      = THES_SYSTEM_DIR;
