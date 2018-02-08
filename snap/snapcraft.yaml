@@ -51,11 +51,13 @@ parts:
             - --with-build-version=libreoffice-6.0.0.3-snap1
             - --with-gdrive-client-id=424119844901.apps.googleusercontent.com
             - --with-gdrive-client-secret=AIienwDlGIIsHoKnNHmWGXyJ
+            - --with-system-graphite
+            - --with-system-harfbuzz
+            - --with-system-icu
             - --with-system-libexttextcat
             - --with-system-openldap
             - --with-system-nss
             - --with-system-hsqldb
-            - --without-system-icu
             - --with-hsqldb-jar=/usr/share/java/hsqldb1.8.0.jar
             - --with-theme=galaxy hicontrast oxygen tango sifr breeze elementary
             - --with-vendor=Canonical, Ltd.
@@ -107,6 +109,7 @@ parts:
             - libhunspell-dev
             - libhyphen-dev
             - libice-dev
+            - libicu-dev
             - libjpeg-dev
             - libkrb5-dev
             - liblangtag-dev
