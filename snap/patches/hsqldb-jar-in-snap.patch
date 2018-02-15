@@ -8,7 +8,18 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
                      OUString(
  #ifdef SYSTEM_HSQLDB
 -                        HSQLDB_JAR
-+                        "vnd.sun.star.expand:$SNAP/usr/share/java/hsqldb1.8.0.jar"
++                        "vnd.sun.star.expand:file://$SNAP" HSQLDB_JAR
  #else
                          "vnd.sun.star.expand:$LO_JAVA_DIR/hsqldb.jar"
  #endif
+--- a/RepositoryExternal.mk
++++ b/RepositoryExternal.mk
+@@ -2856,7 +2856,7 @@ define gb_LinkTarget__use_hsqldb
+ 
+ $(call gb_LinkTarget_add_defs,$(1),\
+ 	-DSYSTEM_HSQLDB \
+-	-DHSQLDB_JAR=\""file://$(HSQLDB_JAR)"\" \
++	-DHSQLDB_JAR=\""$(HSQLDB_JAR)"\" \
+ )
+ 
+ endef
