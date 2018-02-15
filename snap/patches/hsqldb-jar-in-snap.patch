@@ -1,0 +1,14 @@
+Description: look up the HSQLDB jar inside the snap
+Author: Olivier Tilloy <olivier.tilloy@canonical.com>
+
+--- a/connectivity/source/drivers/hsqldb/HDriver.cxx
++++ b/connectivity/source/drivers/hsqldb/HDriver.cxx
+@@ -224,7 +224,7 @@ namespace connectivity
+                 aProperties.put( "JavaDriverClassPath",
+                     OUString(
+ #ifdef SYSTEM_HSQLDB
+-                        HSQLDB_JAR
++                        "vnd.sun.star.expand:$SNAP/usr/share/java/hsqldb1.8.0.jar"
+ #else
+                         "vnd.sun.star.expand:$LO_JAVA_DIR/hsqldb.jar"
+ #endif
