@@ -222,7 +222,7 @@ parts:
             - -lib/libreoffice/share/fonts
             - usr/lib/*/lib*
             - usr/lib/*/mesa/lib*
-            - usr/share/java/*
+            - usr/share/java/
             - usr/sbin/*
 
     libreoffice-wrapper:
