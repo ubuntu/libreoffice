@@ -76,7 +76,6 @@ parts:
             - gdb
             - gettext
             - gperf
-            - graphviz
             - junit4
             - kdelibs5-dev
             - libarchive-zip-perl
@@ -161,7 +160,6 @@ parts:
             - zlib1g-dev
         stage-packages:
             - default-jdk
-            - graphviz
             - libatk1.0-0
             - libatk1.0-dev
             - libcairo2
