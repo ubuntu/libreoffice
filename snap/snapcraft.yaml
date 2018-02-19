@@ -209,6 +209,7 @@ parts:
         source: .
         prime:
             - libreoffice.wrapper
+            - javasettings.py
         after: [desktop-gtk3]
 
     themes:

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+$SNAP/javasettings.py
+
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SNAP/lib/libreoffice/program"
 
 #export SAL_USE_VCLPLUGIN=gen
