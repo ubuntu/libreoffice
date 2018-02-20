@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# Write a java settings file for libreoffice, if it does not exist yet.
+# Without such a file, libreoffice can locate the JRE embedded in the snap,
+# but it will not use it by default, and the user has to open the settings UI
+# to explicitly select the JRE.
+
 import base64
 import os
 import os.path
@@ -20,6 +25,7 @@ if __name__ == '__main__':
         "javasettings_Linux_{}.xml".format(javasettings_arch)
     javasettings_filepath = os.path.join(lo_config_dir, javasettings_filename)
     if os.path.isfile(javasettings_filepath):
+        # The java settings file already exists, do nothing.
         sys.exit()
 
     if not os.path.exists(lo_config_dir):
@@ -34,6 +40,9 @@ if __name__ == '__main__':
     java_version = re.match('openjdk version "(?P<version>[\d\._]+)"',
                             java_output).group("version")
 
+    # Vendor data is a base64-encoded utf-16 string containing the path to the
+    # JVM shared library, and a LD_LIBRARY_PATH to locate java libraries
+    # (similar to the output of the javaldx executable).
     vendor_data = []
     vendor_data.append("file://{}/server/libjvm.so".format(jvm))
     paths = []
