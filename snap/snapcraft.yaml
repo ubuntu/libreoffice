@@ -302,6 +302,8 @@ apps:
     libreoffice:
         command: libreoffice.wrapper
         desktop: lib/libreoffice/share/xdg/startcenter.desktop
+        environment: &environment
+            TMPDIR: $XDG_RUNTIME_DIR
         plugs: &plugs
             - bluez
             - cups-control
@@ -317,24 +319,30 @@ apps:
     base:
         command: libreoffice.wrapper --base
         desktop: lib/libreoffice/share/xdg/base.desktop
+        environment: *environment
         plugs: *plugs
     calc:
         command: libreoffice.wrapper --calc
         desktop: lib/libreoffice/share/xdg/calc.desktop
+        environment: *environment
         plugs: *plugs
     draw:
         command: libreoffice.wrapper --draw
         desktop: lib/libreoffice/share/xdg/draw.desktop
+        environment: *environment
         plugs: *plugs
     impress:
         command: libreoffice.wrapper --impress
         desktop: lib/libreoffice/share/xdg/impress.desktop
+        environment: *environment
         plugs: *plugs
     math:
         command: libreoffice.wrapper --math
         desktop: lib/libreoffice/share/xdg/math.desktop
+        environment: *environment
         plugs: *plugs
     writer:
         command: libreoffice.wrapper --writer
         desktop: lib/libreoffice/share/xdg/writer.desktop
+        environment: *environment
         plugs: *plugs
