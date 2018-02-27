@@ -26,7 +26,7 @@ parts:
             - jvm
             - caches-packages
         plugin: autotools
-        source: https://dev-builds.libreoffice.org/pre-releases/src/libreoffice-6.0.2.1.tar.xz
+        source: https://download.documentfoundation.org/libreoffice/src/6.0.2/libreoffice-6.0.2.1.tar.xz
         configflags:
             - --disable-ccache
             - --disable-coinmp
@@ -181,7 +181,12 @@ parts:
             set -eux
             for patch in $(cat ../../../snap/patches/series)
             do
-                patch -d . -p1 < ../../../snap/patches/$patch
+                case "$patch" in
+                    \#*)
+                        echo "skipping $patch";;
+                    *)
+                        patch -d . -p1 < ../../../snap/patches/$patch;;
+                esac
             done
         install: |
             set -eux
