@@ -158,45 +158,104 @@ parts:
             - zlib1g-dev
         stage-packages:
             - default-jdk
+            - gstreamer1.0-libav
+            - gstreamer1.0-plugins-bad
+            - gstreamer1.0-plugins-bad-faad
+            - gstreamer1.0-plugins-bad-videoparsers
             - gstreamer1.0-plugins-base
             - gstreamer1.0-plugins-good
             - gstreamer1.0-pulseaudio
             - libaa1
+            - libass5
             - libatk1.0-0
+            - libavcodec-ffmpeg56
+            - libavfilter-ffmpeg5
+            - libavformat-ffmpeg56
+            - libavresample-ffmpeg2
+            - libavutil-ffmpeg54
+            - libbluray1
+            - libbs2b0
             - libbz2-1.0
             - libcairo-gobject2
             - libcairo2
+            - libcrystalhd3
+            - libcurl3-gnutls
             - libdbus-glib-1-2
+            - libde265-0
             - libdv4
             - libexttextcat-2.0-0
+            - libfaad2
+            - libffi6
             - libflac8
+            - libflite1
             - libfreetype6
+            - libfribidi0
             - libgconf-2-4
             - libgl1-mesa-glx
             - libglib2.0-0
+            - libgme0
+            - libgmp10
+            - libgnutls30
+            - libgomp1
             - libgpm2
+            - libgsm1
+            - libgstreamer-plugins-bad1.0-0
             - libgstreamer-plugins-base1.0-0
             - libgstreamer-plugins-good1.0-0
             - libgstreamer1.0-0
             - libgtk-3-bin
             - libgtk2.0-0
+            - libhogweed4
             - libhsqldb1.8.0-java
+            - libidn2-0
             - libldap-2.4-2
+            - libmp3lame0
+            - libmodplug1
+            - libnettle6
             - libnspr4
             - libnss3
+            - libnuma1
             - libogg0
+            - libopenal1
+            - libopenal-data
+            - libopencv-core2.4v5
+            - libopencv-imgproc2.4v5
+            - libopenjpeg5
             - libopus0
             - liborc-0.4-0
+            - libp11-kit0
+            - libpostproc-ffmpeg53
+            - librtmp1
+            - libschroedinger-1.0-0
+            - libshine3
+            - libsnappy1v5
+            - libsodium18
             - libsoup2.4-1
+            - libsoxr0
             - libspeex1
+            - libssh-gcrypt-4
+            - libswresample-ffmpeg1
+            - libswscale-ffmpeg3
+            - libtasn1-6
+            - libtbb2
             - libtheora0
+            - libtwolame0
+            - libunistring0
             - libv4l-0
+            - libva1
             - libvorbis0a
             - libvpx3
             - libwavpack1
+            - libwebp5
+            - libx264-148
+            - libx265-79
             - libxml2
             - libxslt1.1
+            - libxvidcore4
+            - libzmq5
+            - libzvbi0
             - xorg
+            - zlib1g
         prepare: |
             set -eux
             for patch in $(cat ../../../snap/patches/series)
