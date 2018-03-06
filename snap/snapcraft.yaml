@@ -160,6 +160,7 @@ parts:
             - default-jdk
             - gstreamer1.0-plugins-base
             - gstreamer1.0-plugins-good
+            - gstreamer1.0-pulseaudio
             - libaa1
             - libatk1.0-0
             - libbz2-1.0
@@ -173,6 +174,7 @@ parts:
             - libgconf-2-4
             - libgl1-mesa-glx
             - libglib2.0-0
+            - libgpm2
             - libgstreamer-plugins-base1.0-0
             - libgstreamer-plugins-good1.0-0
             - libgstreamer1.0-0
@@ -337,6 +339,7 @@ apps:
             - network
             - network-bind
             - opengl
+            - pulseaudio
             - removable-media
             - unity7
             - wayland
