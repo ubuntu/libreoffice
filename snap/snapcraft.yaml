@@ -264,6 +264,12 @@ parts:
             - openjdk-8-jre
 
     gstreamer:
+        # GStreamer packages needed for audio/video clip playback in office
+        # documents. Libreoffice uses the gtksink element, which in Ubuntu
+        # 16.04 is part of gstreamer1.0-plugins-bad. As of Ubuntu 18.04 it has
+        # made its way to gstreamer1.0-plugins-good, so when the snap is built
+        # on 18.04 that list of stage packages will need updating.
+        # Ref: https://launchpad.net/bugs/1752166.
         plugin: nil
         stage-packages:
             - gstreamer1.0-libav
