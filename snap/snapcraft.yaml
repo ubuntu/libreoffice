@@ -216,6 +216,14 @@ parts:
             - javasettings.py
         after: [desktop-gtk3]
 
+    desktop-gtk3:
+        # Exclude unity-gtk-module from the upstream part as it causes a crash
+        # when starting libreoffice.math on Ubuntu 16.04
+        # (https://launchpad.net/bugs/1755178), and it's not needed anyway
+        # because libreoffice talks GMenuModel already.
+        stage:
+            - -usr/lib/*/gtk-3.0/modules/libunity-gtk-module.so
+
     themes:
         plugin: nil
         stage-packages:
