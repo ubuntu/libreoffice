@@ -214,6 +214,7 @@ parts:
         prime:
             - libreoffice.wrapper
             - javasettings.py
+            - filebug.py
         after: [desktop-gtk3]
 
     desktop-gtk3:
@@ -450,3 +451,9 @@ apps:
         desktop: lib/libreoffice/share/xdg/writer.desktop
         environment: *environment
         plugs: *plugs
+    filebug:
+        command: filebug.py
+        environment: *environment
+        plugs:
+            - desktop
+            - network
