@@ -288,8 +288,6 @@ parts:
         stage-packages:
             - gstreamer1.0-libav
             - gstreamer1.0-plugins-bad
-            - gstreamer1.0-plugins-bad-faad
-            - gstreamer1.0-plugins-bad-videoparsers
             - gstreamer1.0-plugins-base
             - gstreamer1.0-plugins-good
             - gstreamer1.0-pulseaudio
