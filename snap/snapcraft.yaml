@@ -224,11 +224,6 @@ parts:
         # because libreoffice talks GMenuModel already.
         stage:
             - -usr/lib/*/gtk-3.0/modules/libunity-gtk-module.so
-        # Add missing ibus-related stage packages until this lands upstream
-        # (https://github.com/ubuntu/snapcraft-desktop-helpers/pull/105)
-        stage-packages:
-            - ibus-gtk3
-            - libibus-1.0-5
 
     themes:
         plugin: nil
