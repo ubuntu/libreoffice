@@ -1,5 +1,5 @@
 name: libreoffice
-version: 6.0.5.1
+version: 6.0.5.2
 summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 confinement: strict
@@ -27,7 +27,7 @@ parts:
             - gstreamer
             - caches-packages
         plugin: autotools
-        source: https://dev-builds.libreoffice.org/pre-releases/src/libreoffice-6.0.5.1.tar.xz
+        source: https://download.documentfoundation.org/libreoffice/src/6.0.5/libreoffice-6.0.5.2.tar.xz
         configflags:
             - --disable-ccache
             - --disable-coinmp
@@ -49,7 +49,7 @@ parts:
             - --enable-scripting-beanshell
             - --enable-scripting-javascript
             - --with-alloc=system
-            - --with-build-version=libreoffice-6.0.5.1-snap1
+            - --with-build-version=libreoffice-6.0.5.2-snap1
             - --with-gdrive-client-id=424119844901.apps.googleusercontent.com
             - --with-gdrive-client-secret=AIienwDlGIIsHoKnNHmWGXyJ
             - --with-system-graphite
