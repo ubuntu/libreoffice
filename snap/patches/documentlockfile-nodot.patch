@@ -1,0 +1,15 @@
+Description: Remove leading dot in temporary lock file names to prevent apparmor denials in $HOME
+Author: Olivier Tilloy <olivier.tilloy@canonical.com>
+Bug-Ubuntu: https://launchpad.net/bugs/1766192
+
+--- a/svl/source/misc/documentlockfile.cxx
++++ b/svl/source/misc/documentlockfile.cxx
+@@ -53,7 +53,7 @@ bool DocumentLockFile::m_bAllowInteracti
+ 
+ 
+ DocumentLockFile::DocumentLockFile( const OUString& aOrigURL )
+-: LockFileCommon( aOrigURL, ".~lock." )
++: LockFileCommon( aOrigURL, "~lock." )
+ {
+ }
+ 
