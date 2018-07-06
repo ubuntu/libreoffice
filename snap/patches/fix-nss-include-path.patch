@@ -3,7 +3,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 
 --- a/xmlsecurity/source/xmlsec/nss/nssinitializer.cxx
 +++ b/xmlsecurity/source/xmlsec/nss/nssinitializer.cxx
-@@ -49,7 +49,7 @@
+@@ -42,7 +42,7 @@
  
  #include <nspr.h>
  #include <cert.h>
@@ -36,7 +36,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
  
 --- a/comphelper/source/misc/hash.cxx
 +++ b/comphelper/source/misc/hash.cxx
-@@ -11,7 +11,7 @@
+@@ -14,7 +14,7 @@
  #include <config_oox.h>
  
  #if USE_TLS_NSS

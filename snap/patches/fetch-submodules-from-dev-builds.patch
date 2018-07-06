@@ -3,7 +3,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -233,7 +233,7 @@ $(if $(gb_LO_VER),,$(error Error while r
+@@ -251,7 +251,7 @@ $(if $(gb_LO_VER),,$(error Error while r
  get-submodules: | download
  ifneq ($(foreach i,$(subst helpcontent2,help,$(GIT_NEEDED_SUBMODULES)),$(SRCDIR)/src/libreoffice-$(i)-$(gb_LO_VER)),$(wildcard $(foreach i,$(subst helpcontent2,help,$(GIT_NEEDED_SUBMODULES)),$(SRCDIR)/src/libreoffice-$(i)-$(gb_LO_VER))))
  	$(foreach i,$(subst helpcontent2,help,$(GIT_NEEDED_SUBMODULES)),\

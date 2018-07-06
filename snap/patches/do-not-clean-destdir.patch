@@ -4,7 +4,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 
 --- a/solenv/bin/ooinstall
 +++ b/solenv/bin/ooinstall
-@@ -78,15 +78,6 @@ if ($is_windows) {
+@@ -77,15 +77,6 @@ if ($is_windows) {
             "-msilanguage $ENV{SRC_ROOT}/workdir/CustomTarget/instsetoo_native/install/win_ulffiles";
  }
  
