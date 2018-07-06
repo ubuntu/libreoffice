@@ -60,7 +60,7 @@ parts:
             - --with-system-nss
             - --with-system-hsqldb
             - --with-hsqldb-jar=/usr/share/java/hsqldb1.8.0.jar
-            - --with-theme=galaxy hicontrast oxygen tango sifr breeze elementary
+            - --with-theme=colibre hicontrast oxygen tango sifr breeze elementary
             - --with-vendor=Canonical, Ltd.
             - --disable-postgresql-sdbc
             - --with-help
