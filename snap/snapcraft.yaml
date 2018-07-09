@@ -146,6 +146,7 @@ parts:
             - libxslt1.1
             - libxt-dev
             - libxtst-dev
+            - locales
             - maven-repo-helper
             - patch
             - python3-dev
