@@ -176,7 +176,7 @@ parts:
             - libxml2
             - libxslt1.1
             - xorg
-        prepare: |
+        override-build: |
             set -eux
             for patch in $(cat ../../../snap/patches/series)
             do
@@ -187,8 +187,7 @@ parts:
                         patch -d . -p1 < ../../../snap/patches/$patch;;
                 esac
             done
-        install: |
-            set -eux
+            snapcraftctl build
             srcdir=$PWD
             cd workdir/CustomTarget/sysui/share/libreoffice
             SRCDIR=$srcdir INSTDIR=$srcdir/instdir DESTDIR=$SNAPCRAFT_PART_INSTALL PREFIXDIR=usr GNOMEDIR=usr PKG_CONFIG=pkg-config ./create_tree.sh
