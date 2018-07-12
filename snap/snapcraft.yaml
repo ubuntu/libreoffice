@@ -388,8 +388,9 @@ parts:
     caches-compilation:
         plugin: nil
         after: [libreoffice]
-        install: |
+        override-build: |
             set -eux
+            snapcraftctl build
             mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share
             cp -R $SNAPCRAFT_STAGE/usr/share/mime $SNAPCRAFT_PART_INSTALL/usr/share/
             cp -R $SNAPCRAFT_STAGE/usr/share/icons $SNAPCRAFT_PART_INSTALL/usr/share/
