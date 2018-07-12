@@ -188,7 +188,7 @@ parts:
                         patch -d . -p1 < ../../../snap/patches/$patch;;
                 esac
             done
-            export LOCPATH=$PWD/locales
+            export LOCPATH=$SNAPCRAFT_PART_SRC/../locales
             mkdir -p $LOCPATH
             localedef -i en_US -c -f UTF-8 $LOCPATH/en_US.UTF-8
             export LANG=en_US.UTF-8
