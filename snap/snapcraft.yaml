@@ -188,11 +188,17 @@ parts:
                         patch -d . -p1 < ../../../snap/patches/$patch;;
                 esac
             done
+            locale -a
+            locale -a -v
+            locale
             export LOCPATH=$SNAPCRAFT_PART_SRC/../locales
             mkdir -p $LOCPATH
             localedef -i en_US -c -f UTF-8 $LOCPATH/en_US.UTF-8
             export LANG=en_US.UTF-8
             export LC_ALL=en_US.UTF-8
+            locale -a
+            locale -a -v
+            locale
             snapcraftctl build
             rm -rf $LOCPATH
             srcdir=$PWD
