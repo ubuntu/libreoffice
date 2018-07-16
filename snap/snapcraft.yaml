@@ -430,6 +430,7 @@ apps:
             - opengl
             - pulseaudio
             - removable-media
+            - screen-inhibit-control
             - unity7
             - wayland
     base:
