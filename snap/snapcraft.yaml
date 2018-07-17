@@ -146,7 +146,7 @@ parts:
             - libxslt1.1
             - libxt-dev
             - libxtst-dev
-            - locales
+            - locales-all
             - maven-repo-helper
             - patch
             - python3-dev
@@ -188,22 +188,9 @@ parts:
                         patch -d . -p1 < ../../../snap/patches/$patch;;
                 esac
             done
-            locale -a
-            locale -a -v
-            locale
-            export LOCPATH=$SNAPCRAFT_PART_SRC/../locales
-            mkdir -p $LOCPATH
-            localedef -i en_US -c -f UTF-8 $LOCPATH/en_US.UTF-8
             export LANG=en_US.UTF-8
-            export LANGUAGE=en_US.UTF-8
             export LC_ALL=en_US.UTF-8
-            locale -a
-            locale -a -v
-            locale
-            echo $LOCPATH
-            ls -lhaR $LOCPATH
             snapcraftctl build
-            rm -rf $LOCPATH
             srcdir=$PWD
             cd workdir/CustomTarget/sysui/share/libreoffice
             SRCDIR=$srcdir INSTDIR=$srcdir/instdir DESTDIR=$SNAPCRAFT_PART_INSTALL PREFIXDIR=usr GNOMEDIR=usr PKG_CONFIG=pkg-config ./create_tree.sh
