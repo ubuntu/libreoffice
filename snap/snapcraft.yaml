@@ -4,6 +4,20 @@ summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 confinement: strict
 
+plugs:
+  gtk-3-themes:
+    interface: content
+    target: $SNAP/data-dir/themes
+    default-provider: gtk-common-themes
+  icon-themes:
+    interface: content
+    target: $SNAP/data-dir/icons
+    default-provider: gtk-common-themes
+  sound-themes:
+    interface: content
+    target: $SNAP/data-dir/sounds
+    default-provider: gtk-common-themes
+
 parts:
     # Launchpad builders have a timeout for how long they are allowed to access
     # the internet (through a proxy) starting from the start of the build.
