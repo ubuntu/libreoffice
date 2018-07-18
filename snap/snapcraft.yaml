@@ -231,6 +231,7 @@ parts:
             - libreoffice.wrapper
             - javasettings.py
             - filebug.py
+            - data-dir/*
         after: [desktop-gtk3]
 
     desktop-gtk3:
