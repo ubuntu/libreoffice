@@ -41,7 +41,7 @@ parts:
             - gstreamer
             - caches-packages
         plugin: autotools
-        source: https://dev-builds.libreoffice.org/pre-releases/src/libreoffice-6.1.0.3.tar.xz
+        source: http://download.documentfoundation.org/libreoffice/src/6.1.0/libreoffice-6.1.0.3.tar.xz
         configflags:
             - --disable-ccache
             - --disable-coinmp
