@@ -193,13 +193,13 @@ parts:
             - xorg
         override-build: |
             set -eux
-            for patch in $(cat ../../../snap/patches/series)
+            for patch in $(cat ../../../patches/series)
             do
                 case "$patch" in
                     \#*)
                         echo "skipping $patch";;
                     *)
-                        patch -d . -p1 < ../../../snap/patches/$patch;;
+                        patch -d . -p1 < ../../../patches/$patch;;
                 esac
             done
             export LANG=en_US.UTF-8
