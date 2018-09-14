@@ -81,6 +81,7 @@ parts:
             - --without-doxygen
             - --with-lang=en-US de es fr it pt pt-BR ja zh-TW ru ca
         build-packages:
+            - quilt
             - ant
             - ant-optional
             - bison
@@ -162,7 +163,6 @@ parts:
             - libxtst-dev
             - locales-all
             - maven-repo-helper
-            - patch
             - python3-dev
             - unixodbc-dev
             - unzip
@@ -193,15 +193,7 @@ parts:
             - xorg
         override-build: |
             set -eux
-            for patch in $(cat ../../../patches/series)
-            do
-                case "$patch" in
-                    \#*)
-                        echo "skipping $patch";;
-                    *)
-                        patch -d . -p1 < ../../../patches/$patch;;
-                esac
-            done
+            QUILT_PATCHES=../../../patches quilt push -a
             export LANG=en_US.UTF-8
             export LC_ALL=en_US.UTF-8
             snapcraftctl build
