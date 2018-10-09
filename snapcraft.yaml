@@ -30,8 +30,16 @@ parts:
     # and stage packages before the libreoffice part is built, and one that does
     # the actual generation of the caches after the libreoffice part is built.
 
+    libreoffice-patches:
+        plugin: dump
+        source: patches
+        organize:
+            '*' : patches/
+        override-prime: ""
+
     libreoffice:
         after:
+            - libreoffice-patches
             - libreoffice-wrapper
             - themes
             - spellchecking
@@ -193,7 +201,7 @@ parts:
             - xorg
         override-build: |
             set -eux
-            QUILT_PATCHES=../../../patches quilt push -a
+            QUILT_PATCHES=$SNAPCRAFT_STAGE/patches quilt push -a
             export LANG=en_US.UTF-8
             export LC_ALL=en_US.UTF-8
             snapcraftctl build
