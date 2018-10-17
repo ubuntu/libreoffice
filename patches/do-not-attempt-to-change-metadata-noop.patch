@@ -4,7 +4,7 @@ Bug-Ubuntu: https://launchpad.net/bugs/1713730
 
 --- a/sal/osl/unx/file_misc.cxx
 +++ b/sal/osl/unx/file_misc.cxx
-@@ -875,6 +875,10 @@ void attemptChangeMetadata( const sal_Ch
+@@ -880,6 +880,10 @@ void attemptChangeMetadata( const sal_Ch
      {
          nUID=getuid();
      }
