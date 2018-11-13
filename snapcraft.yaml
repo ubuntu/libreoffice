@@ -49,6 +49,7 @@ parts:
             - jvm
             - gstreamer
             - caches-packages
+            - gtk3-locales
         plugin: autotools
         source: https://download.documentfoundation.org/libreoffice/src/6.1.3/libreoffice-6.1.3.2.tar.xz
         configflags:
@@ -418,6 +419,23 @@ parts:
             - usr/share/glib-2.0/schemas/*
             - usr/share/icons/*
             - usr/share/mime/*
+
+    # In Ubuntu compiled locales for GTK are installed by langpacks, not by
+    # libgtk-3-common. Fetch all the langpacks and keep only the GTK locales.
+    gtk3-locales:
+        plugin: nil
+        build-packages:
+            - apt
+            - dpkg
+        override-pull: |
+            set -eux
+            apt download "language-pack-gnome-*-base"
+        override-build: |
+            set -eux
+            for deb in *.deb; do dpkg-deb -x $deb .; done
+            find usr/share/locale-langpack -type f -not -name "gtk30*.mo" -exec rm '{}' \;
+            mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share
+            cp -R usr/share/locale-langpack $SNAPCRAFT_PART_INSTALL/usr/share/
 
 apps:
     libreoffice:
