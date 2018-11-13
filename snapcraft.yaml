@@ -199,8 +199,11 @@ parts:
             - libnss3
             - libxml2
             - libxslt1.1
-            - python3-distutils
-            - xorg
+            - libx11-6
+            - libxext6
+            - libxinerama1
+            - libxrandr2
+            - libxrender1
         override-build: |
             set -eux
             QUILT_PATCHES=$SNAPCRAFT_STAGE/patches quilt push -a
