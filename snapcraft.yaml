@@ -148,7 +148,7 @@ parts:
             - libpoppler-dev
             - libpoppler-private-dev
             - libpq-dev
-            - libpython3.6-dev
+            - libpython3-dev
             - libqt4-dev
             - librdf0-dev
             - libsane-dev
