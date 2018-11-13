@@ -58,7 +58,6 @@ parts:
             - --disable-dconf
             - --disable-evolution2
             - --disable-firebird-sdbc
-            - --disable-gltf
             - --disable-gstreamer-0-10
             - --disable-kde4
             - --disable-online-update
