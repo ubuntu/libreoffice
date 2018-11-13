@@ -16,7 +16,7 @@ Subject: [PATCH 4/6] inject snapped JRE path in build
 -        const std::vector<OUString>& vecJRELocations =
 -            settings.getJRELocations();
 +        std::vector<OUString> vecJRELocations = settings.getJRELocations();
-+        OUString sSnappedJRE("file:///snap/libreoffice/current/usr/lib/jvm/java-8-openjdk-amd64/"); // FIXME: use SNAP environment variable
++        OUString sSnappedJRE("file:///snap/libreoffice/current/usr/lib/jvm/java-11-openjdk-amd64/"); // FIXME: use SNAP environment variable
 +        vecJRELocations.insert(vecJRELocations.begin(), { sSnappedJRE } );
          //Use every plug-in library to get Java installations.
          for (auto const & vendor: vecVendors)

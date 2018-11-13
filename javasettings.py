@@ -24,15 +24,19 @@ if __name__ == '__main__':
     javasettings_filename = \
         "javasettings_Linux_{}.xml".format(javasettings_arch)
     javasettings_filepath = os.path.join(lo_config_dir, javasettings_filename)
-    if os.path.isfile(javasettings_filepath):
-        # The java settings file already exists, do nothing.
+
+    marker_revision = 1 # bump when the contents of the file need to change
+    marker_filename = ".snap_javasettings_writer.{}".format(marker_revision)
+    marker_file = os.path.join(lo_config_dir, marker_filename)
+    if os.path.isfile(marker_file):
+        # The java settings file already exists and is up-to-date, do nothing.
         sys.exit()
 
     if not os.path.exists(lo_config_dir):
         os.makedirs(lo_config_dir)
 
-    jre = "{}/usr/lib/jvm/java-8-openjdk-{}/jre".format(snap, snap_arch)
-    jvm = "{}/lib/{}".format(jre, snap_arch)
+    jre = "{}/usr/lib/jvm/java-11-openjdk-{}".format(snap, snap_arch)
+    jvm = "{}/lib".format(jre)
 
     java_location = "file://{}".format(jre)
 
@@ -45,11 +49,7 @@ if __name__ == '__main__':
     # (similar to the output of the javaldx executable).
     vendor_data = []
     vendor_data.append("file://{}/server/libjvm.so".format(jvm))
-    paths = []
-    paths.append("{}/client".format(jvm))
-    paths.append("{}/server".format(jvm))
-    paths.append("{}/native_threads".format(jvm))
-    paths.append(jvm)
+    paths = ["{}/server".format(jvm), jvm]
     vendor_data.append(":".join(paths))
     vendor_data.append("")
     vendor_data = "\n".join(vendor_data)
@@ -74,3 +74,5 @@ if __name__ == '__main__':
                                    vendorData=vendor_data)
     with open(javasettings_filepath, "w") as f:
         f.write(javasettings)
+
+    open(marker_file, "w").close()
