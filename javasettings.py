@@ -49,7 +49,8 @@ if __name__ == '__main__':
     # (similar to the output of the javaldx executable).
     vendor_data = []
     vendor_data.append("file://{}/server/libjvm.so".format(jvm))
-    paths = ["{}/server".format(jvm), jvm]
+    paths = [os.path.normpath(os.path.join(jvm, snap_arch, i))
+             for i in ("client", "server", "native_threads", "")]
     vendor_data.append(":".join(paths))
     vendor_data.append("")
     vendor_data = "\n".join(vendor_data)
