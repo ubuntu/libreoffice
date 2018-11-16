@@ -182,7 +182,6 @@ parts:
             - zip
             - zlib1g-dev
         stage-packages:
-            - default-jdk
             - libatk1.0-0
             - libcairo2
             - libdbus-glib-1-2
@@ -294,7 +293,6 @@ parts:
     jvm:
         plugin: nil
         stage-packages:
-            - openjdk-11-jdk
             - openjdk-11-jre
 
     gstreamer:
