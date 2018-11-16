@@ -26,10 +26,6 @@ parts:
     # that it is the last one to build, so that all other parts have had a
     # chance to pull their build and stage packages before the proxy
     # authentication is revoked.
-    # Since the generation of the caches needs to run after the libreoffice
-    # part, it is artificially split into two parts: one that installs the build
-    # and stage packages before the libreoffice part is built, and one that does
-    # the actual generation of the caches after the libreoffice part is built.
 
     libreoffice-patches:
         plugin: dump
@@ -42,13 +38,11 @@ parts:
         after:
             - libreoffice-patches
             - libreoffice-wrapper
-            - themes
             - spellchecking
             - hyphenation
             - thesauri
             - jvm
             - gstreamer
-            - caches-packages
             - gtk3-locales
         plugin: autotools
         source: https://download.documentfoundation.org/libreoffice/src/6.1.3/libreoffice-6.1.3.2.tar.xz
@@ -249,12 +243,6 @@ parts:
         stage:
             - -usr/lib/*/gtk-3.0/modules/libunity-gtk-module.so
 
-    themes:
-        plugin: nil
-        stage-packages:
-            - light-themes
-            - ubuntu-settings
-
     spellchecking:
         plugin: nil
         stage-packages:
@@ -382,46 +370,6 @@ parts:
             - libzmq5
             - libzvbi0
             - zlib1g
-
-    caches-packages:
-        plugin: nil
-        stage-packages:
-            - adwaita-icon-theme
-            - gnome-icon-theme
-            - gsettings-desktop-schemas
-            - hicolor-icon-theme
-            - humanity-icon-theme
-            - libgtk-3-common
-            - shared-mime-info
-            - ubuntu-mono
-            - ubuntu-settings
-            - unity-gtk-module-common
-        build-packages:
-            - gtk-update-icon-cache
-            - libglib2.0-bin
-            - shared-mime-info
-
-    caches-compilation:
-        plugin: nil
-        after: [libreoffice]
-        override-build: |
-            set -eux
-            snapcraftctl build
-            mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share
-            cp -R $SNAPCRAFT_STAGE/usr/share/mime $SNAPCRAFT_PART_INSTALL/usr/share/
-            cp -R $SNAPCRAFT_STAGE/usr/share/icons $SNAPCRAFT_PART_INSTALL/usr/share/
-            cp -R $SNAPCRAFT_STAGE/usr/share/glib-2.0 $SNAPCRAFT_PART_INSTALL/usr/share/
-            glib-compile-schemas $SNAPCRAFT_PART_INSTALL/usr/share/glib-2.0/schemas
-            update-mime-database $SNAPCRAFT_PART_INSTALL/usr/share/mime
-            for dir in $SNAPCRAFT_PART_INSTALL/usr/share/icons/*; do
-                if [ -f "$dir/index.theme" ]; then
-                    gtk-update-icon-cache --force "$dir"
-                fi
-            done
-        prime:
-            - usr/share/glib-2.0/schemas/*
-            - usr/share/icons/*
-            - usr/share/mime/*
 
     # In Ubuntu compiled locales for GTK are installed by langpacks, not by
     # libgtk-3-common. Fetch all the langpacks and keep only the GTK locales.
