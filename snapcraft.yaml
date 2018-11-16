@@ -282,6 +282,8 @@ parts:
         plugin: nil
         stage-packages:
             - openjdk-11-jre
+        prime:
+            - -usr/share/doc
 
     gstreamer:
         # GStreamer packages needed for audio/video clip playback in office
