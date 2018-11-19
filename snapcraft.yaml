@@ -222,6 +222,7 @@ parts:
             - -lib/libreoffice/share/fonts
             - usr/lib/*/lib*
             - usr/lib/*/mesa/lib*
+            - usr/share/icons/gnome/256x256/apps/*
             - usr/share/java/
             - usr/sbin/*
 
