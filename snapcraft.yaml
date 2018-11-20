@@ -46,6 +46,7 @@ parts:
             - gtk3-locales
         plugin: autotools
         source: https://download.documentfoundation.org/libreoffice/src/6.1.3/libreoffice-6.1.3.2.tar.xz
+        build-attributes: [ no-system-libraries ]
         configflags:
             - --disable-ccache
             - --disable-coinmp
@@ -281,6 +282,7 @@ parts:
 
     jvm:
         plugin: nil
+        build-attributes: [ no-system-libraries ]
         stage-packages:
             - openjdk-11-jre
         prime:
@@ -294,6 +296,7 @@ parts:
         # on 18.04 that list of stage packages will need updating.
         # Ref: https://launchpad.net/bugs/1752166.
         plugin: nil
+        build-attributes: [ no-system-libraries ]
         stage-packages:
             - gstreamer1.0-libav
             - gstreamer1.0-plugins-bad
@@ -320,6 +323,7 @@ parts:
             - libflac8
             - libflite1
             - libfribidi0
+            - libglu1-mesa
             - libgme0
             - libgmp10
             - libgnutls30
@@ -348,6 +352,7 @@ parts:
             - libpostproc54
             - librtmp1
             - libshine3
+            - libslang2
             - libsnappy1v5
             - libsodium23
             - libsoup2.4-1
