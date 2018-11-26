@@ -407,10 +407,7 @@ parts:
             - ubuntu-settings
         override-prime: |
             set -eux
-            SCHEMAS_DIR=usr/share/glib-2.0/schemas
-            mkdir -p $SCHEMAS_DIR
-            cp $SNAPCRAFT_STAGE/$SCHEMAS_DIR/* $SCHEMAS_DIR/
-            glib-compile-schemas $SCHEMAS_DIR
+            glib-compile-schemas usr/share/glib-2.0/schemas
 
 apps:
     libreoffice:
