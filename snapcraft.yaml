@@ -396,6 +396,22 @@ parts:
             mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share
             cp -R usr/share/locale-langpack $SNAPCRAFT_PART_INSTALL/usr/share/
 
+    # Ship a default set of GSettings schemas so that the correct theme is used
+    # in Wayland sessions on Ubuntu (see https://forum.snapcraft.io/t/7806/3).
+    desktop-settings:
+        plugin: nil
+        build-packages:
+            - libglib2.0-bin
+        stage-packages:
+            - gsettings-desktop-schemas
+            - ubuntu-settings
+        override-prime: |
+            set -eux
+            SCHEMAS_DIR=usr/share/glib-2.0/schemas
+            mkdir -p $SCHEMAS_DIR
+            cp $SNAPCRAFT_STAGE/$SCHEMAS_DIR/* $SCHEMAS_DIR/
+            glib-compile-schemas $SCHEMAS_DIR
+
 apps:
     libreoffice:
         command: libreoffice.wrapper
