@@ -44,6 +44,7 @@ parts:
             - jvm
             - gstreamer
             - gtk3-locales
+            - desktop-settings-packages
         plugin: autotools
         source: https://download.documentfoundation.org/libreoffice/src/6.1.3/libreoffice-6.1.3.2.tar.xz
         build-attributes: [ no-system-libraries ]
@@ -398,13 +399,18 @@ parts:
 
     # Ship a default set of GSettings schemas so that the correct theme is used
     # in Wayland sessions on Ubuntu (see https://forum.snapcraft.io/t/7806/3).
-    desktop-settings:
+    desktop-settings-packages:
         plugin: nil
         build-packages:
             - libglib2.0-bin
         stage-packages:
             - gsettings-desktop-schemas
             - ubuntu-settings
+        prime:
+            - usr/share/glib-2.0/schemas/*
+    desktop-settings-build:
+        plugin: nil
+        after: [ desktop-settings-packages, libreoffice ]
         override-prime: |
             set -eux
             glib-compile-schemas usr/share/glib-2.0/schemas
