@@ -9,7 +9,7 @@ Subject: [PATCH 4/6] inject snapped JRE path in build
 
 --- a/jvmfwk/source/framework.cxx
 +++ b/jvmfwk/source/framework.cxx
-@@ -65,8 +65,9 @@ javaFrameworkError jfw_findAllJREs(std::
+@@ -66,8 +66,9 @@ javaFrameworkError jfw_findAllJREs(std::
          //get the list of paths to jre locations which have been
          //added manually
          const jfw::MergedSettings settings;

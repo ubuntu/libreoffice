@@ -1,5 +1,5 @@
 name: libreoffice
-version: 6.1.4.2
+version: 6.2.0.2
 summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 confinement: strict
@@ -46,7 +46,7 @@ parts:
             - gtk3-locales
             - desktop-settings-packages
         plugin: autotools
-        source: https://download.documentfoundation.org/libreoffice/src/6.1.4/libreoffice-6.1.4.2.tar.xz
+        source: https://dev-builds.libreoffice.org/pre-releases/src/libreoffice-6.2.0.2.tar.xz
         build-attributes: [ no-system-libraries ]
         configflags:
             - --disable-ccache
@@ -68,7 +68,7 @@ parts:
             - --enable-scripting-beanshell
             - --enable-scripting-javascript
             - --with-alloc=system
-            - --with-build-version=libreoffice-6.1.4.2-snap1
+            - --with-build-version=libreoffice-6.2.0.2-snap1
             - --with-gdrive-client-id=424119844901.apps.googleusercontent.com
             - --with-gdrive-client-secret=AIienwDlGIIsHoKnNHmWGXyJ
             - --with-system-graphite
@@ -215,8 +215,8 @@ parts:
             for app in base calc draw impress math startcenter writer
             do
                 sed -i \
-                    -e "s#Icon=libreoffice6.1-$app#Icon=/usr/share/icons/gnome/256x256/apps/libreoffice6.1-$app.png#" \
-                    -e "s#^Exec=libreoffice6.1 --\(.*\)#Exec=libreoffice.\1#g" \
+                    -e "s#Icon=libreoffice6.2-$app#Icon=/usr/share/icons/gnome/256x256/apps/libreoffice6.2-$app.png#" \
+                    -e "s#^Exec=libreoffice6.2 --\(.*\)#Exec=libreoffice.\1#g" \
                     $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/xdg/$app.desktop
             done
         prime:

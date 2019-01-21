@@ -3,7 +3,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 
 --- a/xmlsecurity/source/xmlsec/nss/nssinitializer.cxx
 +++ b/xmlsecurity/source/xmlsec/nss/nssinitializer.cxx
-@@ -42,7 +42,7 @@
+@@ -43,7 +43,7 @@
  
  #include <nspr.h>
  #include <cert.h>
@@ -12,17 +12,6 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
  #include <pk11pub.h>
  #include <secmod.h>
  #include <nssckbi.h>
---- a/include/oox/crypto/CryptTools.hxx
-+++ b/include/oox/crypto/CryptTools.hxx
-@@ -28,7 +28,7 @@
- #endif // USE_TLS_OPENSSL
- 
- #if USE_TLS_NSS
--#include <nss.h>
-+#include <nss/nss.h>
- #include <pk11pub.h>
- #include <sechash.h>
- #endif // USE_TLS_NSS
 --- a/onlineupdate/source/update/updater/updater.cxx
 +++ b/onlineupdate/source/update/updater/updater.cxx
 @@ -114,7 +114,7 @@ struct UpdateServerThreadArgs

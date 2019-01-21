@@ -14,7 +14,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
  #endif
 --- a/RepositoryExternal.mk
 +++ b/RepositoryExternal.mk
-@@ -2915,7 +2915,7 @@ define gb_LinkTarget__use_hsqldb
+@@ -2887,7 +2887,7 @@ define gb_LinkTarget__use_hsqldb
  
  $(call gb_LinkTarget_add_defs,$(1),\
  	-DSYSTEM_HSQLDB \
