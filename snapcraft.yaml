@@ -166,7 +166,6 @@ parts:
             - libxslt1.1
             - libxt-dev
             - libxtst-dev
-            - locales-all
             - maven-repo-helper
             - python3-dev
             - unixodbc-dev
@@ -205,8 +204,6 @@ parts:
         override-build: |
             set -eux
             QUILT_PATCHES=$SNAPCRAFT_STAGE/patches quilt push -a
-            export LANG=en_US.UTF-8
-            export LC_ALL=en_US.UTF-8
             snapcraftctl build
             srcdir=$PWD
             cd workdir/CustomTarget/sysui/share/libreoffice
