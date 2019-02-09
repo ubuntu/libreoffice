@@ -46,7 +46,7 @@ parts:
             - gtk3-locales
             - desktop-settings-packages
         plugin: autotools
-        source: https://dev-builds.libreoffice.org/pre-releases/src/libreoffice-6.2.0.3.tar.xz
+        source: https://download.documentfoundation.org/libreoffice/src/6.2.0/libreoffice-6.2.0.3.tar.xz
         build-attributes: [ no-system-libraries ]
         configflags:
             - --disable-ccache
