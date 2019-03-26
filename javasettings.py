@@ -25,7 +25,7 @@ if __name__ == '__main__':
         "javasettings_Linux_{}.xml".format(javasettings_arch)
     javasettings_filepath = os.path.join(lo_config_dir, javasettings_filename)
 
-    marker_revision = 1 # bump when the contents of the file need to change
+    marker_revision = 2 # bump when the contents of the file need to change
     marker_filename = ".snap_javasettings_writer.{}".format(marker_revision)
     marker_file = os.path.join(lo_config_dir, marker_filename)
     if os.path.isfile(marker_file):
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     template = """<?xml version="1.0" encoding="UTF-8"?>
 <java xmlns="http://openoffice.org/2004/java/framework/1.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <javaInfo xsi:nil="false" vendorUpdate="2013-05-02" autoSelect="false">
+  <javaInfo xsi:nil="false" vendorUpdate="2019-01-19" autoSelect="false">
     <vendor>Oracle Corporation</vendor>
     <location>{javaLocation}</location>
     <version>{javaVersion}</version>
