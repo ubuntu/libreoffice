@@ -183,6 +183,7 @@ parts:
             - zip
             - zlib1g-dev
         stage-packages:
+            - firebird3.0-common
             - firebird3.0-server-core
             - libatk1.0-0
             - libcairo2
@@ -224,10 +225,13 @@ parts:
                     $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/xdg/$app.desktop
             done
         prime:
+            - etc/firebird/
             - lib/libreoffice/*
             - -lib/libreoffice/share/fonts
             - usr/lib/*/lib*
             - usr/lib/*/firebird/
+            - -usr/lib/*/firebird/*/databases.conf
+            - -usr/lib/*/firebird/*/fbtrace.conf
             - usr/lib/*/mesa/lib*
             - usr/share/icons/gnome/256x256/apps/*
             - usr/share/java/
