@@ -19,6 +19,11 @@ plugs:
     target: $SNAP/data-dir/sounds
     default-provider: gtk-common-themes
 
+passthrough:
+  layout:
+    /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/firebird:
+      bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/firebird
+
 parts:
     # Launchpad builders have a timeout for how long they are allowed to access
     # the internet (through a proxy) starting from the start of the build.
@@ -53,7 +58,6 @@ parts:
             - --disable-coinmp
             - --disable-dconf
             - --disable-evolution2
-            - --disable-firebird-sdbc
             - --disable-gstreamer-0-10
             - --disable-kde4
             - --disable-online-update
@@ -93,6 +97,8 @@ parts:
             - build-essential
             - default-jdk
             - doxygen
+            - firebird-dev
+            - firebird3.0-server-core
             - flex
             - gdb
             - gettext
@@ -177,6 +183,7 @@ parts:
             - zip
             - zlib1g-dev
         stage-packages:
+            - firebird3.0-server-core
             - libatk1.0-0
             - libcairo2
             - libdbus-glib-1-2
@@ -220,6 +227,7 @@ parts:
             - lib/libreoffice/*
             - -lib/libreoffice/share/fonts
             - usr/lib/*/lib*
+            - usr/lib/*/firebird/
             - usr/lib/*/mesa/lib*
             - usr/share/icons/gnome/256x256/apps/*
             - usr/share/java/
