@@ -9,7 +9,7 @@ Subject: [PATCH 4/6] inject snapped JRE path in build
 
 --- a/jvmfwk/source/framework.cxx
 +++ b/jvmfwk/source/framework.cxx
-@@ -66,8 +66,9 @@ javaFrameworkError jfw_findAllJREs(std::
+@@ -64,8 +64,9 @@ javaFrameworkError jfw_findAllJREs(std::
          //get the list of paths to jre locations which have been
          //added manually
          const jfw::MergedSettings settings;
@@ -18,6 +18,6 @@ Subject: [PATCH 4/6] inject snapped JRE path in build
 +        std::vector<OUString> vecJRELocations = settings.getJRELocations();
 +        OUString sSnappedJRE("file:///snap/libreoffice/current/usr/lib/jvm/java-11-openjdk-amd64/"); // FIXME: use SNAP environment variable
 +        vecJRELocations.insert(vecJRELocations.begin(), { sSnappedJRE } );
-         //Use every plug-in library to get Java installations.
-         for (auto const & vendor: vecVendors)
-         {
+         //Use all plug-in libraries to get Java installations.
+         std::vector<std::unique_ptr<JavaInfo>> arInfos;
+         std::vector<rtl::Reference<jfw_plugin::VendorBase>> infos;
