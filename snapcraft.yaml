@@ -425,6 +425,19 @@ parts:
             set -eux
             glib-compile-schemas usr/share/glib-2.0/schemas
 
+    cleanup:
+        after: [ desktop-settings-build ]
+        plugin: nil
+        build-snaps:
+            - gnome-3-28-1804
+            - gtk-common-themes
+        override-prime: |
+            set -eux
+            cd /snap/gnome-3-28-1804/current
+            find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/{} \;
+            cd /snap/gtk-common-themes/current
+            find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/usr/{} \;
+
 apps:
     libreoffice:
         command: libreoffice.wrapper
