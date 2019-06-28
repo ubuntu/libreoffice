@@ -8,6 +8,14 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SNAP/lib/libreoffice/program"
 
 export DICPATH="$SNAP/usr/share/hunspell:$SNAP/usr/share/myspell:$SNAP/usr/share/myspell/dicts"
 
+if [ ! -d $SNAP_USER_DATA/.config/libreoffice/4/user/extensions/bundled ]; then
+  mkdir -p $SNAP_USER_DATA/.config/libreoffice/4/user/extensions/bundled
+  cp $SNAP/config/extensions.pmap $SNAP_USER_DATA/.config/libreoffice/4/user/extensions/bundled/
+
+  version=$(awk -F "=" '/buildid/ {print $2;exit;}' $SNAP/lib/libreoffice/program/versionrc)
+  echo $version > $SNAP_USER_DATA/.config/libreoffice/4/user/extensions/buildid
+fi
+
 soffice=$SNAP/lib/libreoffice/program/soffice.bin
 EXITHELPER_NORMAL_RESTART=81
 "$SNAP/bin/desktop-launch" "$soffice" "$@"
