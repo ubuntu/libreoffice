@@ -56,7 +56,6 @@ parts:
             - desktop-settings-packages
         plugin: autotools
         source: https://download.documentfoundation.org/libreoffice/src/6.2.5/libreoffice-6.2.5.2.tar.xz
-        build-attributes: [ no-system-libraries ]
         configflags:
             - --disable-ccache
             - --disable-coinmp
@@ -324,7 +323,6 @@ parts:
 
     jvm:
         plugin: nil
-        build-attributes: [ no-system-libraries ]
         stage-packages:
             - openjdk-11-jre
         prime:
@@ -334,7 +332,6 @@ parts:
         # GStreamer packages needed for audio/video clip playback in office
         # documents. Libreoffice uses the gtksink element.
         plugin: nil
-        build-attributes: [ no-system-libraries ]
         stage-packages:
             - gstreamer1.0-gtk3
             - gstreamer1.0-libav
