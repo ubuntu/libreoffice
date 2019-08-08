@@ -8,3 +8,4 @@ hsqldb-jar-in-snap.patch
 do-not-clean-destdir.patch
 add-missing-odf-validation-schemas.patch
 #fetch-submodules-from-dev-builds.patch
+fix-calendar-namespace.diff

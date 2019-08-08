@@ -1,0 +1,14 @@
+Description: Fix build error: "reference to ‘Calendar’ is ambiguous"
+Author: Marcus Tomlinson <marcus.tomlinson@canonical.com>
+
+--- a/i18npool/source/calendar/calendarImpl.cxx
++++ b/i18npool/source/calendar/calendarImpl.cxx
+@@ -128,7 +128,7 @@ CalendarImpl::getLoadedCalendar2()
+     return xCalendar->getLoadedCalendar2();
+ }
+ 
+-Calendar SAL_CALL
++::com::sun::star::i18n::Calendar SAL_CALL
+ CalendarImpl::getLoadedCalendar()
+ {
+     if (!xCalendar.is())
