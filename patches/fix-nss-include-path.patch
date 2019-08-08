@@ -4,14 +4,14 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 --- a/xmlsecurity/source/xmlsec/nss/nssinitializer.cxx
 +++ b/xmlsecurity/source/xmlsec/nss/nssinitializer.cxx
 @@ -43,7 +43,7 @@
+ #include <vector>
  
- #include <nspr.h>
- #include <cert.h>
 -#include <nss.h>
 +#include <nss/nss.h>
  #include <pk11pub.h>
  #include <secmod.h>
- #include <nssckbi.h>
+ #include <prerror.h>
+ #include <prinit.h>
 --- a/onlineupdate/source/update/updater/updater.cxx
 +++ b/onlineupdate/source/update/updater/updater.cxx
 @@ -114,7 +114,7 @@ struct UpdateServerThreadArgs
@@ -31,6 +31,6 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
  #if USE_TLS_NSS
 -#include <nss.h>
 +#include <nss/nss.h>
- #include <pk11pub.h>
  #include <sechash.h>
  #elif USE_TLS_OPENSSL
+ #include <openssl/evp.h>
