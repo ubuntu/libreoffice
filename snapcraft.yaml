@@ -470,6 +470,7 @@ apps:
         environment: &environment
             TMPDIR: $XDG_RUNTIME_DIR
         plugs: &plugs
+            - audio-playback
             - bluez
             - cups-control
             - desktop
