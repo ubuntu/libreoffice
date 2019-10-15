@@ -88,7 +88,6 @@ parts:
             - --with-hsqldb-jar=/usr/share/java/hsqldb1.8.0.jar
             - --with-theme=colibre tango sifr breeze elementary
             - --with-vendor=Canonical, Ltd.
-            - --disable-postgresql-sdbc
             - --with-help
             - --without-doxygen
             - --with-lang=en-US de es fr it pt pt-BR ja zh-TW ru ca
@@ -140,6 +139,7 @@ parts:
             - libice-dev
             - libicu-dev
             - libjpeg-dev
+            - libkrb5-dev
             - liblangtag-dev
             - liblcms2-dev
             - libldap2-dev
