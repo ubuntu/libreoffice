@@ -19,11 +19,11 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 +
 +--- a/expat-2.2.5/lib/xmlparse.c
 ++++ b/expat-2.2.5/lib/xmlparse.c
-+@@ -56,7 +56,7 @@
++@@ -61,7 +61,7 @@
 + #ifdef _WIN32
-+ #include "winconfig.h"
++ #  include "winconfig.h"
 + #elif defined(HAVE_EXPAT_CONFIG_H)
-+-#include <expat_config.h>
++-#  include <expat_config.h>
 ++#include "../expat_config.h"
 + #endif /* ndef _WIN32 */
 + 
@@ -31,23 +31,23 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 +--- a/expat-2.2.5/lib/xmlrole.c
 ++++ b/expat-2.2.5/lib/xmlrole.c
 +@@ -36,7 +36,7 @@
-+ #include "winconfig.h"
++ #  include "winconfig.h"
 + #else
-+ #ifdef HAVE_EXPAT_CONFIG_H
-+-#include <expat_config.h>
++ #  ifdef HAVE_EXPAT_CONFIG_H
++-#    include <expat_config.h>
 ++#include "../expat_config.h"
-+ #endif
++ #  endif
 + #endif /* ndef _WIN32 */
 + 
 +--- a/expat-2.2.5/lib/xmltok.c
 ++++ b/expat-2.2.5/lib/xmltok.c
-+@@ -47,7 +47,7 @@
-+ #include "winconfig.h"
++@@ -46,7 +46,7 @@
++ #  include "winconfig.h"
 + #else
-+ #ifdef HAVE_EXPAT_CONFIG_H
-+-#include <expat_config.h>
++ #  ifdef HAVE_EXPAT_CONFIG_H
++-#    include <expat_config.h>
 ++#include "../expat_config.h"
-+ #endif
++ #  endif
 + #endif /* ndef _WIN32 */
 + 
 +--- a/expat-2.2.5/tests/chardata.c
@@ -56,7 +56,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 + */
 + 
 + #ifdef HAVE_EXPAT_CONFIG_H
-+-# include <expat_config.h>
++-#  include <expat_config.h>
 ++# include "../expat_config.h"
 + #endif
 + #include "minicheck.h"
@@ -67,7 +67,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 + #endif
 + 
 + #ifdef HAVE_EXPAT_CONFIG_H
-+-# include <expat_config.h>
++-#  include <expat_config.h>
 ++# include "../expat_config.h"
 + #endif
 + 
@@ -78,18 +78,18 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 + */
 + 
 + #ifdef HAVE_EXPAT_CONFIG_H
-+-# include "expat_config.h"
++-#  include "expat_config.h"
 ++# include "../expat_config.h"
 + #endif
 + 
-+ 
++ #include <assert.h>
 +--- a/expat-2.2.5/xmlwf/xmlfile.c
 ++++ b/expat-2.2.5/xmlwf/xmlfile.c
 +@@ -39,7 +39,7 @@
 + #ifdef _WIN32
-+ #include "winconfig.h"
++ #  include "winconfig.h"
 + #elif defined(HAVE_EXPAT_CONFIG_H)
-+-#include <expat_config.h>
++-#  include <expat_config.h>
 ++#include "../expat_config.h"
 + #endif /* ndef _WIN32 */
 + 
