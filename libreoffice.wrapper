@@ -18,7 +18,7 @@ fi
 
 soffice=$SNAP/lib/libreoffice/program/soffice.bin
 EXITHELPER_NORMAL_RESTART=81
-"$SNAP/bin/desktop-launch" "$soffice" "$@"
+"$soffice" "$@"
 if [ $? -eq $EXITHELPER_NORMAL_RESTART ]; then
-  exec "$SNAP/bin/desktop-launch" "$soffice" "$@"
+  exec "$soffice" "$@"
 fi

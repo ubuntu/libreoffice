@@ -32,9 +32,6 @@ if __name__ == '__main__':
         # The java settings file already exists and is up-to-date, do nothing.
         sys.exit()
 
-    # Save some time later by running all first launch configurations now
-    desktop_launch = subprocess.Popen([snap + '/bin/desktop-launch'])
-
     if not os.path.exists(lo_config_dir):
         os.makedirs(lo_config_dir)
 
@@ -80,5 +77,3 @@ if __name__ == '__main__':
         f.write(javasettings)
 
     open(marker_file, "w").close()
-
-    desktop_launch.wait()
