@@ -1,0 +1,558 @@
+Description: Source Sans Pro fonts are not available on Ubuntu, use Noto Sans instead
+Author: Marcus Tomlinson <marcus.tomlinson@canonical.com>
+
+diff --git a/extras/source/templates/presnt/Alizarin/content.xml b/extras/source/templates/presnt/Alizarin/content.xml
+index e55acc68f..61f0845a5 100644
+--- a/extras/source/templates/presnt/Alizarin/content.xml
++++ b/extras/source/templates/presnt/Alizarin/content.xml
+@@ -2,14 +2,14 @@
+ <office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2">
+   <office:scripts/>
+   <office:font-face-decls>
+-    <style:font-face style:name="Source Sans Pro" svg:font-family="'Source Sans Pro'" style:font-family-generic="roman" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Black" svg:font-family="'Source Sans Pro Black'" style:font-family-generic="roman" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Light" svg:font-family="'Source Sans Pro Light'" style:font-family-generic="roman" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Semibold" svg:font-family="'Source Sans Pro Semibold'" style:font-family-generic="roman" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro2" svg:font-family="'Source Sans Pro'" style:font-adornments="標準" style:font-family-generic="swiss" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Black2" svg:font-family="'Source Sans Pro Black'" style:font-adornments="黒" style:font-family-generic="swiss" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Light2" svg:font-family="'Source Sans Pro Light'" style:font-adornments="細字" style:font-family-generic="swiss" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Semibold2" svg:font-family="'Source Sans Pro Semibold'" style:font-adornments="Semibold" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-family-generic="roman" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Black" svg:font-family="'Noto Sans Black'" style:font-family-generic="roman" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Light" svg:font-family="'Noto Sans Light'" style:font-family-generic="roman" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans SemiBold" svg:font-family="'Noto Sans SemiBold'" style:font-family-generic="roman" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-adornments="標準" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Black" svg:font-family="'Noto Sans Black'" style:font-adornments="黒" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Light" svg:font-family="'Noto Sans Light'" style:font-adornments="細字" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans SemiBold" svg:font-family="'Noto Sans SemiBold'" style:font-adornments="Semibold" style:font-family-generic="swiss" style:font-pitch="variable"/>
+   </office:font-face-decls>
+   <office:automatic-styles>
+     <style:style style:name="dp1" style:family="drawing-page">
+diff --git a/extras/source/templates/presnt/Alizarin/styles.xml b/extras/source/templates/presnt/Alizarin/styles.xml
+index a26391f3e..6fda544ed 100644
+--- a/extras/source/templates/presnt/Alizarin/styles.xml
++++ b/extras/source/templates/presnt/Alizarin/styles.xml
+@@ -1,14 +1,14 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <office:document-styles xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2">
+   <office:font-face-decls>
+-    <style:font-face style:name="Source Sans Pro" svg:font-family="'Source Sans Pro'" style:font-family-generic="roman" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Black" svg:font-family="'Source Sans Pro Black'" style:font-family-generic="roman" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Light" svg:font-family="'Source Sans Pro Light'" style:font-family-generic="roman" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Semibold" svg:font-family="'Source Sans Pro Semibold'" style:font-family-generic="roman" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro2" svg:font-family="'Source Sans Pro'" style:font-adornments="標準" style:font-family-generic="swiss" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Black2" svg:font-family="'Source Sans Pro Black'" style:font-adornments="黒" style:font-family-generic="swiss" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Light2" svg:font-family="'Source Sans Pro Light'" style:font-adornments="細字" style:font-family-generic="swiss" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Semibold2" svg:font-family="'Source Sans Pro Semibold'" style:font-adornments="Semibold" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-family-generic="roman" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Black" svg:font-family="'Noto Sans Black'" style:font-family-generic="roman" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Light" svg:font-family="'Noto Sans Light'" style:font-family-generic="roman" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans SemiBold" svg:font-family="'Noto Sans SemiBold'" style:font-family-generic="roman" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-adornments="標準" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Black" svg:font-family="'Noto Sans Black'" style:font-adornments="黒" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Light" svg:font-family="'Noto Sans Light'" style:font-adornments="細字" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans SemiBold" svg:font-family="'Noto Sans SemiBold'" style:font-adornments="Semibold" style:font-family-generic="swiss" style:font-pitch="variable"/>
+   </office:font-face-decls>
+   <office:styles>
+     <draw:gradient draw:name="Gradient_20_2" draw:display-name="Gradient 2" draw:style="linear" draw:start-color="#3465a4" draw:end-color="#ffffff" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="0" draw:border="0%"/>
+@@ -21,7 +21,7 @@
+       <style:paragraph-properties style:text-autospace="none" style:punctuation-wrap="simple" style:line-break="strict" style:writing-mode="lr-tb" style:font-independent-line-spacing="false">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties style:use-window-font-color="true" style:font-name="Source Sans Pro" fo:font-size="24pt"/>
++      <style:text-properties style:use-window-font-color="true" style:font-name="Noto Sans Regular" fo:font-size="24pt"/>
+     </style:default-style>
+     <style:style style:name="standard" style:family="graphic">
+       <style:graphic-properties draw:stroke="solid" draw:stroke-dash="Dashed_20__28_var_29__20_1" svg:stroke-width="0cm" svg:stroke-color="#3465a4" draw:marker-start-width="0.2cm" draw:marker-start-center="false" draw:marker-end-width="0.2cm" draw:marker-end-center="false" draw:fill="solid" draw:fill-color="#729fcf" draw:textarea-horizontal-align="justify" fo:padding-top="0.125cm" fo:padding-bottom="0.125cm" fo:padding-left="0.25cm" fo:padding-right="0.25cm" draw:shadow="hidden" draw:shadow-offset-x="0.2cm" draw:shadow-offset-y="0.2cm" draw:shadow-color="#808080">
+@@ -71,7 +71,7 @@
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:line-height="100%" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro2" fo:font-family="'Source Sans Pro'" style:font-style-name="標準" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-style-name="標準" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="objectwitharrow" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="solid" svg:stroke-width="0.2cm" svg:stroke-color="#2c3e50" draw:marker-start="Arrow" draw:marker-start-width="0.7cm" draw:marker-start-center="true" draw:marker-end-width="0.38cm" draw:stroke-linejoin="miter" draw:fill-gradient-name="Gradient_20_2" draw:fill-hatch-name="Hatching_20_91"/>
+@@ -100,7 +100,7 @@
+     </style:style>
+     <style:style style:name="title" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-gradient-name="Gradient_20_2" draw:fill-hatch-name="Hatching_20_91"/>
+-      <style:text-properties style:font-name="Source Sans Pro Black2" fo:font-family="'Source Sans Pro Black'" style:font-style-name="黒" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="44pt" fo:font-weight="900"/>
++      <style:text-properties style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-style-name="黒" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="44pt" fo:font-weight="900"/>
+     </style:style>
+     <style:style style:name="title1" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#008080" draw:fill-gradient-name="Gradient_20_2" draw:fill-hatch-name="Hatching_20_91" draw:shadow="visible" draw:shadow-offset-x="0.2cm" draw:shadow-offset-y="0.2cm" draw:shadow-color="#808080"/>
+@@ -120,7 +120,7 @@
+     <style:style style:name="headline1" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-gradient-name="Gradient_20_2" draw:fill-hatch-name="Hatching_20_91"/>
+       <style:paragraph-properties fo:margin-top="0.42cm" fo:margin-bottom="0.21cm"/>
+-      <style:text-properties style:font-name="Source Sans Pro Semibold2" fo:font-family="'Source Sans Pro Semibold'" style:font-style-name="Semibold" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="600"/>
++      <style:text-properties style:font-name="Noto Sans SemiBold" fo:font-family="'Noto Sans SemiBold'" style:font-style-name="Semibold" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="600"/>
+     </style:style>
+     <style:style style:name="headline2" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-gradient-name="Gradient_20_2" draw:fill-hatch-name="Hatching_20_91"/>
+@@ -140,12 +140,12 @@
+       <style:paragraph-properties style:text-autospace="none" style:punctuation-wrap="simple" style:writing-mode="lr-tb">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:color="#ffffff" style:font-name="Source Sans Pro Black2" fo:font-family="'Source Sans Pro Black'" style:font-style-name="黒" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="900" style:letter-kerning="true"/>
++      <style:text-properties fo:color="#ffffff" style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-style-name="黒" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="900" style:letter-kerning="true"/>
+     </style:style>
+     <style:style style:name="Alizarin-notes" style:display-name="Alizarin-notes" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none"/>
+       <style:paragraph-properties fo:margin-left="0.6cm" fo:margin-right="0cm" fo:text-indent="-0.6cm"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro2" fo:font-family="'Source Sans Pro'" style:font-style-name="標準" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-style-name="標準" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Alizarin-outline1" style:display-name="Alizarin-outline1" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:auto-grow-height="false" draw:fit-to-size="false" style:shrink-to-fit="true">
+@@ -193,11 +193,11 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.403cm" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#1c1c1c" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Semibold2" fo:font-family="'Source Sans Pro Semibold'" style:font-style-name="Semibold" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="26pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="600" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#1c1c1c" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans SemiBold" fo:font-family="'Noto Sans SemiBold'" style:font-style-name="Semibold" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="26pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="600" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Alizarin-outline2" style:display-name="Alizarin-outline2" style:family="presentation" style:parent-style-name="Alizarin-outline1">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.4cm" fo:text-indent="0cm"/>
+-      <style:text-properties style:font-name="Source Sans Pro Light2" fo:font-family="'Source Sans Pro Light'" style:font-style-name="細字" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="22pt" fo:font-weight="200"/>
++      <style:text-properties style:font-name="Noto Sans Light" fo:font-family="'Noto Sans Light'" style:font-style-name="細字" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="22pt" fo:font-weight="200"/>
+     </style:style>
+     <style:style style:name="Alizarin-outline3" style:display-name="Alizarin-outline3" style:family="presentation" style:parent-style-name="Alizarin-outline2">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.3cm" fo:text-indent="0cm"/>
+@@ -275,7 +275,7 @@
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:text-align="start" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#1c1c1c" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Light2" fo:font-family="'Source Sans Pro Light'" style:font-style-name="細字" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="26pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="200" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#1c1c1c" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Light" fo:font-family="'Noto Sans Light'" style:font-style-name="細字" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="26pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="200" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Alizarin-title" style:display-name="Alizarin-title" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="bottom" draw:auto-grow-height="false" fo:wrap-option="wrap">
+@@ -325,7 +325,7 @@
+       <style:paragraph-properties fo:text-align="start" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Black2" fo:font-family="'Source Sans Pro Black'" style:font-style-name="黒" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="900" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-style-name="黒" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="900" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Alizarin0-background" style:display-name="Alizarin0-background" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-color="#fffde7" draw:fill-image-width="0cm" draw:fill-image-height="0cm"/>
+@@ -336,12 +336,12 @@
+       <style:paragraph-properties style:text-autospace="none" style:punctuation-wrap="simple" style:writing-mode="lr-tb">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:color="#e74c3c" style:font-name="Source Sans Pro Black2" fo:font-family="'Source Sans Pro Black'" style:font-style-name="黒" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="900" style:letter-kerning="true"/>
++      <style:text-properties fo:color="#e74c3c" style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-style-name="黒" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="900" style:letter-kerning="true"/>
+     </style:style>
+     <style:style style:name="Alizarin0-notes" style:display-name="Alizarin0-notes" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none"/>
+       <style:paragraph-properties fo:margin-left="0.6cm" fo:margin-right="0cm" fo:text-indent="-0.6cm"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro2" fo:font-family="'Source Sans Pro'" style:font-style-name="標準" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="28.1pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-style-name="標準" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="28.1pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Alizarin0-outline1" style:display-name="Alizarin0-outline1" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:auto-grow-height="false" draw:fit-to-size="false" style:shrink-to-fit="true">
+@@ -389,11 +389,11 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.403cm" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#1c1c1c" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Semibold2" fo:font-family="'Source Sans Pro Semibold'" style:font-style-name="Semibold" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="26pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="600" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#1c1c1c" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans SemiBold" fo:font-family="'Noto Sans SemiBold'" style:font-style-name="Semibold" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="26pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="600" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Alizarin0-outline2" style:display-name="Alizarin0-outline2" style:family="presentation" style:parent-style-name="Alizarin0-outline1">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.399cm" fo:text-indent="0cm"/>
+-      <style:text-properties style:font-name="Source Sans Pro Light2" fo:font-family="'Source Sans Pro Light'" style:font-style-name="細字" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="22pt" fo:font-weight="200"/>
++      <style:text-properties style:font-name="Noto Sans Light" fo:font-family="'Noto Sans Light'" style:font-style-name="細字" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="22pt" fo:font-weight="200"/>
+     </style:style>
+     <style:style style:name="Alizarin0-outline3" style:display-name="Alizarin0-outline3" style:family="presentation" style:parent-style-name="Alizarin0-outline2">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.3cm" fo:text-indent="0cm"/>
+@@ -471,7 +471,7 @@
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:text-align="start" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#1c1c1c" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Light2" fo:font-family="'Source Sans Pro Light'" style:font-style-name="細字" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="22pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="200" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#1c1c1c" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Light" fo:font-family="'Noto Sans Light'" style:font-style-name="細字" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="22pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="200" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Alizarin0-title" style:display-name="Alizarin0-title" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="bottom" draw:auto-grow-height="false" fo:wrap-option="wrap">
+@@ -521,7 +521,7 @@
+       <style:paragraph-properties fo:text-align="start" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Black2" fo:font-family="'Source Sans Pro Black'" style:font-style-name="黒" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="900" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-style-name="黒" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="900" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:presentation-page-layout style:name="AL1T0">
+       <presentation:placeholder presentation:object="title" svg:x="2.058cm" svg:y="1.743cm" svg:width="23.912cm" svg:height="3.507cm"/>
+diff --git a/extras/source/templates/presnt/Midnightblue/content.xml b/extras/source/templates/presnt/Midnightblue/content.xml
+index d375c7ba7..749bd6acb 100644
+--- a/extras/source/templates/presnt/Midnightblue/content.xml
++++ b/extras/source/templates/presnt/Midnightblue/content.xml
+@@ -2,9 +2,9 @@
+ <office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2">
+   <office:scripts/>
+   <office:font-face-decls>
+-    <style:font-face style:name="Source Sans Pro" svg:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Black" svg:font-family="'Source Sans Pro Black'" style:font-family-generic="swiss" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Semibold" svg:font-family="'Source Sans Pro Semibold'" style:font-adornments="Semibold" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Black" svg:font-family="'Noto Sans Black'" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans SemiBold" svg:font-family="'Noto Sans SemiBold'" style:font-adornments="Semibold" style:font-family-generic="swiss" style:font-pitch="variable"/>
+   </office:font-face-decls>
+   <office:automatic-styles>
+     <style:style style:name="dp1" style:family="drawing-page">
+diff --git a/extras/source/templates/presnt/Midnightblue/styles.xml b/extras/source/templates/presnt/Midnightblue/styles.xml
+index 854f372bf..de2eb6c48 100644
+--- a/extras/source/templates/presnt/Midnightblue/styles.xml
++++ b/extras/source/templates/presnt/Midnightblue/styles.xml
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <office:document-styles xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2">
+   <office:font-face-decls>
+-    <style:font-face style:name="Source Sans Pro" svg:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Black" svg:font-family="'Source Sans Pro Black'" style:font-family-generic="swiss" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Semibold" svg:font-family="'Source Sans Pro Semibold'" style:font-adornments="Semibold" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Black" svg:font-family="'Noto Sans Black'" style:font-family-generic="swiss" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans SemiBold" svg:font-family="'Noto Sans SemiBold'" style:font-adornments="Semibold" style:font-family-generic="swiss" style:font-pitch="variable"/>
+   </office:font-face-decls>
+   <office:styles>
+     <draw:gradient draw:name="Gradient_20_2" draw:display-name="Gradient 2" draw:style="linear" draw:start-color="#3465a4" draw:end-color="#ffffff" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="0" draw:border="0%"/>
+@@ -17,7 +17,7 @@
+       <style:paragraph-properties style:text-autospace="none" style:punctuation-wrap="simple" style:line-break="strict" style:font-independent-line-spacing="false">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties style:use-window-font-color="true" style:font-name="Source Sans Pro" fo:font-size="24pt"/>
++      <style:text-properties style:use-window-font-color="true" style:font-name="Noto Sans Regular" fo:font-size="24pt"/>
+     </style:default-style>
+     <style:style style:name="standard" style:family="graphic">
+       <style:graphic-properties draw:stroke="solid" draw:stroke-dash="Dashed_20__28_var_29__20_1" svg:stroke-width="0cm" svg:stroke-color="#3465a4" draw:marker-start-width="0.2cm" draw:marker-start-center="false" draw:marker-end-width="0.2cm" draw:marker-end-center="false" draw:fill="solid" draw:fill-color="#729fcf" draw:textarea-horizontal-align="justify" fo:padding-top="0.125cm" fo:padding-bottom="0.125cm" fo:padding-left="0.25cm" fo:padding-right="0.25cm" draw:shadow="hidden" draw:shadow-offset-x="0.2cm" draw:shadow-offset-y="0.2cm" draw:shadow-color="#808080">
+@@ -67,7 +67,7 @@
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:line-height="100%" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="objectwitharrow" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="solid" svg:stroke-width="0.2cm" svg:stroke-color="#2c3e50" draw:marker-start="Arrow" draw:marker-start-width="0.7cm" draw:marker-start-center="true" draw:marker-end-width="0.38cm" draw:stroke-linejoin="miter" draw:fill-gradient-name="Gradient_20_2" draw:fill-hatch-name="Hatching_20_91" draw:fill-image-name="Bitmap_20_1"/>
+@@ -96,7 +96,7 @@
+     </style:style>
+     <style:style style:name="title" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-gradient-name="Gradient_20_2" draw:fill-hatch-name="Hatching_20_91" draw:fill-image-name="Bitmap_20_1"/>
+-      <style:text-properties style:font-name="Source Sans Pro Black" fo:font-family="'Source Sans Pro Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="44pt" fo:font-weight="900"/>
++      <style:text-properties style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="44pt" fo:font-weight="900"/>
+     </style:style>
+     <style:style style:name="title1" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#008080" draw:fill-gradient-name="Gradient_20_2" draw:fill-hatch-name="Hatching_20_91" draw:fill-image-name="Bitmap_20_1" draw:shadow="visible" draw:shadow-offset-x="0.2cm" draw:shadow-offset-y="0.2cm" draw:shadow-color="#808080"/>
+@@ -116,7 +116,7 @@
+     <style:style style:name="headline1" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-gradient-name="Gradient_20_2" draw:fill-hatch-name="Hatching_20_91" draw:fill-image-name="Bitmap_20_1"/>
+       <style:paragraph-properties fo:margin-top="0.42cm" fo:margin-bottom="0.21cm"/>
+-      <style:text-properties style:font-name="Source Sans Pro Semibold" fo:font-family="'Source Sans Pro Semibold'" style:font-style-name="Semibold" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="600"/>
++      <style:text-properties style:font-name="Noto Sans SemiBold" fo:font-family="'Noto Sans SemiBold'" style:font-style-name="Semibold" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="600"/>
+     </style:style>
+     <style:style style:name="headline2" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-gradient-name="Gradient_20_2" draw:fill-hatch-name="Hatching_20_91" draw:fill-image-name="Bitmap_20_1"/>
+@@ -136,12 +136,12 @@
+       <style:paragraph-properties style:text-autospace="none" style:punctuation-wrap="simple">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:color="#ffffff" style:font-name="Source Sans Pro Black" fo:font-family="'Source Sans Pro Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="900" style:letter-kerning="true"/>
++      <style:text-properties fo:color="#ffffff" style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="900" style:letter-kerning="true"/>
+     </style:style>
+     <style:style style:name="Midnightblue-notes" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none"/>
+       <style:paragraph-properties fo:margin-left="0.6cm" fo:margin-right="0cm" fo:text-indent="-0.6cm"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Midnightblue-outline1" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:auto-grow-height="false" draw:fit-to-size="false" style:shrink-to-fit="true">
+@@ -189,11 +189,11 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.499cm" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#2c3e50" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Semibold" fo:font-family="'Source Sans Pro Semibold'" style:font-style-name="Semibold" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="600" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#2c3e50" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans SemiBold" fo:font-family="'Noto Sans SemiBold'" style:font-style-name="Semibold" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="600" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Midnightblue-outline2" style:family="presentation" style:parent-style-name="Midnightblue-outline1">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.4cm" fo:text-indent="0cm"/>
+-      <style:text-properties style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="28pt" fo:font-weight="normal"/>
++      <style:text-properties style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="28pt" fo:font-weight="normal"/>
+     </style:style>
+     <style:style style:name="Midnightblue-outline3" style:family="presentation" style:parent-style-name="Midnightblue-outline2">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.3cm" fo:text-indent="0cm"/>
+@@ -269,7 +269,7 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:text-align="center" fo:text-indent="0cm"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#2c3e50" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#2c3e50" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Midnightblue-title" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:wrap-option="wrap">
+@@ -319,7 +319,7 @@
+       <style:paragraph-properties fo:text-align="start" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Black" fo:font-family="'Source Sans Pro Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="36pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="900" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="36pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="900" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Midnightblue1-background" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#2c3e50" draw:fill-hatch-solid="false" draw:fill-image-width="0cm" draw:fill-image-height="0cm"/>
+@@ -330,12 +330,12 @@
+       <style:paragraph-properties style:text-autospace="none" style:punctuation-wrap="simple">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:color="#ffffff" style:font-name="Source Sans Pro Black" fo:font-family="'Source Sans Pro Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="900" style:letter-kerning="true"/>
++      <style:text-properties fo:color="#ffffff" style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="900" style:letter-kerning="true"/>
+     </style:style>
+     <style:style style:name="Midnightblue1-notes" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none"/>
+       <style:paragraph-properties fo:margin-left="0.6cm" fo:margin-right="0cm" fo:text-indent="-0.6cm"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#2c3e50" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#2c3e50" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Midnightblue1-outline1" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:auto-grow-height="false" draw:fit-to-size="false" style:shrink-to-fit="true">
+@@ -383,11 +383,11 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.309cm" fo:text-align="start" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Midnightblue1-outline2" style:family="presentation" style:parent-style-name="Midnightblue1-outline1">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.4cm" fo:text-align="start" fo:text-indent="0cm"/>
+-      <style:text-properties style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-weight="normal"/>
++      <style:text-properties style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-weight="normal"/>
+     </style:style>
+     <style:style style:name="Midnightblue1-outline3" style:family="presentation" style:parent-style-name="Midnightblue1-outline2">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.3cm" fo:text-align="start" fo:text-indent="0cm"/>
+@@ -463,7 +463,7 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:text-align="center" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="22pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="22pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Midnightblue1-title" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:textarea-horizontal-align="center" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:wrap-option="wrap">
+@@ -513,7 +513,7 @@
+       <style:paragraph-properties fo:line-height="150%" fo:text-align="center" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Black" fo:font-family="'Source Sans Pro Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="36pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="900" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="36pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="900" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Midnightblue2-background" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#2c3e50" draw:fill-hatch-solid="false" draw:fill-image-width="0cm" draw:fill-image-height="0cm"/>
+@@ -524,12 +524,12 @@
+       <style:paragraph-properties style:text-autospace="none" style:punctuation-wrap="simple">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:color="#ffffff" style:font-name="Source Sans Pro Black" fo:font-family="'Source Sans Pro Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="900" style:letter-kerning="true"/>
++      <style:text-properties fo:color="#ffffff" style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="18pt" fo:font-weight="900" style:letter-kerning="true"/>
+     </style:style>
+     <style:style style:name="Midnightblue2-notes" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none"/>
+       <style:paragraph-properties fo:margin-left="0.6cm" fo:margin-right="0cm" fo:text-indent="-0.6cm"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Midnightblue2-outline1" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:auto-grow-height="false" draw:fit-to-size="false" style:shrink-to-fit="true">
+@@ -577,11 +577,11 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.309cm" fo:text-align="start" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Midnightblue2-outline2" style:family="presentation" style:parent-style-name="Midnightblue2-outline1">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.4cm" fo:text-align="start" fo:text-indent="0cm"/>
+-      <style:text-properties style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-weight="normal"/>
++      <style:text-properties style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="20pt" fo:font-weight="normal"/>
+     </style:style>
+     <style:style style:name="Midnightblue2-outline3" style:family="presentation" style:parent-style-name="Midnightblue2-outline2">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.3cm" fo:text-align="start" fo:text-indent="0cm"/>
+@@ -657,7 +657,7 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:text-align="center" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging"/>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="22pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="22pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Midnightblue2-title" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:textarea-horizontal-align="center" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" fo:wrap-option="wrap">
+@@ -707,7 +707,7 @@
+       <style:paragraph-properties fo:line-height="100%" fo:text-align="center" style:text-autospace="none" style:punctuation-wrap="hanging">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#2c3e50" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Black" fo:font-family="'Source Sans Pro Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="36pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="900" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:font-variant="normal" fo:text-transform="none" fo:color="#2c3e50" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="36pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="900" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:presentation-page-layout style:name="AL0T26">
+       <presentation:placeholder presentation:object="handout" svg:x="2.058cm" svg:y="1.743cm" svg:width="10.556cm" svg:height="-0.233cm"/>
+diff --git a/extras/source/templates/presnt/Vivid/content.xml b/extras/source/templates/presnt/Vivid/content.xml
+index 2032718cf..310d922d2 100644
+--- a/extras/source/templates/presnt/Vivid/content.xml
++++ b/extras/source/templates/presnt/Vivid/content.xml
+@@ -2,9 +2,9 @@
+ <office:document-content xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2">
+   <office:scripts/>
+   <office:font-face-decls>
+-    <style:font-face style:name="Source Sans Pro" svg:font-family="'Source Sans Pro'" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Black" svg:font-family="'Source Sans Pro Black'" style:font-adornments="Negra" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Light" svg:font-family="'Source Sans Pro Light'" style:font-adornments="Ligera" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Black" svg:font-family="'Noto Sans Black'" style:font-adornments="Negra" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Light" svg:font-family="'Noto Sans Light'" style:font-adornments="Ligera" style:font-pitch="variable"/>
+     <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-family-generic="system" style:font-pitch="variable"/>
+   </office:font-face-decls>
+   <office:automatic-styles>
+diff --git a/extras/source/templates/presnt/Vivid/styles.xml b/extras/source/templates/presnt/Vivid/styles.xml
+index cf7e3bcf9..40e8ce944 100644
+--- a/extras/source/templates/presnt/Vivid/styles.xml
++++ b/extras/source/templates/presnt/Vivid/styles.xml
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <office:document-styles xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:smil="urn:oasis:names:tc:opendocument:xmlns:smil-compatible:1.0" xmlns:anim="urn:oasis:names:tc:opendocument:xmlns:animation:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2">
+   <office:font-face-decls>
+-    <style:font-face style:name="Source Sans Pro" svg:font-family="'Source Sans Pro'" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Black" svg:font-family="'Source Sans Pro Black'" style:font-adornments="Negra" style:font-pitch="variable"/>
+-    <style:font-face style:name="Source Sans Pro Light" svg:font-family="'Source Sans Pro Light'" style:font-adornments="Ligera" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Black" svg:font-family="'Noto Sans Black'" style:font-adornments="Negra" style:font-pitch="variable"/>
++    <style:font-face style:name="Noto Sans Light" svg:font-family="'Noto Sans Light'" style:font-adornments="Ligera" style:font-pitch="variable"/>
+     <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-family-generic="system" style:font-pitch="variable"/>
+   </office:font-face-decls>
+   <office:styles>
+@@ -71,7 +71,7 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:line-height="100%" fo:text-indent="0cm"/>
+-      <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-pitch="variable" fo:font-size="22pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-pitch="variable" fo:font-size="22pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="objectwitharrow" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="solid" svg:stroke-width="0.15cm" svg:stroke-color="#000000" draw:marker-start="Arrow" draw:marker-start-width="0.7cm" draw:marker-start-center="true" draw:marker-end-width="0.3cm"/>
+@@ -100,7 +100,7 @@
+     </style:style>
+     <style:style style:name="title" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="none" draw:fill="none"/>
+-      <style:text-properties fo:color="#04617b" style:font-name="Source Sans Pro Light" fo:font-family="'Source Sans Pro Light'" style:font-style-name="Ligera" style:font-pitch="variable" fo:font-size="66pt" fo:font-weight="200"/>
++      <style:text-properties fo:color="#04617b" style:font-name="Noto Sans Light" fo:font-family="'Noto Sans Light'" style:font-style-name="Ligera" style:font-pitch="variable" fo:font-size="66pt" fo:font-weight="200"/>
+     </style:style>
+     <style:style style:name="title1" style:family="graphic" style:parent-style-name="standard">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-color="#008080" draw:fill-gradient-name="Gradient_20_15" draw:fill-hatch-name="Hatching_20_93" draw:fill-image-name="Bitmape_20_2" draw:shadow="hidden" draw:shadow-offset-x="0.2cm" draw:shadow-offset-y="0.2cm" draw:shadow-color="#808080"/>
+@@ -137,7 +137,7 @@
+     </style:style>
+     <style:style style:name="Vivid-backgroundobjects" style:family="presentation">
+       <style:graphic-properties draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:textarea-horizontal-align="justify" draw:shadow="hidden" draw:shadow-offset-x="0.2cm" draw:shadow-offset-y="0.2cm" draw:shadow-color="#808080"/>
+-      <style:text-properties fo:color="#dbf5f9" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-pitch="variable" fo:font-size="24pt" style:letter-kerning="true"/>
++      <style:text-properties fo:color="#dbf5f9" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-pitch="variable" fo:font-size="24pt" style:letter-kerning="true"/>
+     </style:style>
+     <style:style style:name="Vivid-notes" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm"/>
+@@ -190,7 +190,7 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.435cm" fo:text-indent="0cm"/>
+-      <style:text-properties fo:color="#dbf5f9" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-pitch="variable" fo:font-size="28pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:color="#dbf5f9" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-pitch="variable" fo:font-size="28pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Vivid-outline2" style:family="presentation" style:parent-style-name="Vivid-outline1">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.396cm" fo:text-indent="0cm"/>
+@@ -272,7 +272,7 @@
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:line-height="100%" fo:text-align="start" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="simple" style:line-break="strict" style:font-independent-line-spacing="false">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:color="#dbf5f9" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:text-position="0% 100%" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-pitch="variable" fo:font-size="36pt" fo:letter-spacing="normal" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:text-underline-mode="continuous" style:text-overline-mode="continuous" style:text-line-through-mode="continuous" style:letter-kerning="true" style:text-emphasize="none" style:text-scale="100%" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color" fo:hyphenate="false"/>
++      <style:text-properties fo:color="#dbf5f9" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:text-position="0% 100%" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-pitch="variable" fo:font-size="36pt" fo:letter-spacing="normal" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:text-underline-mode="continuous" style:text-overline-mode="continuous" style:text-line-through-mode="continuous" style:letter-kerning="true" style:text-emphasize="none" style:text-scale="100%" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color" fo:hyphenate="false"/>
+     </style:style>
+     <style:style style:name="Vivid-title" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="bottom" draw:auto-grow-height="false" draw:fit-to-size="false" style:shrink-to-fit="true" fo:min-height="3.306cm" fo:wrap-option="no-wrap">
+@@ -322,7 +322,7 @@
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0cm" fo:line-height="100%" fo:text-align="start" fo:text-indent="0cm" style:text-autospace="ideograph-alpha" style:punctuation-wrap="simple" style:line-break="strict">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:color="#04617b" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:text-position="0% 100%" style:font-name="Source Sans Pro Light" fo:font-family="'Source Sans Pro Light'" style:font-style-name="Ligera" style:font-pitch="variable" fo:font-size="80pt" fo:letter-spacing="normal" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="200" style:text-underline-mode="continuous" style:text-overline-mode="continuous" style:text-line-through-mode="continuous" style:letter-kerning="true" style:text-emphasize="none" style:text-scale="100%" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color" fo:hyphenate="false"/>
++      <style:text-properties fo:color="#04617b" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:text-position="0% 100%" style:font-name="Noto Sans Light" fo:font-family="'Noto Sans Light'" style:font-style-name="Ligera" style:font-pitch="variable" fo:font-size="80pt" fo:letter-spacing="normal" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="200" style:text-underline-mode="continuous" style:text-overline-mode="continuous" style:text-line-through-mode="continuous" style:letter-kerning="true" style:text-emphasize="none" style:text-scale="100%" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color" fo:hyphenate="false"/>
+     </style:style>
+     <style:style style:name="Vivid1-background" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="bitmap" draw:fill-image-name="Bitmap_20_2" style:repeat="stretch"/>
+@@ -330,7 +330,7 @@
+     </style:style>
+     <style:style style:name="Vivid1-backgroundobjects" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:textarea-horizontal-align="justify" draw:shadow="hidden" draw:shadow-offset-x="0.2cm" draw:shadow-offset-y="0.2cm" draw:shadow-color="#808080"/>
+-      <style:text-properties fo:color="#484848" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-pitch="variable" fo:font-size="24pt" style:letter-kerning="true"/>
++      <style:text-properties fo:color="#484848" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-pitch="variable" fo:font-size="24pt" style:letter-kerning="true"/>
+     </style:style>
+     <style:style style:name="Vivid1-notes" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm"/>
+@@ -383,7 +383,7 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.497cm" fo:text-indent="0cm"/>
+-      <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Vivid1-outline2" style:family="presentation" style:parent-style-name="Vivid1-outline1">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.396cm" fo:text-indent="0cm"/>
+@@ -463,7 +463,7 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:text-align="center" fo:text-indent="0cm"/>
+-      <style:text-properties fo:color="#04617b" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:color="#04617b" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="bold" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Vivid1-title" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="bottom" draw:auto-grow-height="false" draw:fit-to-size="false" style:shrink-to-fit="true" fo:wrap-option="no-wrap">
+@@ -513,7 +513,7 @@
+       <style:paragraph-properties fo:text-align="start">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Light" fo:font-family="'Source Sans Pro Light'" style:font-style-name="Ligera" style:font-pitch="variable" fo:font-size="60pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="200" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:color="#ffffff" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Light" fo:font-family="'Noto Sans Light'" style:font-style-name="Ligera" style:font-pitch="variable" fo:font-size="60pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="200" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Vivid2-background" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="bitmap" draw:fill-image-name="Bitmape_20_11" style:repeat="stretch"/>
+@@ -521,7 +521,7 @@
+     </style:style>
+     <style:style style:name="Vivid2-backgroundobjects" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:textarea-horizontal-align="justify" draw:shadow="hidden" draw:shadow-offset-x="0.2cm" draw:shadow-offset-y="0.2cm" draw:shadow-color="#808080"/>
+-      <style:text-properties fo:color="#484848" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-pitch="variable" fo:font-size="24pt" style:letter-kerning="true"/>
++      <style:text-properties fo:color="#484848" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-pitch="variable" fo:font-size="24pt" style:letter-kerning="true"/>
+     </style:style>
+     <style:style style:name="Vivid2-notes" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm"/>
+@@ -574,7 +574,7 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.498cm" fo:text-indent="0cm"/>
+-      <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro" fo:font-family="'Source Sans Pro'" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties style:use-window-font-color="true" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="'Noto Sans'" style:font-pitch="variable" fo:font-size="32pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Vivid2-outline2" style:family="presentation" style:parent-style-name="Vivid2-outline1">
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.396cm" fo:text-indent="0cm"/>
+@@ -654,7 +654,7 @@
+         </text:list-style>
+       </style:graphic-properties>
+       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:text-align="center" fo:text-indent="0cm"/>
+-      <style:text-properties fo:color="#04617b" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Black" fo:font-family="'Source Sans Pro Black'" style:font-style-name="Negra" style:font-pitch="variable" fo:font-size="40pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="900" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:color="#04617b" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Black" fo:font-family="'Noto Sans Black'" style:font-style-name="Negra" style:font-pitch="variable" fo:font-size="40pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="900" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:style style:name="Vivid2-title" style:family="presentation">
+       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="middle" draw:auto-grow-height="false" draw:fit-to-size="false" style:shrink-to-fit="true" fo:wrap-option="no-wrap">
+@@ -704,7 +704,7 @@
+       <style:paragraph-properties fo:text-align="start">
+         <style:tab-stops/>
+       </style:paragraph-properties>
+-      <style:text-properties fo:color="#04617b" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Source Sans Pro Light" fo:font-family="'Source Sans Pro Light'" style:font-style-name="Ligera" style:font-pitch="variable" fo:font-size="60pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="200" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
++      <style:text-properties fo:color="#04617b" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Light" fo:font-family="'Noto Sans Light'" style:font-style-name="Ligera" style:font-pitch="variable" fo:font-size="60pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="200" style:letter-kerning="true" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
+     </style:style>
+     <style:presentation-page-layout style:name="AL0T24">
+       <presentation:placeholder presentation:object="handout" svg:x="2.058cm" svg:y="1.743cm" svg:width="6.104cm" svg:height="3.507cm"/>

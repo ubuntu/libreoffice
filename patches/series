@@ -9,3 +9,5 @@ do-not-clean-destdir.patch
 add-missing-odf-validation-schemas.patch
 #fetch-submodules-from-dev-builds.patch
 disable-certificate-tests.diff
+fix-noto-sans-in-templates.diff
+replace-source-sans-in-templates.diff
