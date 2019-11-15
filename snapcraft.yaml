@@ -5,24 +5,6 @@ description: LibreOffice is a free and open source office suite, developed by Th
 confinement: strict
 base: core18
 
-plugs:
-  gnome-3-28-1804:
-    interface: content
-    target: $SNAP/gnome-platform
-    default-provider: gnome-3-28-1804
-  gtk-3-themes:
-    interface: content
-    target: $SNAP/data-dir/themes
-    default-provider: gtk-common-themes
-  icon-themes:
-    interface: content
-    target: $SNAP/data-dir/icons
-    default-provider: gtk-common-themes
-  sound-themes:
-    interface: content
-    target: $SNAP/data-dir/sounds
-    default-provider: gtk-common-themes
-
 passthrough:
   layout:
     /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/firebird:
@@ -470,13 +452,14 @@ apps:
     libreoffice:
         command: libreoffice.wrapper
         desktop: lib/libreoffice/share/xdg/startcenter.desktop
+        extensions: &extensions
+            - gnome-3-28
         environment: &environment
             TMPDIR: $XDG_RUNTIME_DIR
         plugs: &plugs
             - audio-playback
             - bluez
             - cups-control
-            - desktop
             - gsettings
             - home
             - network
@@ -486,35 +469,40 @@ apps:
             - removable-media
             - screen-inhibit-control
             - unity7
-            - wayland
     base:
         command: libreoffice.wrapper --base
         desktop: lib/libreoffice/share/xdg/base.desktop
+        extensions: *extensions
         environment: *environment
         plugs: *plugs
     calc:
         command: libreoffice.wrapper --calc
         desktop: lib/libreoffice/share/xdg/calc.desktop
+        extensions: *extensions
         environment: *environment
         plugs: *plugs
     draw:
         command: libreoffice.wrapper --draw
         desktop: lib/libreoffice/share/xdg/draw.desktop
+        extensions: *extensions
         environment: *environment
         plugs: *plugs
     impress:
         command: libreoffice.wrapper --impress
         desktop: lib/libreoffice/share/xdg/impress.desktop
+        extensions: *extensions
         environment: *environment
         plugs: *plugs
     math:
         command: libreoffice.wrapper --math
         desktop: lib/libreoffice/share/xdg/math.desktop
+        extensions: *extensions
         environment: *environment
         plugs: *plugs
     writer:
         command: libreoffice.wrapper --writer
         desktop: lib/libreoffice/share/xdg/writer.desktop
+        extensions: *extensions
         environment: *environment
         plugs: *plugs
     filebug:
