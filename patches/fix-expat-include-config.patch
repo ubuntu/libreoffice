@@ -3,11 +3,12 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 
 --- a/external/expat/UnpackedTarball_expat.mk
 +++ b/external/expat/UnpackedTarball_expat.mk
-@@ -15,6 +15,7 @@ $(eval $(call gb_UnpackedTarball_update_
+@@ -15,7 +15,8 @@ $(eval $(call gb_UnpackedTarball_update_
  
  $(eval $(call gb_UnpackedTarball_add_patches,expat,\
  	external/expat/expat-winapi.patch \
 +	external/expat/expat-include-config.patch \
+	external/expat/ubsan.patch.0 \
  ))
  
  # This is a bit hackish.
