@@ -436,36 +436,42 @@ apps:
     base:
         command: libreoffice.wrapper --base
         desktop: lib/libreoffice/share/xdg/base.desktop
+        common-id: libreoffice-base.desktop
         extensions: *extensions
         environment: *environment
         plugs: *plugs
     calc:
         command: libreoffice.wrapper --calc
         desktop: lib/libreoffice/share/xdg/calc.desktop
+        common-id: libreoffice-calc.desktop
         extensions: *extensions
         environment: *environment
         plugs: *plugs
     draw:
         command: libreoffice.wrapper --draw
         desktop: lib/libreoffice/share/xdg/draw.desktop
+        common-id: libreoffice-draw.desktop
         extensions: *extensions
         environment: *environment
         plugs: *plugs
     impress:
         command: libreoffice.wrapper --impress
         desktop: lib/libreoffice/share/xdg/impress.desktop
+        common-id: libreoffice-impress.desktop
         extensions: *extensions
         environment: *environment
         plugs: *plugs
     math:
         command: libreoffice.wrapper --math
         desktop: lib/libreoffice/share/xdg/math.desktop
+        common-id: libreoffice-math.desktop
         extensions: *extensions
         environment: *environment
         plugs: *plugs
     writer:
         command: libreoffice.wrapper --writer
         desktop: lib/libreoffice/share/xdg/writer.desktop
+        common-id: libreoffice-writer.desktop
         extensions: *extensions
         environment: *environment
         plugs: *plugs
