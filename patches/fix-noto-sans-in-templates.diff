@@ -80,15 +80,6 @@ diff --git a/extras/source/templates/presnt/Vivid/styles.xml b/extras/source/tem
 index 1419f7b50..343273ea9 100644
 --- a/extras/source/templates/presnt/Vivid/styles.xml
 +++ b/extras/source/templates/presnt/Vivid/styles.xml
-@@ -4,7 +4,7 @@
-     <style:font-face style:name="Source Sans Pro" svg:font-family="'Source Sans Pro'" style:font-pitch="variable"/>
-     <style:font-face style:name="Source Sans Pro Black" svg:font-family="'Source Sans Pro Black'" style:font-adornments="Negra" style:font-pitch="variable"/>
-     <style:font-face style:name="Source Sans Pro Light" svg:font-family="'Source Sans Pro Light'" style:font-adornments="Ligera" style:font-pitch="variable"/>
--    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans Regular'" style:font-family-generic="system" style:font-pitch="variable"/>
-+    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-family-generic="system" style:font-pitch="variable"/>
-   </office:font-face-decls>
-   <office:styles>
-     <draw:gradient draw:name="Filled" draw:style="linear" draw:start-color="#ffffff" draw:end-color="#cccccc" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="300" draw:border="0%"/>
 @@ -189,7 +189,7 @@
      <style:style style:name="Vivid-notes" style:family="presentation">
        <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm"/>
