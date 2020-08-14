@@ -1,25 +1,17 @@
-From 890347280ac08d676a1d08bf284fbce29b54fa61 Mon Sep 17 00:00:00 2001
-From: Bjoern Michaelsen <bjoern.michaelsen@canonical.com>
-Date: Tue, 25 Oct 2016 11:38:06 +0200
-Subject: [PATCH 6/6] allow root builds on lp
-
-Change-Id: Ic809f277cfac5e26438667d331c1850f646e71f4
----
- Makefile.in | 7 +------
- 1 file changed, 1 insertion(+), 6 deletions(-)
-
+diff --git a/Makefile.in b/Makefile.in
+index 6af416b8a..b690e5c5a 100644
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -60,12 +60,7 @@ else # MAKE_RESTARTS
+@@ -59,12 +59,7 @@ else # MAKE_RESTARTS
  .DEFAULT_GOAL := build
  
  check-if-root:
--        @if test ! `uname` = 'Haiku' -a `id -u` = 0 && ! grep -q 'lxc\|docker' /proc/self/cgroup && ! grep -q 'libpod_parent' /proc/self/cgroup; then \
--                echo; \
--                echo 'Building LibreOffice as root is a very bad idea, use a regular user.'; \
--                echo; \
--                exit 1; \
--        fi
+-	@if test ! `uname` = 'Haiku' -a `id -u` = 0 && ! grep -q 'lxc\|docker' /proc/self/cgroup && ! grep -q 'libpod_parent' /proc/self/cgroup; then \
+-		echo; \
+-		echo 'Building LibreOffice as root is a very bad idea, use a regular user.'; \
+-		echo; \
+-		exit 1; \
+-	fi
 +	@true
  
  gb_Side ?= host
