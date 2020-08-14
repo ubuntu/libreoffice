@@ -76,19 +76,6 @@ index dd91099c5..497b90267 100644
      </style:style>
      <style:presentation-page-layout style:name="AL0T26">
        <presentation:placeholder presentation:object="handout" svg:x="2.058cm" svg:y="1.743cm" svg:width="10.556cm" svg:height="-0.233cm"/>
-diff --git a/extras/source/templates/presnt/Vivid/content.xml b/extras/source/templates/presnt/Vivid/content.xml
-index 8d0758e2d..34645d12a 100644
---- a/extras/source/templates/presnt/Vivid/content.xml
-+++ b/extras/source/templates/presnt/Vivid/content.xml
-@@ -5,7 +5,7 @@
-     <style:font-face style:name="Source Sans Pro" svg:font-family="'Source Sans Pro'" style:font-pitch="variable"/>
-     <style:font-face style:name="Source Sans Pro Black" svg:font-family="'Source Sans Pro Black'" style:font-adornments="Negra" style:font-pitch="variable"/>
-     <style:font-face style:name="Source Sans Pro Light" svg:font-family="'Source Sans Pro Light'" style:font-adornments="Ligera" style:font-pitch="variable"/>
--    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans Regular'" style:font-family-generic="system" style:font-pitch="variable"/>
-+    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-family-generic="system" style:font-pitch="variable"/>
-   </office:font-face-decls>
-   <office:automatic-styles>
-     <style:style style:name="dp1" style:family="drawing-page">
 diff --git a/extras/source/templates/presnt/Vivid/styles.xml b/extras/source/templates/presnt/Vivid/styles.xml
 index 1419f7b50..343273ea9 100644
 --- a/extras/source/templates/presnt/Vivid/styles.xml
