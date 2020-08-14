@@ -326,11 +326,11 @@ index 8d0758e2d..c48c724ba 100644
 -    <style:font-face style:name="Source Sans Pro" svg:font-family="'Source Sans Pro'" style:font-pitch="variable"/>
 -    <style:font-face style:name="Source Sans Pro Black" svg:font-family="'Source Sans Pro Black'" style:font-adornments="Negra" style:font-pitch="variable"/>
 -    <style:font-face style:name="Source Sans Pro Light" svg:font-family="'Source Sans Pro Light'" style:font-adornments="Ligera" style:font-pitch="variable"/>
--    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans Regular'" style:font-family-generic="system" style:font-pitch="variable"/>
+    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans Regular'" style:font-family-generic="system" style:font-pitch="variable"/>
 +    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-pitch="variable"/>
 +    <style:font-face style:name="Noto Sans Black" svg:font-family="'Noto Sans Black'" style:font-adornments="Negra" style:font-pitch="variable"/>
 +    <style:font-face style:name="Noto Sans Light" svg:font-family="'Noto Sans Light'" style:font-adornments="Ligera" style:font-pitch="variable"/>
-+    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-family-generic="system" style:font-pitch="variable"/>
+    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-family-generic="system" style:font-pitch="variable"/>
    </office:font-face-decls>
    <office:automatic-styles>
      <style:style style:name="dp1" style:family="drawing-page">
