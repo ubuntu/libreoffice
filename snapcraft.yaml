@@ -205,7 +205,7 @@ parts:
             for app in base calc draw impress math startcenter writer
             do
                 sed -i \
-                    -e "s#Icon=libreoffice7.0-$app#Icon=/usr/share/icons/gnome/hicolor/256x256/apps/libreoffice7.0-$app.png#" \
+                    -e "s#Icon=libreoffice7.0-$app#Icon=/usr/share/icons/gnome/256x256/apps/libreoffice7.0-$app.png#" \
                     -e "s#^Exec=libreoffice7.0 --\(.*\)#Exec=libreoffice.\1#g" \
                     $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/xdg/$app.desktop
             done
