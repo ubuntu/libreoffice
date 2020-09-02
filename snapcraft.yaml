@@ -57,7 +57,7 @@ parts:
             - --enable-scripting-beanshell
             - --enable-scripting-javascript
             - --with-alloc=system
-            - --with-build-version=libreoffice-7.0.0.3
+            - --with-build-version=libreoffice-7.0.1.2
             - --with-gdrive-client-id=424119844901.apps.googleusercontent.com
             - --with-gdrive-client-secret=AIienwDlGIIsHoKnNHmWGXyJ
             - --with-system-graphite
