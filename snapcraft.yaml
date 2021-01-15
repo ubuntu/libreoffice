@@ -496,4 +496,4 @@ apps:
         environment: *environment
         plugs:
             - desktop
-             network
+            - network
