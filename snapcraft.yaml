@@ -3,7 +3,7 @@ version: 7.1.2.2
 summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 confinement: strict
-base: core18
+base: core20
 compression: lzo
 
 passthrough:
@@ -35,12 +35,10 @@ parts:
             - thesauri
             - jvm
             - gstreamer
-            - gtk3-locales
-            - desktop-settings-packages
             - yaru-icons
         plugin: autotools
         source: http://download.documentfoundation.org/libreoffice/src/7.1.2/libreoffice-7.1.2.2.tar.xz
-        configflags:
+        autotools-configure-parameters:
             - --disable-ccache
             - --disable-coinmp
             - --disable-dconf
@@ -90,11 +88,8 @@ parts:
             - gettext
             - gperf
             - junit4
-            - kdelibs5-dev
             - libarchive-zip-perl
-            - libatk1.0-dev
             - libbluetooth-dev
-            - libcairo2-dev
             - libcups2-dev
             - libcurl4-gnutls-dev
             - libdbus-glib-1-dev
@@ -109,14 +104,10 @@ parts:
             - libgirepository1.0-dev
             - libgl1-mesa-glx
             - libglew-dev
-            - libglib2.0-dev
             - libglm-dev
             - libgraphite2-dev
             - libgstreamer-plugins-base1.0-dev
             - libgstreamer1.0-dev
-            - libgtk-3-dev
-            - libgtk2.0-dev
-            - libharfbuzz-dev
             - libhsqldb1.8.0-java
             - libhunspell-dev
             - libhyphen-dev
@@ -138,7 +129,6 @@ parts:
             - libpoppler-private-dev
             - libpq-dev
             - libpython3-dev
-            - libqt4-dev
             - librdf0-dev
             - libsane-dev
             - libsm-dev
@@ -172,22 +162,17 @@ parts:
         stage-packages:
             - firebird3.0-common
             - firebird3.0-server-core
-            - libatk1.0-0
-            - libcairo2
             - libdbus-glib-1-2
             - libexttextcat-2.0-0
             - libfreetype6
             - libgconf-2-4
             - libgl1-mesa-glx
-            - libglib2.0-0
-            - libgtk-3-bin
-            - libgtk2.0-0
             - libharfbuzz-icu0
             - libhsqldb1.8.0-java
             - libldap-2.4-2
             - libnspr4
             - libnss3
-            - libpython3.6
+            - libpython3.9
             - libsm6
             - libxml2
             - libxslt1.1
@@ -209,7 +194,7 @@ parts:
                 sed -i \
                     -e "s#Icon=libreoffice7.1-$app#Icon=/usr/share/icons/hicolor/256x256/apps/libreoffice7.1-$app.png#" \
                     -e "s#^Exec=libreoffice7.1 --\(.*\)#Exec=libreoffice.\1#g" \
-                    $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/xdg/$app.desktop
+                    $SNAPCRAFT_PART_INSTALL/usr/local/lib/libreoffice/share/xdg/$app.desktop
             done
         prime:
             - etc/firebird/
@@ -223,6 +208,8 @@ parts:
             - usr/share/icons/hicolor/256x256/apps/*
             - usr/share/java/
             - usr/sbin/*
+        organize:
+            usr/local/lib/libreoffice/ : lib/libreoffice/
 
     libreoffice-wrapper:
         plugin: dump
@@ -289,11 +276,11 @@ parts:
             - gstreamer1.0-pulseaudio
             - libaa1
             - libass9
-            - libavcodec57
-            - libavfilter6
-            - libavformat57
-            - libavresample3
-            - libavutil55
+            - libavcodec58
+            - libavfilter7
+            - libavformat58
+            - libavresample4
+            - libavutil56
             - libbluray2
             - libbs2b0
             - libbz2-1.0
@@ -303,7 +290,7 @@ parts:
             - libde265-0
             - libdv4
             - libfaad2
-            - libffi6
+            - libffi7
             - libflac8
             - libflite1
             - libfribidi0
@@ -318,22 +305,22 @@ parts:
             - libgstreamer-plugins-base1.0-0
             - libgstreamer-plugins-good1.0-0
             - libgstreamer1.0-0
-            - libhogweed4
+            - libhogweed5
             - libidn2-0
             - libmp3lame0
             - libmodplug1
-            - libnettle6
+            - libnettle7
             - libnuma1
             - libogg0
             - libopenal1
             - libopenal-data
-            - libopencv-core3.2
-            - libopencv-imgproc3.2
+            - libopencv-core4.2
+            - libopencv-imgproc4.2
             - libopenjp2-7
             - libopus0
             - liborc-0.4-0
             - libp11-kit0
-            - libpostproc54
+            - libpostproc55
             - librtmp1
             - libshine3
             - libslang2
@@ -343,8 +330,8 @@ parts:
             - libsoxr0
             - libspeex1
             - libssh-gcrypt-4
-            - libswresample2
-            - libswscale4
+            - libswresample3
+            - libswscale5
             - libtasn1-6
             - libtbb2
             - libtheora0
@@ -353,50 +340,14 @@ parts:
             - libv4l-0
             - libva2
             - libvorbis0a
-            - libvpx5
+            - libvpx6
             - libwavpack1
             - libwebp6
-            - libx264-152
-            - libx265-146
+            - libx265-179
             - libxvidcore4
             - libzmq5
             - libzvbi0
             - zlib1g
-
-    # In Ubuntu compiled locales for GTK are installed by langpacks, not by
-    # libgtk-3-common. Fetch all the langpacks and keep only the GTK locales.
-    gtk3-locales:
-        plugin: nil
-        build-packages:
-            - apt
-            - dpkg
-        override-pull: |
-            set -eux
-            apt download "language-pack-gnome-*-base"
-        override-build: |
-            set -eux
-            for deb in *.deb; do dpkg-deb -x $deb .; done
-            find usr/share/locale-langpack -type f -not -name "gtk30*.mo" -exec rm '{}' \;
-            mkdir -p $SNAPCRAFT_PART_INSTALL/usr/share
-            cp -R usr/share/locale-langpack $SNAPCRAFT_PART_INSTALL/usr/share/
-
-    # Ship a default set of GSettings schemas so that the correct theme is used
-    # in Wayland sessions on Ubuntu (see https://forum.snapcraft.io/t/7806/3).
-    desktop-settings-packages:
-        plugin: nil
-        build-packages:
-            - libglib2.0-bin
-        stage-packages:
-            - gsettings-desktop-schemas
-            - ubuntu-settings
-        prime:
-            - usr/share/glib-2.0/schemas/*
-    desktop-settings-build:
-        plugin: nil
-        after: [ desktop-settings-packages, libreoffice ]
-        override-prime: |
-            set -eux
-            glib-compile-schemas usr/share/glib-2.0/schemas
 
     yaru-icons:
       plugin: nil
@@ -413,17 +364,17 @@ parts:
         cp $SNAPCRAFT_PART_BUILD/oxt/iconsets/images_yaru_svg.zip $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/config/
 
     cleanup:
-        after: [ desktop-settings-build ]
+        #after: [ desktop-settings-build ]
         plugin: nil
         build-snaps:
-            - core18
-            - gnome-3-28-1804
+            - core20
+            - gnome-3-38-2004
             - gtk-common-themes
         override-prime: |
             set -eux
-            cd /snap/core18/current
+            cd /snap/core20/current
             find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/{} \;
-            cd /snap/gnome-3-28-1804/current
+            cd /snap/gnome-3-38-2004/current
             find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/{} \;
             cd /snap/gtk-common-themes/current
             find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/usr/{} \;
@@ -433,7 +384,7 @@ apps:
         command: libreoffice.wrapper
         desktop: lib/libreoffice/share/xdg/startcenter.desktop
         extensions: &extensions
-            - gnome-3-28
+            - gnome-3-38
         environment: &environment
             TMPDIR: $XDG_RUNTIME_DIR
         plugs: &plugs
