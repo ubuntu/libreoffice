@@ -3,21 +3,29 @@ From: Bjoern Michaelsen <bjoern.michaelsen@canonical.com>
 Date: Thu, 9 Jun 2016 12:45:14 +0200
 Subject: [PATCH 4/6] inject snapped JRE path in build
 
----
- jvmfwk/source/framework.cxx | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
-
 --- a/jvmfwk/source/framework.cxx
 +++ b/jvmfwk/source/framework.cxx
-@@ -64,8 +64,9 @@ javaFrameworkError jfw_findAllJREs(std::
-         //get the list of paths to jre locations which have been
-         //added manually
-         const jfw::MergedSettings settings;
--        const std::vector<OUString>& vecJRELocations =
--            settings.getJRELocations();
-+        std::vector<OUString> vecJRELocations = settings.getJRELocations();
-+        OUString sSnappedJRE("file:///snap/libreoffice/current/usr/lib/jvm/java-11-openjdk-amd64/"); // FIXME: use SNAP environment variable
-+        vecJRELocations.insert(vecJRELocations.begin(), { sSnappedJRE } );
-         //Use all plug-in libraries to get Java installations.
-         std::vector<std::unique_ptr<JavaInfo>> arInfos;
-         std::vector<rtl::Reference<jfw_plugin::VendorBase>> infos;
+@@ -83,8 +83,9 @@ javaFrameworkError jfw_findAllJREs(std::vector<std::unique_ptr<JavaInfo>> *pparI
+             //get the list of paths to jre locations which have been
+             //added manually
+             const jfw::MergedSettings settings;
+-            const std::vector<OUString> vecJRELocations =
+-                settings.getJRELocations();
++            std::vector<OUString> vecJRELocations = settings.getJRELocations();
++            OUString sSnappedJRE("file:///snap/libreoffice/current/usr/lib/jvm/java-11-openjdk-amd64/"); // FIXME: use SNAP environment variable
++            vecJRELocations.insert(vecJRELocations.begin(), { sSnappedJRE } );
+             //Check if any plugin can detect JREs at the location
+             // of the paths added by jfw_addJRELocation
+             //Check every manually added location
+@@ -343,8 +344,9 @@ javaFrameworkError jfw_findAndSelectJRE(std::unique_ptr<JavaInfo> *pInfo)
+                 //get the list of paths to jre locations which have been added manually
+                 const jfw::MergedSettings settings;
+                 //node.loadFromSettings();
+-                const std::vector<OUString> & vecJRELocations =
+-                    settings.getJRELocations();
++                std::vector<OUString> vecJRELocations = settings.getJRELocations();
++                OUString sSnappedJRE("file:///snap/libreoffice/current/usr/lib/jvm/java-11-openjdk-amd64/"); // FIXME: use SNAP environment variable
++                vecJRELocations.insert(vecJRELocations.begin(), { sSnappedJRE } );
+                 //use all plug-ins to determine the JavaInfo objects
+                 for (auto const & JRELocation : vecJRELocations)
+                 {
