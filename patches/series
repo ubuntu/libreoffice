@@ -6,7 +6,6 @@ fix-expat-include-config.patch
 dicts-in-snap.patch
 hsqldb-jar-in-snap.patch
 do-not-clean-destdir.patch
-add-missing-odf-validation-schemas.patch
 #fetch-submodules-from-dev-builds.patch
 disable-certificate-tests.diff
 fix-noto-sans-in-templates.diff
