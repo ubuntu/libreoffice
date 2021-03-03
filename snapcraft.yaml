@@ -74,7 +74,7 @@ parts:
             - --with-vendor=Canonical, Ltd.
             - --with-help
             - --without-doxygen
-            - --with-lang=en-US de es fr it pt pt-BR ja zh-TW ru ca tr hu pl el
+            - --with-lang=en-US ca de el es fr hu it ja pl pt pt-BR ru tr zh-TW
         build-packages:
             - quilt
             - ant
