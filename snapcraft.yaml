@@ -202,12 +202,12 @@ parts:
             snapcraftctl build
             srcdir=$PWD
             cd workdir/CustomTarget/sysui/share/libreoffice
-            SRCDIR=$srcdir INSTDIR=$srcdir/instdir DESTDIR=$SNAPCRAFT_PART_INSTALL PREFIXDIR=usr GNOMEDIR=usr PKG_CONFIG=pkg-config ./create_tree.sh
+            SRCDIR=$srcdir INSTDIR=$srcdir/instdir DESTDIR=$SNAPCRAFT_PART_INSTALL PREFIXDIR=usr KDEMAINDIR=usr PKG_CONFIG=pkg-config ./create_tree.sh
             chmod a+x $SNAPCRAFT_PART_INSTALL/usr/share
             for app in base calc draw impress math startcenter writer
             do
                 sed -i \
-                    -e "s#Icon=libreoffice7.1-$app#Icon=/usr/share/icons/gnome/256x256/apps/libreoffice7.1-$app.png#" \
+                    -e "s#Icon=libreoffice7.1-$app#Icon=/usr/share/icons/hicolor/256x256/apps/libreoffice7.1-$app.png#" \
                     -e "s#^Exec=libreoffice7.1 --\(.*\)#Exec=libreoffice.\1#g" \
                     $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/xdg/$app.desktop
             done
@@ -220,7 +220,7 @@ parts:
             - -usr/lib/*/firebird/*/databases.conf
             - -usr/lib/*/firebird/*/fbtrace.conf
             - usr/lib/*/mesa/lib*
-            - usr/share/icons/gnome/256x256/apps/*
+            - usr/share/icons/hicolor/256x256/apps/*
             - usr/share/java/
             - usr/sbin/*
 
