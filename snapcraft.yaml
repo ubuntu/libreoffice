@@ -260,6 +260,7 @@ parts:
         plugin: nil
         stage-packages:
             - openjdk-11-jre
+            - openjdk-11-jre-headless
         prime:
             - -usr/share/doc
 
