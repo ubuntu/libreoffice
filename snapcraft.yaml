@@ -63,11 +63,11 @@ parts:
             - --with-system-nss
             - --with-system-hsqldb
             - --with-hsqldb-jar=/usr/share/java/hsqldb1.8.0.jar
-            - --with-theme=colibre sifr breeze elementary
-            - --with-vendor=Canonical, Ltd.
+            - --with-theme='colibre sifr breeze elementary'
+            - --with-vendor='Canonical, Ltd.'
             - --with-help
             - --without-doxygen
-            - --with-lang=en-US ca de el es fr hu it ja pl pt pt-BR ru tr zh-TW
+            - --with-lang='en-US ca de el es fr hu it ja pl pt pt-BR ru tr zh-TW'
         build-packages:
             - quilt
             - ant
