@@ -357,7 +357,6 @@ parts:
         fi
         mkdir -p  $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/config/
         cp $SNAPCRAFT_PART_BUILD/oxt/iconsets/images_yaru.zip $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/config/
-        cp $SNAPCRAFT_PART_BUILD/oxt/iconsets/images_yaru_svg.zip $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/config/
 
     cleanup:
         #after: [ desktop-settings-build ]
