@@ -5,6 +5,7 @@ on:
     branches:
       - edge
       - stable
+  workflow_dispatch:
 
 jobs:
   snap:
