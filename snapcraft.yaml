@@ -1,5 +1,5 @@
 name: libreoffice
-version: 7.1.3.2~uc20
+version: 7.2.0.1
 summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 confinement: strict
@@ -37,7 +37,7 @@ parts:
             - gstreamer
             - yaru-icons
         plugin: autotools
-        source: http://download.documentfoundation.org/libreoffice/src/7.1.3/libreoffice-7.1.3.2.tar.xz
+        source: http://download.documentfoundation.org/libreoffice/src/7.2.0/libreoffice-7.2.0.1.tar.xz
         autotools-configure-parameters:
             - --disable-ccache
             - --disable-coinmp
@@ -68,6 +68,7 @@ parts:
             - --with-help
             - --without-doxygen
             - --with-lang='en-US ca de el es fr hu it ja pl pt pt-BR ru tr zh-TW'
+            - --with-parallelism=1
         build-packages:
             - quilt
             - ant
@@ -79,6 +80,7 @@ parts:
             - firebird-dev
             - firebird3.0-server-core
             - flex
+            - g++
             - gdb
             - gettext
             - gperf
@@ -187,8 +189,8 @@ parts:
             for app in base calc draw impress math startcenter writer
             do
                 sed -i \
-                    -e "s#Icon=libreoffice7.1-$app#Icon=/usr/share/icons/hicolor/256x256/apps/libreoffice7.1-$app.png#" \
-                    -e "s#^Exec=libreoffice7.1 --\(.*\)#Exec=libreoffice.\1#g" \
+                    -e "s#Icon=libreoffice7.2-$app#Icon=/usr/share/icons/hicolor/256x256/apps/libreoffice7.2-$app.png#" \
+                    -e "s#^Exec=libreoffice7.2 --\(.*\)#Exec=libreoffice.\1#g" \
                     $SNAPCRAFT_PART_INSTALL/usr/local/lib/libreoffice/share/xdg/$app.desktop
             done
         prime:
@@ -347,7 +349,7 @@ parts:
 
     yaru-icons:
         plugin: nil
-        source: https://github.com/ubuntu/libreoffice-style-yaru-fullcolor/archive/refs/tags/2021-03-14.tar.gz
+        source: https://github.com/ubuntu/libreoffice-style-yaru-fullcolor/archive/refs/tags/2021-07-02.tar.gz
         override-build: |
             set -eux
             cd $SNAPCRAFT_PART_BUILD 

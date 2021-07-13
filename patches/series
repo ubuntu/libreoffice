@@ -10,3 +10,5 @@ do-not-clean-destdir.patch
 disable-certificate-tests.diff
 fix-noto-sans-in-templates.diff
 replace-source-sans-in-templates.diff
+unpack-sources.patch
+skia-symbols.patch

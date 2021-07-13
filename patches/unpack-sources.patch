@@ -1,0 +1,19 @@
+Description: Revert problematic upstream commit causing issue with linking modules in builds from tarballs: https://cgit.freedesktop.org/libreoffice/core/commit/?id=f3b7dc649bc384be6000d98a87763cab26fe3f32
+Author: Heather Ellsworth <heather.ellsworth@canonical.com>
+Last-Updated: 2021-07-14
+
+Index: b/bin/unpack-sources
+===================================================================
+--- a/bin/unpack-sources
++++ b/bin/unpack-sources
+@@ -85,7 +85,7 @@
+     fi
+ 
+     # create symlinks for module directories; ignore git-hooks directory
+-    while read -r dir; do
+-        ln -sf "src/${tarname}/$(basename "$dir")" "$start_dir"
+-    done < <(find "$lo_src_dir/$tarname" -mindepth 1 -maxdepth 1 -type d -path $lo_src_dir/$tarname/git-hooks)
++    for dir in `find "$lo_src_dir/$tarname" -mindepth 1 -maxdepth 1 -type d -path $lo_src_dir/$tarname/git-hooks -o -printf "$tarname/%f\n"` ; do
++        ln -sf "src/$dir" "$start_dir"
++    done
+ done

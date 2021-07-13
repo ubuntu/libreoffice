@@ -1,9 +1,10 @@
 Description: look up hyphenation and thesaurus dictionaries inside the snap
-Author: Olivier Tilloy <olivier.tilloy@canonical.com>
+Author: Olivier Tilloy <olivier.tilloy@canonical.com>, Heather Ellsworth <heather.ellsworth@canonical.com>
+Last-Updated: 2021-07-14
 
 --- a/lingucomponent/source/lingutil/lingutil.cxx
 +++ b/lingucomponent/source/lingutil/lingutil.cxx
-@@ -39,6 +39,7 @@
+@@ -40,6 +40,7 @@
  #include <rtl/tencinfo.h>
  #include <linguistic/misc.hxx>
  
@@ -11,7 +12,7 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
  #include <set>
  #include <vector>
  #include <string.h>
-@@ -163,6 +164,7 @@ std::vector< SvtLinguConfigDictionaryEnt
+@@ -168,6 +169,7 @@ std::vector< SvtLinguConfigDictionaryEnt
          aDicExtension   = ".dic";
  #ifdef SYSTEM_DICTS
          aSystemDir      = HYPH_SYSTEM_DIR;
@@ -19,11 +20,11 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
          aSystemPrefix   = "hyph_";
          aSystemSuffix   = aDicExtension;
  #endif
-@@ -173,6 +175,7 @@ std::vector< SvtLinguConfigDictionaryEnt
+@@ -178,6 +180,7 @@ std::vector< SvtLinguConfigDictionaryEnt
          aDicExtension   = ".dat";
  #ifdef SYSTEM_DICTS
          aSystemDir      = THES_SYSTEM_DIR;
 +        aSystemDir      = aSystemDir.replaceAt(7, 0, OUString::fromUtf8(std::getenv("SNAP"))); // results in file://$SNAP/usr/share/mythes
          aSystemPrefix   = "th_";
          aSystemSuffix   = "_v2.dat";
- #endif
+ #elif defined IOS

@@ -1,0 +1,34 @@
+Description: Allow usage of isfinite, isinf, and isnan directly
+Author: Heather Ellsworth <heather.ellsworth@canonical.com>
+Last-Updated: 2021-07-20
+
+--- a/external/skia/UnpackedTarball_skia.mk
++++ b/external/skia/UnpackedTarball_skia.mk
+@@ -39,6 +39,7 @@ skia_patches := \
+     fast-png-write.patch.1 \
+     skia_sk_cpu_sse_level_0_by_default.patch.1 \
+     fix-warnings.patch.1 \
++    allow-symbols.patch \
+
+ $(eval $(call gb_UnpackedTarball_set_patchlevel,skia,1))
+
+--- /dev/null
++++ b/external/skia/allow-symbols.patch
+@@ -0,0 +1,17 @@
++Description: Allow usage of isfinite, isinf, and isnan symbols directly.
++Author: Heather Ellsworth <heather.ellsworth@canonical.com>
++Last-Updated: 2021-07-20
++
++--- a/src/sksl/dsl/DSLExpression.cpp
+++++ b/src/sksl/dsl/DSLExpression.cpp
++@@ -19,6 +19,10 @@
++
++ #include "math.h"
++
+++using std::isfinite;
+++using std::isinf;
+++using std::isnan;
+++
++ #if !defined(SKSL_STANDALONE) && SK_SUPPORT_GPU
++ #include "src/gpu/glsl/GrGLSLFragmentShaderBuilder.h"
++ #endif
