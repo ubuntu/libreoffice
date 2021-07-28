@@ -68,7 +68,6 @@ parts:
             - --with-help
             - --without-doxygen
             - --with-lang='en-US ca de el es fr hu it ja pl pt pt-BR ru tr zh-TW'
-            - --with-parallelism=1
         build-packages:
             - quilt
             - ant
@@ -80,7 +79,6 @@ parts:
             - firebird-dev
             - firebird3.0-server-core
             - flex
-            - g++
             - gdb
             - gettext
             - gperf
