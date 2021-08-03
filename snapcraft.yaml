@@ -62,6 +62,7 @@ parts:
             - --with-build-version=libreoffice-7.1.5.2
             - --with-gdrive-client-id=424119844901.apps.googleusercontent.com
             - --with-gdrive-client-secret=AIienwDlGIIsHoKnNHmWGXyJ
+            - --with-system-firebird
             - --with-system-graphite
             - --with-system-harfbuzz
             - --with-system-icu
