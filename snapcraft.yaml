@@ -146,6 +146,7 @@ parts:
             - libxt-dev
             - libxtst-dev
             - maven-repo-helper
+            - nasm
             - python3-dev
             - unixodbc-dev
             - unzip
