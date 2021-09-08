@@ -59,6 +59,7 @@ parts:
             - --with-system-graphite
             - --with-system-harfbuzz
             - --with-system-icu
+            - --with-system-jpeg
             - --with-system-libexttextcat
             - --with-system-openldap
             - --with-system-nss
