@@ -3,7 +3,7 @@
 *[![libreoffice](https://snapcraft.io/libreoffice/badge.svg)](https://snapcraft.io/libreoffice)
 [![libreoffice](https://snapcraft.io/libreoffice/trending.svg?name=0)](https://snapcraft.io/libreoffice)*
 
-Below you will find some instructions to help you contribute to this snap. The general workflow will be to submit PRs from your fork onto the "stable" branch. Once the pull request has been *submitted*, there is a GitHub action that will automatically launch a build of the snap that you can use for testing. And then once the PR has been *merged* the GitHub action will launch a build on launchpad that will be automatically uploaded to the snap store, in the candidate channel, for more extensive testing.
+Below you will find some instructions to help you contribute to this snap. The general workflow will be to submit PRs from your fork onto the "7.1" branch. Once the pull request has been *submitted*, there is a GitHub action that will automatically launch a build of the snap that you can use for testing. And then once the PR has been *merged* the GitHub action will launch a build on launchpad that will be automatically uploaded to the snap store, in the candidate channel, for more extensive testing.
 
 ## How to contribute to this snap
 
@@ -30,10 +30,10 @@ git fetch --all -p
 
 Now that your git metadata has been updated you are ready to create a bugfix branch, make your changes, and open a PR.
 
-1. All PRs should go to the stable branch so create your branch as a copy of the stable branch:
+1. All PRs should go to the 7.1 branch so create your branch as a copy of the 7.1 branch:
 
 ```
-git checkout -b my-bugfix-branch ubuntu/stable
+git checkout -b my-bugfix-branch ubuntu/7.1
 ```
 
 2. Make your desired changes and push them to your fork:
@@ -48,7 +48,7 @@ Once this branch has been pushed to your fork, you should update the local branc
 git branch -u myfork/my-bugfix-branch
 ```
 
-3. When you feel they're ready for submitting to the main repository (stable branch), [open up a pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) from your `my-bugfix-branch` to the `ubuntu/stable` branch.
+3. When you feel they're ready for submitting to the main repository (7.1 branch), [open up a pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) from your `my-bugfix-branch` to the `ubuntu/7.1` branch.
 4. Once you've opened the PR, it will automatically trigger the build-test action that will launch a build of the snap. You can watch the progress of the snap build from your PR (Show all checks -> Details). Once the snap build has completed, you can find the built snap (to test with) under "Artifacts".
 4. Someone from the team will review the open PR and either merge it or start a discussion with you with additional changes or clarification needed.
-5. Once the PR has been merged into the stable branch, then on the next git mirror sync (every 4 hours), launchpad will trigger [a build of the snap that gets published](https://launchpad.net/~desktop-snappers/+snap/libreoffice-snap) to the [snap store](https://snapcraft.io/libreoffice) into the *candidate* channel. After sufficient testing of the snap from the candidate channel, then the reviewer (a Collaborator of the snap in the store) will promote the snap to the stable branch in the snap store.
+5. Once the PR has been merged into the 7.1 branch, then on the next git mirror sync (every 4 hours), launchpad will trigger [a build of the snap that gets published](https://launchpad.net/~desktop-snappers/+snap/libreoffice-snap) to the [snap store](https://snapcraft.io/libreoffice) into the *candidate* channel. After sufficient testing of the snap from the candidate channel, then the reviewer (a Collaborator of the snap in the store) will promote the snap to the stable branch in the snap store.
