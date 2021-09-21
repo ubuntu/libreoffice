@@ -197,6 +197,11 @@ parts:
             - etc/firebird/
             - lib/libreoffice/*
             - -lib/libreoffice/share/fonts
+            - -usr/lib/*/libgtk*
+            - -usr/lib/*/libgdk*
+            - -usr/lib/*/libcairo*
+            - -usr/lib/*/libpango*
+            - -usr/lib/*/libwayland*
             - usr/lib/*/lib*
             - usr/lib/*/firebird/
             - -usr/lib/*/firebird/*/databases.conf
