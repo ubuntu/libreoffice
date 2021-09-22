@@ -369,7 +369,7 @@ parts:
             - unzip
 
     cleanup:
-        #after: [ desktop-settings-build ]
+        after: [ libreoffice ]
         plugin: nil
         build-snaps:
             - core20
@@ -383,6 +383,9 @@ parts:
             find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/{} \;
             cd /snap/gtk-common-themes/current
             find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/usr/{} \;
+
+            # Ensure we don't override key libs from the platform snap
+            rm -rf $SNAPCRAFT_PRIME/usr/lib/*/lib{gtk,gdk,cairo,pango,wayland}*
 
 apps:
     libreoffice:
