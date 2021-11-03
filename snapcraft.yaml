@@ -357,7 +357,7 @@ parts:
         source: https://github.com/ubuntu/libreoffice-style-yaru-fullcolor/archive/refs/tags/2021-09-01.tar.gz
         override-build: |
             set -eux
-            cd $SNAPCRAFT_PART_BUILD 
+            cd $SNAPCRAFT_PART_BUILD
             ./generate-oxt.sh
             if [ ! -f images_yaru.zip ]; then
                 echo "Yaru icons are missing!";
