@@ -37,7 +37,7 @@ parts:
             - gstreamer
             - yaru-icons
         plugin: autotools
-        source: http://download.documentfoundation.org/libreoffice/src/7.2.3/libreoffice-7.2.3.1.tar.xz
+        source: https://download.documentfoundation.org/libreoffice/src/7.2.3/libreoffice-7.2.3.1.tar.xz
         autotools-configure-parameters:
             - --disable-ccache
             - --disable-coinmp
