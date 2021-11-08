@@ -1,5 +1,5 @@
 name: libreoffice
-version: 7.2.2.2
+version: 7.2.3.1
 summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 confinement: strict
@@ -37,7 +37,7 @@ parts:
             - gstreamer
             - yaru-icons
         plugin: autotools
-        source: http://download.documentfoundation.org/libreoffice/src/7.2.2/libreoffice-7.2.2.2.tar.xz
+        source: http://download.documentfoundation.org/libreoffice/src/7.2.3/libreoffice-7.2.3.1.tar.xz
         autotools-configure-parameters:
             - --disable-ccache
             - --disable-coinmp
