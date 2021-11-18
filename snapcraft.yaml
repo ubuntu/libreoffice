@@ -354,7 +354,7 @@ parts:
 
     yaru-icons:
         plugin: nil
-        source: https://github.com/ubuntu/libreoffice-style-yaru-fullcolor/archive/refs/tags/2021-09-01.tar.gz
+        source: https://github.com/ubuntu/libreoffice-style-yaru-fullcolor/archive/refs/tags/2021-11-10.tar.gz
         override-build: |
             set -eux
             cd $SNAPCRAFT_PART_BUILD
