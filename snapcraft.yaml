@@ -53,8 +53,8 @@ parts:
             - --enable-release-build
             - --enable-scripting-beanshell
             - --enable-scripting-javascript
-            - --with-gdrive-client-id=424119844901.apps.googleusercontent.com
-            - --with-gdrive-client-secret=AIienwDlGIIsHoKnNHmWGXyJ
+            - --with-gdrive-client-id=424119844901-gee57209rkbo1rgula4i0arilvgv3lsf.apps.googleusercontent.com
+            - --with-gdrive-client-secret=3h1DknIrVsq2wEhIuADVxQ3E
             - --with-system-firebird
             - --with-system-graphite
             - --with-system-harfbuzz
