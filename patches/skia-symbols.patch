@@ -5,9 +5,9 @@ Last-Updated: 2021-10-15
 --- a/external/skia/UnpackedTarball_skia.mk
 +++ b/external/skia/UnpackedTarball_skia.mk
 @@ -41,6 +41,7 @@ skia_patches := \
-     fix-warnings.patch.1 \
      disable-freetype-colrv1.1 \
      windows-libraries-system32.patch.1 \
+     fix-graphite-ifdef.patch.1 \
 +    allow-symbols.patch \
  
  $(eval $(call gb_UnpackedTarball_set_patchlevel,skia,1))
