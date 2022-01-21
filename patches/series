@@ -12,3 +12,4 @@ fix-noto-sans-in-templates.diff
 replace-source-sans-in-templates.diff
 unpack-sources.patch
 skia-symbols.patch
+pdfium-symbols.patch
