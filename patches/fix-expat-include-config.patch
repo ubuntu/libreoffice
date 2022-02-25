@@ -13,13 +13,13 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
  # This is a bit hackish.
 --- /dev/null
 +++ b/external/expat/expat-include-config.patch
-@@ -0,0 +1,81 @@
+@@ -0,0 +1,92 @@
 +Description: Ensure that the local copy of expat_config.h is used, not the one installed by libexpat1-dev
 +Author: Olivier Tilloy <olivier.tilloy@canonical.com>, Heather Ellsworth <heather.ellsworth@canonical.com>, Rico Tzschichholz <ricotz@ubuntu.com>
-+Last-Updated: 2021-07-15
++Last-Updated: 2022-02-25
 +
-+--- a/expat-2.4.4/lib/xmlparse.c
-++++ b/expat-2.4.4/lib/xmlparse.c
++--- a/expat-2.4.6/lib/xmlparse.c
+++++ b/expat-2.4.6/lib/xmlparse.c
 +@@ -58,7 +58,7 @@
 + 
 + #define XML_BUILDING_EXPAT 1
@@ -29,8 +29,8 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 + 
 + #if ! defined(_GNU_SOURCE)
 + #  define _GNU_SOURCE 1 /* syscall prototype */
-+--- a/expat-2.4.4/lib/xmlrole.c
-++++ b/expat-2.4.4/lib/xmlrole.c
++--- a/expat-2.4.6/lib/xmlrole.c
+++++ b/expat-2.4.6/lib/xmlrole.c
 +@@ -38,7 +38,7 @@
 +    USE OR OTHER DEALINGS IN THE SOFTWARE.
 + */
@@ -40,8 +40,8 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 + 
 + #include <stddef.h>
 + 
-+--- a/expat-2.4.4/lib/xmltok.c
-++++ b/expat-2.4.4/lib/xmltok.c
++--- a/expat-2.4.6/lib/xmltok.c
+++++ b/expat-2.4.6/lib/xmltok.c
 +@@ -43,7 +43,7 @@
 +    USE OR OTHER DEALINGS IN THE SOFTWARE.
 + */
@@ -51,8 +51,8 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 + 
 + #include <stddef.h>
 + #include <string.h> /* memcpy */
-+--- a/expat-2.4.4/tests/chardata.c
-++++ b/expat-2.4.4/tests/chardata.c
++--- a/expat-2.4.6/tests/chardata.c
+++++ b/expat-2.4.6/tests/chardata.c
 +@@ -34,7 +34,7 @@
 +    USE OR OTHER DEALINGS IN THE SOFTWARE.
 + */
@@ -62,8 +62,8 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 + #include "minicheck.h"
 + 
 + #include <assert.h>
-+--- a/expat-2.4.4/tests/runtests.c
-++++ b/expat-2.4.4/tests/runtests.c
++--- a/expat-2.4.6/tests/runtests.c
+++++ b/expat-2.4.6/tests/runtests.c
 +@@ -40,7 +40,7 @@
 +    USE OR OTHER DEALINGS IN THE SOFTWARE.
 + */
@@ -73,8 +73,8 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 + 
 + #if defined(NDEBUG)
 + #  undef NDEBUG /* because test suite relies on assert(...) at the moment */
-+--- a/expat-2.4.4/tests/structdata.c
-++++ b/expat-2.4.4/tests/structdata.c
++--- a/expat-2.4.6/tests/structdata.c
+++++ b/expat-2.4.6/tests/structdata.c
 +@@ -30,7 +30,7 @@
 +    USE OR OTHER DEALINGS IN THE SOFTWARE.
 + */
@@ -84,8 +84,8 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 + 
 + #include <assert.h>
 + #include <stdlib.h>
-+--- a/expat-2.4.4/xmlwf/xmlfile.c
-++++ b/expat-2.4.4/xmlwf/xmlfile.c
++--- a/expat-2.4.6/xmlwf/xmlfile.c
+++++ b/expat-2.4.6/xmlwf/xmlfile.c
 +@@ -37,7 +37,7 @@
 +    USE OR OTHER DEALINGS IN THE SOFTWARE.
 + */
@@ -95,3 +95,14 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 + 
 + #include <stdio.h>
 + #include <stdlib.h>
++--- a/expat-2.4.6/xmlwf/xmlwf.c
+++++ b/expat-2.4.6/xmlwf/xmlwf.c
++@@ -39,7 +39,7 @@
++    USE OR OTHER DEALINGS IN THE SOFTWARE.
++ */
++ 
++-#include <expat_config.h>
+++#include "../expat_config.h"
++ 
++ #include <assert.h>
++ #include <stdio.h>
