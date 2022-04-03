@@ -1,5 +1,5 @@
 name: libreoffice
-version: 7.2.5.2
+version: 7.3.2.2
 summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 confinement: strict
@@ -37,7 +37,7 @@ parts:
             - gstreamer
             - yaru-icons
         plugin: autotools
-        source: https://download.documentfoundation.org/libreoffice/src/7.2.5/libreoffice-7.2.5.2.tar.xz
+        source: https://download.documentfoundation.org/libreoffice/src/7.3.2/libreoffice-7.3.2.2.tar.xz
         autotools-configure-parameters:
             - --disable-ccache
             - --disable-coinmp
@@ -53,8 +53,8 @@ parts:
             - --enable-release-build
             - --enable-scripting-beanshell
             - --enable-scripting-javascript
-            - --with-gdrive-client-id=424119844901.apps.googleusercontent.com
-            - --with-gdrive-client-secret=AIienwDlGIIsHoKnNHmWGXyJ
+            - --with-gdrive-client-id=424119844901-gee57209rkbo1rgula4i0arilvgv3lsf.apps.googleusercontent.com
+            - --with-gdrive-client-secret=3h1DknIrVsq2wEhIuADVxQ3E
             - --with-system-firebird
             - --with-system-graphite
             - --with-system-harfbuzz
@@ -86,52 +86,30 @@ parts:
             - gperf
             - junit4
             - libarchive-zip-perl
-            - libbluetooth-dev
             - libcups2-dev
-            - libcurl4-gnutls-dev
             - libdbus-glib-1-dev
-            - libe-book-dev
-            - libeot-dev
-            - libexpat1-dev
             - libexttextcat-dev
             - libfontconfig1-dev
-            - libfreehand-dev
             - libfreetype6-dev
-            - libgconf2-dev
             - libgirepository1.0-dev
             - libgl1-mesa-glx
-            - libglew-dev
-            - libglm-dev
             - libgraphite2-dev
             - libgstreamer-plugins-base1.0-dev
             - libgstreamer1.0-dev
             - libhsqldb1.8.0-java
-            - libhunspell-dev
             - libhyphen-dev
             - libice-dev
             - libicu-dev
-            - libjpeg-dev
             - libkrb5-dev
-            - liblangtag-dev
             - liblcms2-dev
             - libldap2-dev
-            - libmysqlclient-dev
-            - libmysqlcppconn-dev
-            - libmythes-dev
             - libnspr4-dev
             - libnss3-dev
-            - libpng-dev
-            - libpoppler-cpp-dev
-            - libpoppler-dev
-            - libpoppler-private-dev
             - libpq-dev
             - libpython3-dev
             - librdf0-dev
-            - libsane-dev
             - libsm-dev
-            - libssl-dev
             - libsuitesparse-dev
-            - libvisio-dev
             - libx11-dev
             - libxaw7-dev
             - libxext-dev
@@ -148,7 +126,6 @@ parts:
             - libxtst-dev
             - maven-repo-helper
             - python3-dev
-            - unixodbc-dev
             - unzip
             - wget
             - x11proto-render-dev
@@ -162,7 +139,6 @@ parts:
             - libdbus-glib-1-2
             - libexttextcat-2.0-0
             - libfreetype6
-            - libgconf-2-4
             - libgl1-mesa-glx
             - libharfbuzz-icu0
             - libhsqldb1.8.0-java
@@ -189,8 +165,8 @@ parts:
             for app in base calc draw impress math startcenter writer
             do
                 sed -i \
-                    -e "s#Icon=libreoffice7.2-$app#Icon=/usr/share/icons/hicolor/256x256/apps/libreoffice7.2-$app.png#" \
-                    -e "s#^Exec=libreoffice7.2 --\(.*\)#Exec=libreoffice.\1#g" \
+                    -e "s#Icon=libreoffice7.3-$app#Icon=/usr/share/icons/hicolor/256x256/apps/libreoffice7.3-$app.png#" \
+                    -e "s#^Exec=libreoffice7.3 --\(.*\)#Exec=libreoffice.\1#g" \
                     $SNAPCRAFT_PART_INSTALL/usr/local/lib/libreoffice/share/xdg/$app.desktop
             done
         prime:
@@ -265,6 +241,9 @@ parts:
             - openjdk-11-jre-headless
         prime:
             - -usr/share/doc
+        override-prime: |
+            snapcraftctl prime
+            rm -vf usr/lib/jvm/java-11-openjdk-*/lib/security/blacklisted.certs
 
     gstreamer:
         # GStreamer packages needed for audio/video clip playback in office
@@ -354,7 +333,7 @@ parts:
 
     yaru-icons:
         plugin: nil
-        source: https://github.com/ubuntu/libreoffice-style-yaru-fullcolor/archive/refs/tags/2021-11-10.tar.gz
+        source: https://github.com/ubuntu/libreoffice-style-yaru-fullcolor/archive/refs/tags/2022-03-12.tar.gz
         override-build: |
             set -eux
             cd $SNAPCRAFT_PART_BUILD

@@ -13,91 +13,96 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
  # This is a bit hackish.
 --- /dev/null
 +++ b/external/expat/expat-include-config.patch
-@@ -0,0 +1,87 @@
+@@ -0,0 +1,92 @@
 +Description: Ensure that the local copy of expat_config.h is used, not the one installed by libexpat1-dev
-+Author: Olivier Tilloy <olivier.tilloy@canonical.com>, Heather Ellsworth <heather.ellsworth@canonical.com>
-+Last-Updated: 2021-07-15
++Author: Olivier Tilloy <olivier.tilloy@canonical.com>, Heather Ellsworth <heather.ellsworth@canonical.com>, Rico Tzschichholz <ricotz@ubuntu.com>
++Last-Updated: 2022-02-25
 +
-+--- a/expat-2.4.1/lib/xmlparse.c
-++++ b/expat-2.4.1/lib/xmlparse.c
-+@@ -90,7 +90,7 @@
-+ #  include "winconfig.h"
-+ #endif
-+
++--- a/expat-2.4.6/lib/xmlparse.c
+++++ b/expat-2.4.6/lib/xmlparse.c
++@@ -58,7 +58,7 @@
++ 
++ #define XML_BUILDING_EXPAT 1
++ 
 +-#include <expat_config.h>
 ++#include "../expat_config.h"
-+
-+ #ifdef _WIN32
-+ #  undef HAVE_GETRANDOM
-+
-+--- a/expat-2.4.1/lib/xmlrole.c
-++++ b/expat-2.4.1/lib/xmlrole.c
++ 
++ #if ! defined(_GNU_SOURCE)
++ #  define _GNU_SOURCE 1 /* syscall prototype */
++--- a/expat-2.4.6/lib/xmlrole.c
+++++ b/expat-2.4.6/lib/xmlrole.c
++@@ -38,7 +38,7 @@
++    USE OR OTHER DEALINGS IN THE SOFTWARE.
++ */
++ 
++-#include <expat_config.h>
+++#include "../expat_config.h"
++ 
++ #include <stddef.h>
++ 
++--- a/expat-2.4.6/lib/xmltok.c
+++++ b/expat-2.4.6/lib/xmltok.c
 +@@ -43,7 +43,7 @@
-+ #  include "winconfig.h"
-+ #endif
-+
++    USE OR OTHER DEALINGS IN THE SOFTWARE.
++ */
++ 
 +-#include <expat_config.h>
 ++#include "../expat_config.h"
-+
-+ #include "expat_external.h"
-+ #include "internal.h"
-+
-+--- a/expat-2.4.1/lib/xmltok.c
-++++ b/expat-2.4.1/lib/xmltok.c
-+@@ -50,7 +50,7 @@
-+ #  include "winconfig.h"
-+ #endif
-+
-+-#include <expat_config.h>
-++#include "../expat_config.h"
-+
-+ #include "expat_external.h"
-+ #include "internal.h"
-+
-+--- a/expat-2.4.1/tests/chardata.c
-++++ b/expat-2.4.1/tests/chardata.c
++ 
++ #include <stddef.h>
++ #include <string.h> /* memcpy */
++--- a/expat-2.4.6/tests/chardata.c
+++++ b/expat-2.4.6/tests/chardata.c
 +@@ -34,7 +34,7 @@
 +    USE OR OTHER DEALINGS IN THE SOFTWARE.
 + */
-+
++ 
 +-#include <expat_config.h>
 ++#include "../expat_config.h"
 + #include "minicheck.h"
-+
++ 
 + #include <assert.h>
-+
-+--- a/expat-2.4.1/tests/runtests.c
-++++ b/expat-2.4.1/tests/runtests.c
-+@@ -43,7 +43,7 @@
-+ #  undef NDEBUG /* because test suite relies on assert(...) at the moment */
-+ #endif
-+
++--- a/expat-2.4.6/tests/runtests.c
+++++ b/expat-2.4.6/tests/runtests.c
++@@ -40,7 +40,7 @@
++    USE OR OTHER DEALINGS IN THE SOFTWARE.
++ */
++ 
 +-#include <expat_config.h>
 ++#include "../expat_config.h"
-+
-+ #include <assert.h>
-+ #include <stdlib.h>
-+
-+--- a/expat-2.4.1/tests/structdata.c
-++++ b/expat-2.4.1/tests/structdata.c
++ 
++ #if defined(NDEBUG)
++ #  undef NDEBUG /* because test suite relies on assert(...) at the moment */
++--- a/expat-2.4.6/tests/structdata.c
+++++ b/expat-2.4.6/tests/structdata.c
 +@@ -30,7 +30,7 @@
 +    USE OR OTHER DEALINGS IN THE SOFTWARE.
 + */
-+
++ 
 +-#include "expat_config.h"
 ++#include "../expat_config.h"
-+
++ 
 + #include <assert.h>
 + #include <stdlib.h>
-+
-+--- a/expat-2.4.1/xmlwf/xmlfile.c
-++++ b/expat-2.4.1/xmlwf/xmlfile.c
-+@@ -46,7 +46,7 @@
-+ #  include "winconfig.h"
-+ #endif
-+
++--- a/expat-2.4.6/xmlwf/xmlfile.c
+++++ b/expat-2.4.6/xmlwf/xmlfile.c
++@@ -37,7 +37,7 @@
++    USE OR OTHER DEALINGS IN THE SOFTWARE.
++ */
++ 
 +-#include <expat_config.h>
 ++#include "../expat_config.h"
-+
-+ #include "expat.h"
-+ #include "internal.h" /* for UNUSED_P only */
++ 
++ #include <stdio.h>
++ #include <stdlib.h>
++--- a/expat-2.4.6/xmlwf/xmlwf.c
+++++ b/expat-2.4.6/xmlwf/xmlwf.c
++@@ -39,7 +39,7 @@
++    USE OR OTHER DEALINGS IN THE SOFTWARE.
++ */
++ 
++-#include <expat_config.h>
+++#include "../expat_config.h"
++ 
++ #include <assert.h>
++ #include <stdio.h>
