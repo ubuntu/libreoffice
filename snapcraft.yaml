@@ -202,37 +202,118 @@ parts:
     spellchecking:
         plugin: nil
         stage-packages:
+            - hunspell-af
+            - hunspell-bg
+            - hunspell-bn
+            - hunspell-bs
+            - hunspell-cs
+            - hunspell-da
             - hunspell-de-de
+            - hunspell-el
             - hunspell-en-au
             - hunspell-en-ca
             - hunspell-en-gb
             - hunspell-en-us
             - hunspell-en-za
+            - hunspell-es
             - hunspell-fr-classical
+            - hunspell-gd
+            - hunspell-gl
+            - hunspell-gl-es
+            - hunspell-gu
+            - hunspell-gug
+            - hunspell-he
+            - hunspell-hi
+            - hunspell-hr
+            - hunspell-hu
+            - hunspell-id
+            - hunspell-is
             - hunspell-it
+            - hunspell-kmr
+            - hunspell-lo
+            - hunspell-lt
+            - hunspell-ne
+            - hunspell-no
+            - hunspell-oc
             - hunspell-pl
-            - myspell-es
-            - myspell-pt-br
-            - myspell-pt-pt
+            - hunspell-pt-br
+            - hunspell-pt-pt
+            - hunspell-ro
+            - hunspell-ru
+            - hunspell-si
+            - hunspell-sk
+            - hunspell-sl
+            - hunspell-sr
+            - hunspell-sv
+            - hunspell-sv-se
+            - hunspell-sw
+            - hunspell-te
+            - hunspell-th
+            - hunspell-tr
+            - hunspell-uk
+            - hunspell-vi
 
     hyphenation:
         plugin: nil
         stage-packages:
+            - hyphen-af
+            - hyphen-bg
+            - hyphen-ca
+            - hyphen-cs
+            - hyphen-da
             - hyphen-de
+            - hyphen-el
             - hyphen-en-gb
             - hyphen-en-us
             - hyphen-es
             - hyphen-fr
+            - hyphen-gl
+            - hyphen-hr
+            - hyphen-hu
+            - hyphen-id
+            - hyphen-is
             - hyphen-it
+            - hyphen-lt
+            - hyphen-nl
+            - hyphen-no
             - hyphen-pt-br
             - hyphen-pt-pt
+            - hyphen-ro
+            - hyphen-sk
+            - hyphen-sl
+            - hyphen-sr
+            - hyphen-sv
+            - hyphen-uk
+            - hyphen-zu
 
     thesauri:
         plugin: nil
         stage-packages:
+            - mythes-ar
+            - mythes-bg
+            - mythes-ca
+            - mythes-cs
+            - mythes-da
             - mythes-en-au
             - mythes-en-us
+            - mythes-es
             - mythes-fr
+            - mythes-gl
+            - mythes-gug
+            - mythes-hu
+            - mythes-id
+            - mythes-is
+            - mythes-it
+            - mythes-lv
+            - mythes-ne
+            - mythes-no
+            - mythes-pt-pt
+            - mythes-ro
+            - mythes-ru
+            - mythes-sk
+            - mythes-sl
+            - mythes-sv
+            - mythes-uk
 
     jvm:
         plugin: nil
