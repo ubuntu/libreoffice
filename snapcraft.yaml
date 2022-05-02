@@ -172,6 +172,65 @@ parts:
         prime:
             - etc/firebird/
             - lib/libreoffice/*
+            - -lib/libreoffice/help/af
+            - -lib/libreoffice/help/am
+            - -lib/libreoffice/help/ar
+            - -lib/libreoffice/help/as
+            - -lib/libreoffice/help/ast
+            - -lib/libreoffice/help/be
+            - -lib/libreoffice/help/bg
+            - -lib/libreoffice/help/bn
+            - -lib/libreoffice/help/br
+            - -lib/libreoffice/help/bs
+            - -lib/libreoffice/help/cy
+            - -lib/libreoffice/help/en-ZA
+            - -lib/libreoffice/help/eo
+            - -lib/libreoffice/help/fa
+            - -lib/libreoffice/help/ga
+            - -lib/libreoffice/help/gd
+            - -lib/libreoffice/help/gu
+            - -lib/libreoffice/help/gug
+            - -lib/libreoffice/help/he
+            - -lib/libreoffice/help/hr
+            - -lib/libreoffice/help/is
+            - -lib/libreoffice/help/ka
+            - -lib/libreoffice/help/kk
+            - -lib/libreoffice/help/kmr-Latn
+            - -lib/libreoffice/help/kn
+            - -lib/libreoffice/help/lt
+            - -lib/libreoffice/help/lv
+            - -lib/libreoffice/help/mk
+            - -lib/libreoffice/help/mn
+            - -lib/libreoffice/help/ml
+            - -lib/libreoffice/help/mr
+            - -lib/libreoffice/help/nb
+            - -lib/libreoffice/help/ne
+            - -lib/libreoffice/help/nn
+            - -lib/libreoffice/help/nr
+            - -lib/libreoffice/help/nso
+            - -lib/libreoffice/help/oc
+            - -lib/libreoffice/help/or
+            - -lib/libreoffice/help/pa-IN
+            - -lib/libreoffice/help/ro
+            - -lib/libreoffice/help/rw
+            - -lib/libreoffice/help/si
+            - -lib/libreoffice/help/sr
+            - -lib/libreoffice/help/sr-Latn
+            - -lib/libreoffice/help/ss
+            - -lib/libreoffice/help/st
+            - -lib/libreoffice/help/szl
+            - -lib/libreoffice/help/ta
+            - -lib/libreoffice/help/te
+            - -lib/libreoffice/help/tg
+            - -lib/libreoffice/help/th
+            - -lib/libreoffice/help/tn
+            - -lib/libreoffice/help/ts
+            - -lib/libreoffice/help/ug
+            - -lib/libreoffice/help/uk
+            - -lib/libreoffice/help/uz
+            - -lib/libreoffice/help/ve
+            - -lib/libreoffice/help/xh
+            - -lib/libreoffice/help/zu
             - -lib/libreoffice/share/fonts
             - usr/lib/*/lib*
             - -usr/lib/*/libgtk*
