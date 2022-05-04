@@ -459,6 +459,7 @@ apps:
             - audio-playback
             - bluez
             - cups-control
+            - desktop
             - gsettings
             - home
             - network
