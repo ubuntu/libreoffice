@@ -39,6 +39,8 @@ parts:
         plugin: autotools
         source: https://download.documentfoundation.org/libreoffice/src/7.4.4/libreoffice-7.4.4.2.tar.xz
         autotools-configure-parameters:
+            - CC=gcc-10
+            - CXX=g++-10
             - --disable-ccache
             - --disable-coinmp
             - --disable-dconf
@@ -81,6 +83,8 @@ parts:
             - firebird-dev
             - firebird3.0-server-core
             - flex
+            - g++-10
+            - gcc-10
             - gdb
             - gettext
             - gperf
