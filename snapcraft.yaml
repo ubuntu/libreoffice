@@ -4,13 +4,13 @@ summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 confinement: strict
 grade: devel
-base: core20
+base: core22
 compression: lzo
 
 passthrough:
   layout:
-    /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/firebird:
-      bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/firebird
+    /usr/lib/$CRAFT_ARCH_TRIPLET/firebird:
+      bind: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/firebird
 
 parts:
     # Launchpad builders have a timeout for how long they are allowed to access
@@ -88,10 +88,10 @@ parts:
             - junit4
             - libarchive-zip-perl
             - libcups2-dev
-            - libdbus-glib-1-dev
+            - libdbus-1-dev
             - libexttextcat-dev
-            - libfontconfig1-dev
-            - libfreetype6-dev
+            - libfontconfig-dev
+            - libfreetype-dev
             - libgirepository1.0-dev
             - libgl1-mesa-glx
             - libgraphite2-dev
@@ -103,7 +103,7 @@ parts:
             - libicu-dev
             - libkrb5-dev
             - liblcms2-dev
-            - libldap2-dev
+            - libldap-dev
             - libnspr4-dev
             - libnss3-dev
             - libpq-dev
@@ -143,10 +143,10 @@ parts:
             - libgl1-mesa-glx
             - libharfbuzz-icu0
             - libhsqldb1.8.0-java
-            - libldap-2.4-2
+            - libldap-2.5-0
             - libnspr4
             - libnss3
-            - libpython3.9
+            - libpython3.10
             - libsm6
             - libxml2
             - libxslt1.1
@@ -157,18 +157,18 @@ parts:
             - libxrender1
         override-build: |
             set -eux
-            QUILT_PATCHES=$SNAPCRAFT_STAGE/patches quilt push -a
+            QUILT_PATCHES=$CRAFT_STAGE/patches quilt push -a
             snapcraftctl build
             srcdir=$PWD
             cd workdir/CustomTarget/sysui/share/libreoffice
-            SRCDIR=$srcdir INSTDIR=$srcdir/instdir DESTDIR=$SNAPCRAFT_PART_INSTALL PREFIXDIR=usr KDEMAINDIR=usr PKG_CONFIG=pkg-config ./create_tree.sh
-            chmod a+x $SNAPCRAFT_PART_INSTALL/usr/share
+            SRCDIR=$srcdir INSTDIR=$srcdir/instdir DESTDIR=$CRAFT_PART_INSTALL PREFIXDIR=usr KDEMAINDIR=usr PKG_CONFIG=pkg-config ./create_tree.sh
+            chmod a+x $CRAFT_PART_INSTALL/usr/share
             for app in base calc draw impress math startcenter writer
             do
                 sed -i \
                     -e "s#Icon=libreoffice7.4-$app#Icon=/usr/share/icons/hicolor/256x256/apps/libreoffice7.4-$app.png#" \
                     -e "s#^Exec=libreoffice7.4 --\(.*\)#Exec=libreoffice.\1#g" \
-                    $SNAPCRAFT_PART_INSTALL/usr/local/lib/libreoffice/share/xdg/$app.desktop
+                    $CRAFT_PART_INSTALL/usr/local/lib/libreoffice/share/xdg/$app.desktop
             done
         prime:
             - etc/firebird/
@@ -398,22 +398,22 @@ parts:
             - gstreamer1.0-plugins-good
             - gstreamer1.0-pulseaudio
             - libaa1
+            - libaom3
             - libass9
             - libavcodec58
             - libavfilter7
             - libavformat58
-            - libavresample4
             - libavutil56
             - libbluray2
             - libbs2b0
             - libbz2-1.0
             - libcairo-gobject2
-            - libcrystalhd3
             - libcurl3-gnutls
+            - libdav1d5
             - libde265-0
             - libdv4
             - libfaad2
-            - libffi7
+            - libffi8
             - libflac8
             - libflite1
             - libfribidi0
@@ -428,17 +428,19 @@ parts:
             - libgstreamer-plugins-base1.0-0
             - libgstreamer-plugins-good1.0-0
             - libgstreamer1.0-0
-            - libhogweed5
+            - libhogweed6
             - libidn2-0
+            - liblzma5
+            - libmfx1
             - libmp3lame0
             - libmodplug1
-            - libnettle7
+            - libnettle8
             - libnuma1
             - libogg0
             - libopenal1
             - libopenal-data
-            - libopencv-core4.2
-            - libopencv-imgproc4.2
+            - libopencv-core4.5d
+            - libopencv-imgproc4.5d
             - libopenjp2-7
             - libopus0
             - liborc-0.4-0
@@ -463,10 +465,12 @@ parts:
             - libv4l-0
             - libva2
             - libvorbis0a
-            - libvpx6
+            - libvorbisenc2
+            - libvpx7
             - libwavpack1
-            - libwebp6
-            - libx265-179
+            - libwebp7
+            - libx264-163
+            - libx265-199
             - libxvidcore4
             - libzmq5
             - libzvbi0
@@ -477,14 +481,14 @@ parts:
         source: https://github.com/ubuntu/libreoffice-style-yaru-fullcolor/archive/refs/tags/2022-09-04.tar.gz
         override-build: |
             set -eux
-            cd $SNAPCRAFT_PART_BUILD
+            cd $CRAFT_PART_BUILD
             ./build.sh --zip
             if [ ! -f dist/images_yaru.zip ]; then
                 echo "Yaru icons are missing!";
                 exit 1;
             fi
-            mkdir -p  $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/config/
-            cp $SNAPCRAFT_PART_BUILD/dist/images_yaru.zip $SNAPCRAFT_PART_INSTALL/lib/libreoffice/share/config/
+            mkdir -p  $CRAFT_PART_INSTALL/lib/libreoffice/share/config/
+            cp $CRAFT_PART_BUILD/dist/images_yaru.zip $CRAFT_PART_INSTALL/lib/libreoffice/share/config/
         build-packages:
             - unzip
 
@@ -492,27 +496,27 @@ parts:
         after: [ libreoffice ]
         plugin: nil
         build-snaps:
-            - core20
-            - gnome-3-38-2004
+            - core22
+            - gnome
             - gtk-common-themes
         override-prime: |
             set -eux
-            cd /snap/core20/current
-            find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/{} \;
-            cd /snap/gnome-3-38-2004/current
-            find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/{} \;
+            cd /snap/core22/current
+            find . -type f,l -exec rm -f $CRAFT_PRIME/{} \;
+            cd /snap/gnome-42-2204/current
+            find . -type f,l -exec rm -f $CRAFT_PRIME/{} \;
             cd /snap/gtk-common-themes/current
-            find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/usr/{} \;
+            find . -type f,l -exec rm -f $CRAFT_PRIME/usr/{} \;
 
             # Ensure we don't override key libs from the platform snap
-            rm -rf $SNAPCRAFT_PRIME/usr/lib/*/lib{gtk,gdk,cairo,pango,wayland}*
+            rm -rf $CRAFT_PRIME/usr/lib/*/lib{gtk,gdk,cairo,pango,wayland}*
 
 apps:
     libreoffice:
         command: libreoffice.wrapper
         desktop: lib/libreoffice/share/xdg/startcenter.desktop
         extensions: &extensions
-            - gnome-3-38
+            - gnome
         environment: &environment
             TMPDIR: $XDG_RUNTIME_DIR
         plugs: &plugs
