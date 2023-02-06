@@ -13,3 +13,4 @@ replace-source-sans-in-templates.diff
 unpack-sources.patch
 skia-symbols.patch
 pdfium-symbols.patch
+vcl-Use-fabs-for-double-argument.patch

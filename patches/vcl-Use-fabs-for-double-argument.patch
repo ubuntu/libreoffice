@@ -1,0 +1,26 @@
+From 98b4f624442d6a1e8bc9910dcb7b31d3f59aef49 Mon Sep 17 00:00:00 2001
+From: Rico Tzschichholz <ricotz@ubuntu.com>
+Date: Mon, 6 Feb 2023 19:24:41 +0100
+Subject: [PATCH] vcl: Use fabs() for double argument
+
+Change-Id: I959786e42dc576cb72411bacccf1b9bd32fbe21d
+---
+ vcl/source/window/window2.cxx | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/vcl/source/window/window2.cxx b/vcl/source/window/window2.cxx
+index 978dc0b6ecf8..20182e457061 100644
+--- a/vcl/source/window/window2.cxx
++++ b/vcl/source/window/window2.cxx
+@@ -619,7 +619,7 @@ static double lcl_HandleScrollHelper( Scrollable* pScrl, double nN, bool isMulti
+         }
+ 
+         // compute how many quantized units to scroll
+-        tools::Long magnitude = o3tl::saturating_cast<tools::Long>(abs(nN));
++        tools::Long magnitude = o3tl::saturating_cast<tools::Long>(fabs(nN));
+         tools::Long change = copysign(magnitude, nN);
+ 
+         nNewPos = nNewPos - change;
+-- 
+2.38.1
+
