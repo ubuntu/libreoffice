@@ -492,25 +492,6 @@ parts:
         build-packages:
             - unzip
 
-    cleanup:
-        after: [ libreoffice ]
-        plugin: nil
-        build-snaps:
-            - core22
-            - gnome
-            - gtk-common-themes
-        override-prime: |
-            set -eux
-            cd /snap/core22/current
-            find . -type f,l -exec rm -f $CRAFT_PRIME/{} \;
-            cd /snap/gnome-42-2204/current
-            find . -type f,l -exec rm -f $CRAFT_PRIME/{} \;
-            cd /snap/gtk-common-themes/current
-            find . -type f,l -exec rm -f $CRAFT_PRIME/usr/{} \;
-
-            # Ensure we don't override key libs from the platform snap
-            rm -rf $CRAFT_PRIME/usr/lib/*/lib{gtk,gdk,cairo,pango,wayland}*
-
 apps:
     libreoffice:
         command: libreoffice.wrapper
