@@ -15,14 +15,14 @@ index 3a19feed8ea2..dfe0b9cab33e 100644
 --- a/external/pdfium/UnpackedTarball_pdfium.mk
 +++ b/external/pdfium/UnpackedTarball_pdfium.mk
 @@ -18,6 +18,8 @@ pdfium_patches += c++20-comparison.patch
- pdfium_patches += cg-instead-of-carbon.patch.1
- # Android NDK 19 - that is known to work well - does not have 2 defines
- pdfium_patches += AndroidNDK19.patch.1
+ pdfium_patches += abseil-trivial.patch
+ 
+ pdfium_patches += constexpr-template.patch
 +# Allow usage of isfinite, isinf, and isnan symbols directly.
 +pdfium_patches += allow-symbols.patch
  
- # Work around <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=94141> "c++20 rewritten operator==
- # recursive call mixing friend and external operators for template class" in GCC with
+ $(eval $(call gb_UnpackedTarball_UnpackedTarball,pdfium))
+ 
 diff --git a/external/pdfium/allow-symbols.patch b/external/pdfium/allow-symbols.patch
 new file mode 100644
 index 000000000000..d74abec1f24c
