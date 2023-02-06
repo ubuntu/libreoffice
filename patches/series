@@ -13,4 +13,3 @@ replace-source-sans-in-templates.diff
 unpack-sources.patch
 skia-symbols.patch
 pdfium-symbols.patch
-Revert-tdf-143209-vcl-track-partial-scroll-deltas.patch
