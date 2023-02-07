@@ -45,23 +45,30 @@ parts:
             - --disable-dconf
             - --disable-evolution2
             - --disable-online-update
+            - --disable-openssl
             - --enable-dbus
             - --enable-eot
             - --enable-ext-wiki-publisher
             - --enable-extension-integration
             - --enable-gstreamer-1-0
             - --enable-mergelibs
+            - --enable-python=system
             - --enable-release-build
             - --enable-scripting-beanshell
             - --enable-scripting-javascript
             - --with-gdrive-client-id=424119844901-gee57209rkbo1rgula4i0arilvgv3lsf.apps.googleusercontent.com
             - --with-gdrive-client-secret=3h1DknIrVsq2wEhIuADVxQ3E
+            - --with-system-cairo
+            - --with-system-curl
+            - --with-system-epoxy
             - --with-system-firebird
             - --with-system-graphite
             - --with-system-harfbuzz
             - --with-system-icu
             - --with-system-jpeg
             - --with-system-libexttextcat
+            - --with-system-libpng
+            - --with-system-libtiff
             - --with-system-openldap
             - --with-system-nss
             - --with-system-hsqldb
@@ -87,8 +94,11 @@ parts:
             - gperf
             - junit4
             - libarchive-zip-perl
+            - libcairo2-dev
             - libcups2-dev
+            - libcurl4-gnutls-dev
             - libdbus-1-dev
+            - libepoxy-dev
             - libexttextcat-dev
             - libfontconfig-dev
             - libfreetype-dev
@@ -106,11 +116,13 @@ parts:
             - libldap-dev
             - libnspr4-dev
             - libnss3-dev
+            - libpng-dev
             - libpq-dev
             - libpython3-dev
             - librdf0-dev
             - libsm-dev
             - libsuitesparse-dev
+            - libtiff-dev
             - libx11-dev
             - libxaw7-dev
             - libxext-dev
