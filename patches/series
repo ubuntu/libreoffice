@@ -14,3 +14,4 @@ unpack-sources.patch
 skia-symbols.patch
 pdfium-symbols.patch
 vcl-Use-fabs-for-double-argument.patch
+box2d-symbols.patch

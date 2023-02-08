@@ -1,0 +1,55 @@
+From f35252e26378a72195aff630c871c179c007ec77 Mon Sep 17 00:00:00 2001
+From: Rico Tzschichholz <ricotz@ubuntu.com>
+Date: Wed, 8 Feb 2023 12:45:55 +0100
+Subject: [PATCH] Allow usage of isfinite directly
+
+Change-Id: I67905b51f07b9fb33a62c8fb8faf936f84d0314d
+---
+ external/box2d/UnpackedTarball_box2d.mk |  7 +++++++
+ external/box2d/allow-symbols.patch      | 16 ++++++++++++++++
+ 2 files changed, 23 insertions(+)
+ create mode 100644 external/box2d/allow-symbols.patch
+
+diff --git a/external/box2d/UnpackedTarball_box2d.mk b/external/box2d/UnpackedTarball_box2d.mk
+index 7d7d60e932ad..2f05d7657d5f 100644
+--- a/external/box2d/UnpackedTarball_box2d.mk
++++ b/external/box2d/UnpackedTarball_box2d.mk
+@@ -11,6 +11,13 @@ $(eval $(call gb_UnpackedTarball_UnpackedTarball,box2d))
+ 
+ $(eval $(call gb_UnpackedTarball_set_tarball,box2d,$(BOX2D_TARBALL)))
+ 
++box2d_patches := \
++    allow-symbols.patch \
++
+ $(eval $(call gb_UnpackedTarball_set_patchlevel,box2d,1))
+ 
++$(eval $(call gb_UnpackedTarball_add_patches,box2d,\
++    $(foreach patch,$(box2d_patches),external/box2d/$(patch)) \
++))
++
+ # vim: set noet sw=4 ts=4:
+diff --git a/external/box2d/allow-symbols.patch b/external/box2d/allow-symbols.patch
+new file mode 100644
+index 000000000000..ada0d56a44a7
+--- /dev/null
++++ b/external/box2d/allow-symbols.patch
+@@ -0,0 +1,16 @@
++Description: Allow usage of isfinite symbol directly.
++Author: Rico Tzschichholz <ricotz@ubuntu.com>
++Last-Updated: 2022-02-08
++
++--- a/include/box2d/b2_math.h
+++++ b/include/box2d/b2_math.h
++@@ -25,6 +25,9 @@
++ 
++ #include <math.h>
++ 
+++#include <cmath>
+++using std::isfinite;
+++
++ #include "b2_api.h"
++ #include "b2_settings.h"
++ 
+-- 
+2.38.1
+
