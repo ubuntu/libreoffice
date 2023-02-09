@@ -69,6 +69,7 @@ parts:
             - --with-system-libexttextcat
             - --with-system-libpng
             - --with-system-libtiff
+            - --with-system-mariadb
             - --with-system-openldap
             - --with-system-nss
             - --with-system-hsqldb
@@ -114,6 +115,7 @@ parts:
             - libkrb5-dev
             - liblcms2-dev
             - libldap-dev
+            - libmysqlclient-dev
             - libnspr4-dev
             - libnss3-dev
             - libpng-dev
@@ -156,6 +158,7 @@ parts:
             - libharfbuzz-icu0
             - libhsqldb1.8.0-java
             - libldap-2.5-0
+            - libmysqlclient21
             - libnspr4
             - libnss3
             - libpython3.10
