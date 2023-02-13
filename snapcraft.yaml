@@ -62,8 +62,6 @@ parts:
             - --with-system-curl
             - --with-system-epoxy
             - --with-system-firebird
-            - --with-system-graphite
-            - --with-system-harfbuzz
             - --with-system-icu
             - --with-system-jpeg
             - --with-system-libexttextcat
@@ -155,7 +153,6 @@ parts:
             - libexttextcat-2.0-0
             - libfreetype6
             - libgl1-mesa-glx
-            - libharfbuzz-icu0
             - libhsqldb1.8.0-java
             - libldap-2.5-0
             - libmysqlclient21
