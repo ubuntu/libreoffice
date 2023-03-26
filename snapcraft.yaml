@@ -72,7 +72,7 @@ parts:
             - --with-system-nss
             - --with-system-hsqldb
             - --with-hsqldb-jar=/usr/share/java/hsqldb1.8.0.jar
-            - --with-theme='colibre sifr sifr_dark breeze breeze_dark elementary'
+            - --with-theme='colibre sifr sifr_dark breeze breeze_dark elementary sukapura sukapura_dark'
             - --with-vendor='Canonical, Ltd.'
             - --with-help
             - --without-doxygen
