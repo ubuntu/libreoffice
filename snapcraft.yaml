@@ -443,7 +443,6 @@ parts:
             - libhogweed6
             - libidn2-0
             - liblzma5
-            - libmfx1
             - libmp3lame0
             - libmodplug1
             - libnettle8
