@@ -500,7 +500,7 @@ parts:
                 exit 1;
             fi
             mkdir -p  $CRAFT_PART_INSTALL/lib/libreoffice/share/config/
-            cp $CRAFT_PART_BUILD/dist/images_yaru.zip $CRAFT_PART_INSTALL/lib/libreoffice/share/config/
+            cp $CRAFT_PART_BUILD/dist/images_yaru*.zip $CRAFT_PART_INSTALL/lib/libreoffice/share/config/
         build-packages:
             - unzip
 
