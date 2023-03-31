@@ -490,7 +490,7 @@ parts:
 
     yaru-icons:
         plugin: nil
-        source: https://github.com/ubuntu/libreoffice-style-yaru-fullcolor/archive/refs/tags/2022-09-04.tar.gz
+        source: https://github.com/ubuntu/libreoffice-style-yaru-fullcolor/archive/refs/tags/2023-03-31.tar.gz
         override-build: |
             set -eux
             cd $CRAFT_PART_BUILD
