@@ -155,7 +155,10 @@ parts:
             - libexttextcat-2.0-0
             - libfreetype6
             - libgl1-mesa-glx
+            - libharfbuzz-gobject0
             - libharfbuzz-icu0
+            - libharfbuzz-subset0
+            - libharfbuzz0b
             - libhsqldb1.8.0-java
             - libldap-2.5-0
             - libmysqlclient21
