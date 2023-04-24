@@ -1,4 +1,3 @@
-revert-require-harfbuzz-5.1.0.patch
 fix-nss-include-path.patch
 0004-inject-snapped-JRE-path-in-build.patch
 0006-allow-root-builds-on-lp.patch
