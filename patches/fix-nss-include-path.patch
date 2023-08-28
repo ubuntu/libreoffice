@@ -31,6 +31,6 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
  #if USE_TLS_NSS
 -#include <nss.h>
 +#include <nss/nss.h>
+ #include <nspr.h>
  #include <sechash.h>
  #elif USE_TLS_OPENSSL
- #include <openssl/evp.h>

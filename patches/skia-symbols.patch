@@ -5,9 +5,9 @@ Last-Updated: 2021-10-15
 --- a/external/skia/UnpackedTarball_skia.mk
 +++ b/external/skia/UnpackedTarball_skia.mk
 @@ -41,6 +41,7 @@ skia_patches := \
-     constexpr-template.patch.0 \
-     missing-include.patch.0 \
      tdf147342.patch.0 \
+     redefinition-of-op.patch.0 \
+     0001-Added-missing-include-cstdio.patch \
 +    allow-symbols.patch \
  
  $(eval $(call gb_UnpackedTarball_set_patchlevel,skia,1))
@@ -22,13 +22,13 @@ Last-Updated: 2021-10-15
 +--- a/src/sksl/dsl/DSLExpression.cpp
 ++++ b/src/sksl/dsl/DSLExpression.cpp
 +@@ -19,6 +19,10 @@
-+ #include <math.h>
++
 + #include <utility>
 +
 ++using std::isfinite;
 ++using std::isinf;
 ++using std::isnan;
 ++
-+ #if !defined(SKSL_STANDALONE) && SK_SUPPORT_GPU
-+ #include "src/gpu/ganesh/GrFragmentProcessor.h"
-+ #include "src/gpu/ganesh/glsl/GrGLSLFragmentShaderBuilder.h"
++ namespace SkSL {
++
++ namespace dsl {

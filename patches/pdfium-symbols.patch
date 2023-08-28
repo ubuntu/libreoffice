@@ -15,7 +15,7 @@ index 3a19feed8ea2..dfe0b9cab33e 100644
 --- a/external/pdfium/UnpackedTarball_pdfium.mk
 +++ b/external/pdfium/UnpackedTarball_pdfium.mk
 @@ -18,6 +18,8 @@ pdfium_patches += c++20-comparison.patch
- pdfium_patches += abseil-trivial.patch
+ pdfium_patches += c++20-comparison.patch
  
  pdfium_patches += constexpr-template.patch
 +# Allow usage of isfinite, isinf, and isnan symbols directly.

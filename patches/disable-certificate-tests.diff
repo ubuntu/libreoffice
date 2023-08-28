@@ -9,6 +9,6 @@ Author: Marcus Tomlinson <marcus.tomlinson@canonical.com>
      CPPUNIT_TEST(testGetSignatureState_NonSigned);
 -#if !MPL_HAVE_SUBSET
 +#if 0
+ #if 0 // broken with system nss on RHEL 7
      CPPUNIT_TEST(testInsertCertificate_DER_ODT);
      CPPUNIT_TEST(testInsertCertificate_PEM_ODT);
-     CPPUNIT_TEST(testInsertCertificate_PEM_DOCX);
