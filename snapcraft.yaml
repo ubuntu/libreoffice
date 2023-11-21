@@ -121,7 +121,6 @@ parts:
             - libpng-dev
             - libpq-dev
             - libpython3-dev
-            - librdf0-dev
             - libsm-dev
             - libsuitesparse-dev
             - libtiff-dev
