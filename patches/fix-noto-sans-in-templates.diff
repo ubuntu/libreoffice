@@ -2,7 +2,7 @@ Description: Font family for Noto Sans is "Noto Sans" not "Noto Sans Regular/Bol
 Author: Marcus Tomlinson <marcus.tomlinson@canonical.com>, Rico Tzschichholz <ricotz@ubuntu.com>
 
 diff --git a/extras/source/templates/presnt/Vivid/content.xml b/extras/source/templates/presnt/Vivid/content.xml
-index 8d0758e2d560..34645d12a808 100644
+index a8f1eb699652..07cf641e6a4d 100644
 --- a/extras/source/templates/presnt/Vivid/content.xml
 +++ b/extras/source/templates/presnt/Vivid/content.xml
 @@ -5,7 +5,7 @@
@@ -14,43 +14,3 @@ index 8d0758e2d560..34645d12a808 100644
    </office:font-face-decls>
    <office:automatic-styles>
      <style:style style:name="dp1" style:family="drawing-page">
-diff --git a/extras/source/templates/presnt/Vivid/styles.xml b/extras/source/templates/presnt/Vivid/styles.xml
-index 1419f7b50420..343273ea94cb 100644
---- a/extras/source/templates/presnt/Vivid/styles.xml
-+++ b/extras/source/templates/presnt/Vivid/styles.xml
-@@ -4,7 +4,7 @@
-     <style:font-face style:name="Source Sans Pro" svg:font-family="'Source Sans Pro'" style:font-pitch="variable"/>
-     <style:font-face style:name="Source Sans Pro Black" svg:font-family="'Source Sans Pro Black'" style:font-adornments="Negra" style:font-pitch="variable"/>
-     <style:font-face style:name="Source Sans Pro Light" svg:font-family="'Source Sans Pro Light'" style:font-adornments="Ligera" style:font-pitch="variable"/>
--    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans Regular'" style:font-family-generic="system" style:font-pitch="variable"/>
-+    <style:font-face style:name="Noto Sans Regular" svg:font-family="'Noto Sans'" style:font-family-generic="system" style:font-pitch="variable"/>
-   </office:font-face-decls>
-   <office:styles>
-     <draw:gradient draw:name="Filled" draw:style="linear" draw:start-color="#ffffff" draw:end-color="#cccccc" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="300" draw:border="0%"/>
-@@ -189,7 +189,7 @@
-     <style:style style:name="Vivid-notes" style:family="presentation">
-       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm"/>
-       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.2cm" fo:line-height="110%" fo:text-indent="0cm"/>
--      <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="&apos;Noto Sans Regular&apos;" style:font-family-generic="system" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:font-size-asian="20pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-size-complex="20pt" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
-+      <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="&apos;Noto Sans&apos;" style:font-family-generic="system" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:font-size-asian="20pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-size-complex="20pt" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
-     </style:style>
-     <style:style style:name="Vivid-outline1" style:family="presentation">
-       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:auto-grow-height="false" draw:fit-to-size="shrink-to-fit" style:shrink-to-fit="true">
-@@ -382,7 +382,7 @@
-     <style:style style:name="Vivid1-notes" style:family="presentation">
-       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm"/>
-       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.2cm" fo:line-height="110%" fo:text-indent="0cm"/>
--      <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="&apos;Noto Sans Regular&apos;" style:font-family-generic="system" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:font-size-asian="20pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-size-complex="20pt" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
-+      <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="&apos;Noto Sans&apos;" style:font-family-generic="system" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:font-size-asian="20pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-size-complex="20pt" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
-     </style:style>
-     <style:style style:name="Vivid1-outline1" style:family="presentation">
-       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm" draw:auto-grow-height="false" draw:fit-to-size="shrink-to-fit" style:shrink-to-fit="true">
-@@ -573,7 +573,7 @@
-     <style:style style:name="Vivid2-notes" style:family="presentation">
-       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:fill-image-width="0cm" draw:fill-image-height="0cm"/>
-       <style:paragraph-properties fo:margin-left="0cm" fo:margin-right="0cm" fo:margin-top="0cm" fo:margin-bottom="0.2cm" fo:line-height="110%" fo:text-indent="0cm"/>
--      <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="&apos;Noto Sans Regular&apos;" style:font-family-generic="system" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:font-size-asian="20pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-size-complex="20pt" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
-+      <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:text-outline="false" style:text-line-through-style="none" style:text-line-through-type="none" style:font-name="Noto Sans Regular" fo:font-family="&apos;Noto Sans&apos;" style:font-family-generic="system" style:font-pitch="variable" fo:font-size="20pt" fo:font-style="normal" fo:text-shadow="none" style:text-underline-style="none" fo:font-weight="normal" style:letter-kerning="true" style:font-size-asian="20pt" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-size-complex="20pt" style:font-style-complex="normal" style:font-weight-complex="normal" style:text-emphasize="none" style:font-relief="none" style:text-overline-style="none" style:text-overline-color="font-color"/>
-     </style:style>
-     <style:style style:name="Vivid2-outline1" style:family="presentation">
-       <style:graphic-properties draw:stroke="none" draw:fill="none" draw:auto-grow-height="false" draw:fit-to-size="shrink-to-fit" style:shrink-to-fit="true">
