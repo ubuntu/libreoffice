@@ -1,5 +1,5 @@
 name: libreoffice
-version: 7.6.4.1
+version: 24.2.0.1
 summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 confinement: strict
@@ -38,7 +38,7 @@ parts:
             - gstreamer
             - yaru-icons
         plugin: autotools
-        source: https://download.documentfoundation.org/libreoffice/src/7.6.4/libreoffice-7.6.4.1.tar.xz
+        source: https://download.documentfoundation.org/libreoffice/src/24.2.0/libreoffice-24.2.0.1.tar.xz
         autotools-configure-parameters:
             - --disable-ccache
             - --disable-coinmp
@@ -183,8 +183,8 @@ parts:
             for app in base calc draw impress math startcenter writer
             do
                 sed -i \
-                    -e "s#Icon=libreoffice7.6-$app#Icon=/usr/share/icons/hicolor/256x256/apps/libreoffice7.6-$app.png#" \
-                    -e "s#^Exec=libreoffice7.6 --\(.*\)#Exec=libreoffice.\1#g" \
+                    -e "s#Icon=libreoffice24.2-$app#Icon=/usr/share/icons/hicolor/256x256/apps/libreoffice24.2-$app.png#" \
+                    -e "s#^Exec=libreoffice24.2 --\(.*\)#Exec=libreoffice.\1#g" \
                     $CRAFT_PART_INSTALL/usr/local/lib/libreoffice/share/xdg/$app.desktop
             done
         prime:
