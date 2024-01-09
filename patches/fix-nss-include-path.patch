@@ -12,17 +12,6 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
  #include <secmod.h>
  #include <prerror.h>
  #include <prinit.h>
---- a/onlineupdate/source/update/updater/updater.cxx
-+++ b/onlineupdate/source/update/updater/updater.cxx
-@@ -114,7 +114,7 @@ struct UpdateServerThreadArgs
- #endif
- 
- #if defined(VERIFY_MAR_SIGNATURE) && !defined(_WIN32) && !defined(MACOSX)
--#include <nss.h>
-+#include <nss/nss.h>
- #include <nspr.h>
- #endif
- 
 --- a/comphelper/source/misc/hash.cxx
 +++ b/comphelper/source/misc/hash.cxx
 @@ -14,7 +14,7 @@
