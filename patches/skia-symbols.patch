@@ -29,6 +29,6 @@ Last-Updated: 2021-10-15
 ++using std::isinf;
 ++using std::isnan;
 ++
-+ namespace SkSL {
++ using namespace skia_private;
 +
-+ namespace dsl {
++ namespace SkSL {
