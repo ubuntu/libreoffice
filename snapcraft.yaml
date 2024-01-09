@@ -60,6 +60,7 @@ parts:
             - --enable-scripting-javascript
             - --with-gdrive-client-id=424119844901-gee57209rkbo1rgula4i0arilvgv3lsf.apps.googleusercontent.com
             - --with-gdrive-client-secret=3h1DknIrVsq2wEhIuADVxQ3E
+            - --with-jdk-home=/usr/lib/jvm/java-17-openjdk-$CRAFT_ARCH_BUILD_FOR
             - --with-system-cairo
             - --with-system-curl
             - --with-system-epoxy
@@ -87,7 +88,6 @@ parts:
             - ant-optional
             - bison
             - build-essential
-            - default-jdk
             - doxygen
             - firebird-dev
             - firebird3.0-server-core
@@ -143,6 +143,7 @@ parts:
             - libxt-dev
             - libxtst-dev
             - maven-repo-helper
+            - openjdk-17-jdk
             - python3-dev
             - unzip
             - wget
@@ -399,13 +400,13 @@ parts:
     jvm:
         plugin: nil
         stage-packages:
-            - openjdk-11-jre
-            - openjdk-11-jre-headless
+            - openjdk-17-jre
+            - openjdk-17-jre-headless
         prime:
             - -usr/share/doc
         override-prime: |
             snapcraftctl prime
-            rm -vf usr/lib/jvm/java-11-openjdk-*/lib/security/blacklisted.certs
+            rm -vf usr/lib/jvm/java-17-openjdk-*/lib/security/blacklisted.certs
 
     gstreamer:
         # GStreamer packages needed for audio/video clip playback in office
