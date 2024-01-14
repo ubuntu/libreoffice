@@ -1,5 +1,5 @@
 name: libreoffice
-version: 24.2.0.1
+version: 24.2.0.2
 summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 confinement: strict
@@ -38,7 +38,7 @@ parts:
             - gstreamer
             - yaru-icons
         plugin: autotools
-        source: https://download.documentfoundation.org/libreoffice/src/24.2.0/libreoffice-24.2.0.1.tar.xz
+        source: https://download.documentfoundation.org/libreoffice/src/24.2.0/libreoffice-24.2.0.2.tar.xz
         autotools-configure-parameters:
             - CC=gcc-12
             - CXX=g++-12
