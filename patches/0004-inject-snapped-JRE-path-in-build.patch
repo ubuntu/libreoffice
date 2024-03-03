@@ -12,7 +12,7 @@ Subject: [PATCH 4/6] inject snapped JRE path in build
 -            const std::vector<OUString> vecJRELocations =
 -                settings.getJRELocations();
 +            std::vector<OUString> vecJRELocations = settings.getJRELocations();
-+            OUString sSnappedJRE("file:///snap/libreoffice/current/usr/lib/jvm/java-11-openjdk-amd64/"); // FIXME: use SNAP environment variable
++            OUString sSnappedJRE("file:///snap/libreoffice/current/usr/lib/jvm/java-17-openjdk-amd64/"); // FIXME: use SNAP environment variable
 +            vecJRELocations.insert(vecJRELocations.begin(), { sSnappedJRE } );
              //Check if any plugin can detect JREs at the location
              // of the paths added by jfw_addJRELocation
@@ -24,7 +24,7 @@ Subject: [PATCH 4/6] inject snapped JRE path in build
 -                const std::vector<OUString> & vecJRELocations =
 -                    settings.getJRELocations();
 +                std::vector<OUString> vecJRELocations = settings.getJRELocations();
-+                OUString sSnappedJRE("file:///snap/libreoffice/current/usr/lib/jvm/java-11-openjdk-amd64/"); // FIXME: use SNAP environment variable
++                OUString sSnappedJRE("file:///snap/libreoffice/current/usr/lib/jvm/java-17-openjdk-amd64/"); // FIXME: use SNAP environment variable
 +                vecJRELocations.insert(vecJRELocations.begin(), { sSnappedJRE } );
                  //use all plug-ins to determine the JavaInfo objects
                  for (auto const & JRELocation : vecJRELocations)

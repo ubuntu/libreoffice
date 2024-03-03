@@ -25,7 +25,7 @@ if __name__ == '__main__':
         "javasettings_Linux_{}.xml".format(javasettings_arch)
     javasettings_filepath = os.path.join(lo_config_dir, javasettings_filename)
 
-    marker_revision = 2 # bump when the contents of the file need to change
+    marker_revision = 3 # bump when the contents of the file need to change
     marker_filename = ".snap_javasettings_writer.{}".format(marker_revision)
     marker_file = os.path.join(lo_config_dir, marker_filename)
     if os.path.isfile(marker_file):
@@ -35,7 +35,7 @@ if __name__ == '__main__':
     if not os.path.exists(lo_config_dir):
         os.makedirs(lo_config_dir)
 
-    jre = "{}/usr/lib/jvm/java-11-openjdk-{}".format(snap, snap_arch)
+    jre = "{}/usr/lib/jvm/java-17-openjdk-{}".format(snap, snap_arch)
     jvm = "{}/lib".format(jre)
 
     java_location = "file://{}".format(jre)
