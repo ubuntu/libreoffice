@@ -35,7 +35,7 @@ if __name__ == '__main__':
     if not os.path.exists(lo_config_dir):
         os.makedirs(lo_config_dir)
 
-    jre = "{}/usr/lib/jvm/java-17-openjdk-{}".format(snap, snap_arch)
+    jre = "{}/usr/lib/jvm/java-21-openjdk-{}".format(snap, snap_arch)
     jvm = "{}/lib".format(jre)
 
     java_location = "file://{}".format(jre)
