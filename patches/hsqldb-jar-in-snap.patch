@@ -4,13 +4,13 @@ Author: Olivier Tilloy <olivier.tilloy@canonical.com>
 --- a/connectivity/source/drivers/hsqldb/HDriver.cxx
 +++ b/connectivity/source/drivers/hsqldb/HDriver.cxx
 @@ -224,7 +224,7 @@ namespace connectivity
-                 aProperties.put( "JavaDriverClassPath",
-                     OUString(
+                 aProperties.put( u"JavaDriverClass"_ustr, u"org.hsqldb.jdbcDriver"_ustr );
+                 aProperties.put( u"JavaDriverClassPath"_ustr,
  #ifdef SYSTEM_HSQLDB
--                        HSQLDB_JAR
-+                        "vnd.sun.star.expand:file://$SNAP" HSQLDB_JAR
+-                        u"" HSQLDB_JAR
++                        u"vnd.sun.star.expand:file://$SNAP" HSQLDB_JAR
  #else
-                         "vnd.sun.star.expand:$LO_JAVA_DIR/hsqldb.jar"
+                         u"vnd.sun.star.expand:$LO_JAVA_DIR/hsqldb.jar"
  #endif
 --- a/RepositoryExternal.mk
 +++ b/RepositoryExternal.mk
