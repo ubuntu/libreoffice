@@ -1,5 +1,5 @@
 name: libreoffice
-version: 24.2.6.2
+version: 25.2.3.2
 summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 confinement: strict
@@ -161,7 +161,6 @@ parts:
             - libgl1-mesa-glx
             - libharfbuzz-gobject0
             - libharfbuzz-icu0
-            - libharfbuzz-subset0
             - libharfbuzz0b
             - libhsqldb1.8.0-java
             - libldap-2.5-0
