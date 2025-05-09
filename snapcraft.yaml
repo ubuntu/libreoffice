@@ -4,7 +4,7 @@ summary: LibreOffice is a free and open source office suite
 description: LibreOffice is a free and open source office suite, developed by The Document Foundation. The LibreOffice suite comprises programs for word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, working with databases, and composing mathematical formulae.
 confinement: strict
 grade: stable
-base: core22
+base: core24
 compression: lzo
 
 passthrough:
@@ -40,8 +40,6 @@ parts:
         plugin: autotools
         source: https://download.documentfoundation.org/libreoffice/src/25.2.3/libreoffice-25.2.3.2.tar.xz
         autotools-configure-parameters:
-            - CC=gcc-12
-            - CXX=g++-12
             - --disable-ccache
             - --disable-coinmp
             - --disable-dconf
@@ -92,8 +90,6 @@ parts:
             - firebird-dev
             - firebird3.0-server-core
             - flex
-            - g++-12
-            - gcc-12
             - gdb
             - gettext
             - gperf
@@ -108,7 +104,8 @@ parts:
             - libfontconfig-dev
             - libfreetype-dev
             - libgirepository1.0-dev
-            - libgl1-mesa-glx
+            - libgl1
+            - libglx-mesa0
             - libgraphite2-dev
             - libgstreamer-plugins-base1.0-dev
             - libgstreamer1.0-dev
@@ -155,20 +152,20 @@ parts:
         stage-packages:
             - firebird3.0-common
             - firebird3.0-server-core
-            - libdbus-glib-1-2
             - libexttextcat-2.0-0
             - libfreetype6
-            - libgl1-mesa-glx
+            - libgl1
+            - libglx-mesa0
             - libharfbuzz-gobject0
             - libharfbuzz-icu0
             - libharfbuzz-subset0
             - libharfbuzz0b
             - libhsqldb1.8.0-java
-            - libldap-2.5-0
+            - libldap2
             - libmysqlclient21
             - libnspr4
             - libnss3
-            - libpython3.10
+            - libpython3.12
             - libsm6
             - libxml2
             - libxslt1.1
@@ -301,7 +298,6 @@ parts:
             - hunspell-fr-classical
             - hunspell-gd
             - hunspell-gl
-            - hunspell-gl-es
             - hunspell-gu
             - hunspell-gug
             - hunspell-he
@@ -327,7 +323,6 @@ parts:
             - hunspell-sl
             - hunspell-sr
             - hunspell-sv
-            - hunspell-sv-se
             - hunspell-sw
             - hunspell-te
             - hunspell-th
@@ -423,27 +418,27 @@ parts:
             - libaa1
             - libaom3
             - libass9
-            - libavcodec58
-            - libavfilter7
-            - libavformat58
-            - libavutil56
+            - libavcodec60
+            - libavfilter9
+            - libavformat60
+            - libavutil58
             - libbluray2
             - libbs2b0
             - libbz2-1.0
             - libcairo-gobject2
             - libcurl3-gnutls
-            - libdav1d5
+            - libdav1d7
             - libde265-0
-            - libdv4
+            - libdv4t64
             - libfaad2
             - libffi8
-            - libflac8
+            - libflac12t64
             - libflite1
             - libfribidi0
             - libglu1-mesa
             - libgme0
             - libgmp10
-            - libgnutls30
+            - libgnutls30t64
             - libgomp1
             - libgpm2
             - libgsm1
@@ -451,51 +446,51 @@ parts:
             - libgstreamer-plugins-base1.0-0
             - libgstreamer-plugins-good1.0-0
             - libgstreamer1.0-0
-            - libhogweed6
+            - libhogweed6t64
             - libidn2-0
             - liblzma5
             - libmp3lame0
             - libmodplug1
-            - libnettle8
+            - libnettle8t64
             - libnuma1
             - libogg0
             - libopenal1
             - libopenal-data
-            - libopencv-core4.5d
-            - libopencv-imgproc4.5d
+            - libopencv-core406t64
+            - libopencv-imgproc406t64
             - libopenjp2-7
             - libopus0
-            - liborc-0.4-0
+            - liborc-0.4-0t64
             - libp11-kit0
-            - libpostproc55
+            - libpostproc57
             - librtmp1
             - libshine3
             - libslang2
             - libsnappy1v5
             - libsodium23
-            - libsoup2.4-1
+            - libsoup-3.0-0
             - libsoxr0
             - libspeex1
             - libssh-gcrypt-4
-            - libswresample3
-            - libswscale5
+            - libswresample4
+            - libswscale7
             - libtasn1-6
-            - libtbb2
+            - libtbb12
             - libtheora0
             - libtwolame0
-            - libunistring2
-            - libv4l-0
+            - libunistring5
+            - libv4l-0t64
             - libva2
             - libvorbis0a
             - libvorbisenc2
-            - libvpx7
+            - libvpx9
             - libwavpack1
             - libwebp7
-            - libx264-163
+            - libx264-164
             - libx265-199
             - libxvidcore4
             - libzmq5
-            - libzvbi0
+            - libzvbi0t64
             - zlib1g
 
     yaru-icons:
