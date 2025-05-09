@@ -8,8 +8,6 @@ hsqldb-jar-in-snap.patch
 do-not-clean-destdir.patch
 #fetch-submodules-from-dev-builds.patch
 disable-certificate-tests.diff
-fix-noto-sans-in-templates.diff
-replace-source-sans-in-templates.diff
 unpack-sources.patch
 skia-symbols.patch
 pdfium-symbols.patch
