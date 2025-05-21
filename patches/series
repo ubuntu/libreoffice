@@ -10,3 +10,4 @@ do-not-clean-destdir.patch
 disable-certificate-tests.diff
 unpack-sources.patch
 pdfium-symbols.patch
+lz.patch

@@ -1,0 +1,17 @@
+Description: Fix undefined references to Zlib functions, e.g.
+ .
+ libmspub_utils.cpp:(.text+0x3a2): undefined reference to `inflateInit2_'
+ /snap/gnome-46-2404-sdk/current/usr/bin/ld: libmspub_utils.cpp:(.text+0x433): undefined reference to `inflate'
+ /snap/gnome-46-2404-sdk/current/usr/bin/ld: libmspub_utils.cpp:(.text+0x475): undefined reference to `inflateEnd'
+ /snap/gnome-46-2404-sdk/current/usr/bin/ld: libmspub_utils.cpp:(.text+0x494): undefined reference to `inflateEnd'
+ .
+Author: Nathan Pratta Teodosio <nteodosio@ubuntu.com>
+
+--- a/solenv/gbuild/platform/unxgcc.mk
++++ b/solenv/gbuild/platform/unxgcc.mk
+@@ -166,4 +166,5 @@
+ 		    $(T_LIBS) \
+ 		    $(if $(call gb_LinkTarget__NeedsCxxLinker),$(T_STDLIBS_CXX)) \
++		    -lz \
+ 		    -Wl$(COMMA)--end-group \
+ 		    -Wl$(COMMA)--no-as-needed \

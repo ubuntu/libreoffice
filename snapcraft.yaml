@@ -40,6 +40,7 @@ parts:
         plugin: autotools
         source: https://download.documentfoundation.org/libreoffice/src/25.2.3/libreoffice-25.2.3.2.tar.xz
         autotools-configure-parameters:
+            - --disable-silent-rules
             - --disable-ccache
             - --disable-coinmp
             - --disable-dconf
@@ -74,6 +75,7 @@ parts:
             - --with-system-openldap
             - --with-system-nss
             - --with-system-hsqldb
+            - --with-system-zlib
             - --with-hsqldb-jar=/usr/share/java/hsqldb1.8.0.jar
             - --with-theme='colibre sifr sifr_dark breeze breeze_dark elementary sukapura sukapura_dark'
             - --with-vendor='Canonical, Ltd.'
