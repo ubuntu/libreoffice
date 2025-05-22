@@ -182,7 +182,7 @@ parts:
             snapcraftctl build
             srcdir=$PWD
             cd workdir/CustomTarget/sysui/share/libreoffice
-            SRCDIR=$srcdir INSTDIR=$srcdir/instdir DESTDIR=$CRAFT_PART_INSTALL PREFIXDIR=usr KDEMAINDIR=usr PKG_CONFIG=pkg-config ./create_tree.sh
+            SRCDIR=$srcdir INSTDIR=$srcdir/instdir DESTDIR=$CRAFT_PART_INSTALL/lib/libreoffice PREFIXDIR=usr KDEMAINDIR=usr PKG_CONFIG=pkg-config ./create_tree.sh
             chmod a+x $CRAFT_PART_INSTALL/usr/share
             for app in base calc draw impress math startcenter writer
             do
