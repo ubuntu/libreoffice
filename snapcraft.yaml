@@ -187,7 +187,7 @@ parts:
             for app in base calc draw impress math startcenter writer
             do
                 sed -i \
-                    -e "s#Icon=libreoffice25.2-$app#Icon=/usr/share/icons/hicolor/256x256/apps/libreoffice25.2-$app.png#" \
+                    -e "s#^Icon=.*#Icon=/lib/libreoffice/usr/share/icons/hicolor/256x256/apps/libreoffice25.2-$app.png#" \
                     -e "s#^Exec=libreoffice25.2 --\(.*\)#Exec=libreoffice.\1#g" \
                     $CRAFT_PART_INSTALL/usr/local/lib/libreoffice/share/xdg/$app.desktop
             done
