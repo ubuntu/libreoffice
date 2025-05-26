@@ -183,6 +183,8 @@ parts:
             srcdir=$PWD
             cd workdir/CustomTarget/sysui/share/libreoffice
             SRCDIR=$srcdir INSTDIR=$srcdir/instdir DESTDIR=$CRAFT_PART_INSTALL/lib/libreoffice PREFIXDIR=usr KDEMAINDIR=usr PKG_CONFIG=pkg-config ./create_tree.sh
+            # The Snap Store refuses snaps with broken symlinks. Remove them.
+            find "$CRAFT_PART_INSTALL" -lname "*/opt/*" -exec rm {} +
             chmod a+x $CRAFT_PART_INSTALL/usr/share
             for app in base calc draw impress math startcenter writer
             do
