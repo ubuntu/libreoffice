@@ -6,6 +6,7 @@ confinement: strict
 grade: stable
 base: core24
 compression: lzo
+source-code: https://code.launchpad.net/~libreoffice/+git/libreoffice-snap/+ref/fresh
 
 passthrough:
   layout:
