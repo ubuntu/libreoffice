@@ -1,13 +1,13 @@
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -58,18 +58,6 @@ else # MAKE_RESTARTS
+@@ -66,18 +66,6 @@ else # MAKE_RESTARTS
  
  .DEFAULT_GOAL := build
  
 -# Nested test is to check if the systemd-detect-virt command doesn't exist or it reports we're not
 -# in a container:
 -check-if-root:
--	@if test ! `uname` = 'Haiku' -a `id -u` = 0; then \
+-	@if test ! `uname` = 'Haiku' -a `id -u` = 0 && test -z $$container; then \
 -		if test ! -x "$$(command -v systemd-detect-virt)" || ! systemd-detect-virt -c -q; then \
 -			echo; \
 -			echo 'Building LibreOffice as root is a very bad idea, use a regular user.'; \
@@ -19,7 +19,7 @@
  gb_Side ?= host
  
  include $(BUILDDIR)/config_$(gb_Side).mk
-@@ -252,7 +244,7 @@ endif
+@@ -289,7 +277,7 @@ endif
  #
  # Bootstrap
  #
